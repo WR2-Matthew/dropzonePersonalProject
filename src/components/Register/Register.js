@@ -4,22 +4,20 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { registerUsers } from '../../redux/actionCreators';
 
-const defaultState = {
-  firstName: '',
-  lastName: '',
-  email: '',
-  password: '',
-  fNameErr: '',
-  lNameErr: '',
-  emailErr: '',
-  pswdErr: ''
-};
-
 class Register extends Component {
   constructor(props) {
     super(props);
 
-    this.state = defaultState;
+    this.state = {
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+      fNameErr: '',
+      lNameErr: '',
+      emailErr: '',
+      pswdErr: ''
+    };
   };
 
   handleChange = (e) => {
@@ -29,45 +27,57 @@ class Register extends Component {
   };
 
   validate = () => {
+    const { firstName, lastName, email, password } = this.state;
     let fNameErr = '';
     let lNameErr = '';
     let emailErr = '';
     let pswdErr = '';
 
-    if (!this.state.firstName) {
+    if (!firstName) {
       fNameErr = '* required'
-    }
+    };
 
-    if (!this.state.lastName) {
+    if (!lastName) {
       lNameErr = '* required'
-    }
+    };
 
-    if (!this.state.email.includes('@')) {
+    if (!email.includes('@')) {
       emailErr = '* Invalid Email'
-    }
+    };
 
-    if (this.state.password.length < 7) {
+    if (password.length < 7) {
       pswdErr = '* Must be 8 or more characters'
-    }
+    };
 
     if (emailErr || fNameErr || lNameErr || pswdErr) {
       this.setState({ emailErr, fNameErr, lNameErr, pswdErr });
       return false
-    }
+    };
 
-    return true;
+    if (firstName && lastName && email.includes('@') && password.length > 7) {
+      this.register(firstName, lastName, email, password);
+    };
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
     const isValid = this.validate();
     if (isValid) {
-      this.setState({ defaultState })
+      this.setState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: '',
+        fNameErr: '',
+        lNameErr: '',
+        emailErr: '',
+        pswdErr: ''
+      })
     }
   };
 
   register = (firstName, lastName, email, password) => {
-    console.log('hit')
+    // console.log('hit')
     this.props.registerUsers(firstName, lastName, email, password)
     this.props.history.push('/')
   };
@@ -112,7 +122,7 @@ class Register extends Component {
               </div>
 
               <div>
-                <button type='submit' form='form' value='submit' onClick={() => this.register(firstName, lastName, email, password)} >Register</button>
+                <button type='submit' form='form' value='submit' onClick={() => this.validate()} >Register</button>
               </div>
 
             </form>

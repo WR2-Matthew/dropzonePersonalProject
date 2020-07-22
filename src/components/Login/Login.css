@@ -77,4 +77,8 @@
   border-color: black;
   background-color: #FFF8F3;
 }
+
+.loginInputErr {
+  font-size: xx-small;
+}
 /*# sourceMappingURL=Login.css.map */

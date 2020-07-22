@@ -2,7 +2,7 @@ import { LOGIN_USER, REGISTER_USER } from './constraints';
 import axios from 'axios';
 
 export function loginUsers(email, password) {
-  console.log(email, password)
+  console.log('hit')
   const body = { email, password };
   const loggedUser = axios.post('/auth/login', body);
 
