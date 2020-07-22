@@ -11,6 +11,7 @@ function Login(props) {
 
   function loginUser(email, password) {
     props.loginUsers(email, password)
+    props.history.push('/')
   }
 
   return (

@@ -4,9 +4,31 @@ module.exports = {
   register: async (req, res) => {
     const { firstName, lastName, email, password } = req.body;
     const db = req.app.get('db');
+
+    const userCheck = await db.auth.check_email_exists(email);
+    if (userCheck[0]) {
+      res.status(409).send('Email already assigned to an account.')
+    }
+
+    const salt = bcrypt.genSaltSync(10);
+    const hash = bcrypt.hashSync(password, salt);
+
+    const registerUser = await db.auth.register_user(firstName, lastName, email, hash);
+    const user = registerUser[0]
+    console.log(user)
+    req.session.user = {
+      id: user.user_id,
+      admin: user.is_admin,
+      superAdmin: user.super_admin,
+      email: user.email,
+      firstName: user.first_name,
+      lastName: user.last_name,
+      member: user.uspa_card
+    }
   },
 
   login: async (req, res) => {
+    console.log('hit')
     const { email, password } = req.body;
     const db = req.app.get('db')
 

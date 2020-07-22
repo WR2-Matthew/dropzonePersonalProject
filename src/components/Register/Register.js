@@ -23,11 +23,8 @@ class Register extends Component {
   };
 
   handleChange = (e) => {
-    const isCheckbox = e.target.type === 'checkbox';
     this.setState({
-      [e.target.name]: isCheckbox
-        ? e.target.checked
-        : e.target.value
+      [e.target.name]: e.target.value
     })
   };
 
@@ -65,13 +62,14 @@ class Register extends Component {
     e.preventDefault();
     const isValid = this.validate();
     if (isValid) {
-      console.log(this.state)
       this.setState({ defaultState })
     }
   };
 
   register = (firstName, lastName, email, password) => {
+    console.log('hit')
     this.props.registerUsers(firstName, lastName, email, password)
+    this.props.history.push('/')
   };
 
   render() {
