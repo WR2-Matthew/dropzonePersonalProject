@@ -1,0 +1,27 @@
+// this allows you to import other css files into this one
+@import './variables';
+
+//stores multiple styles to an 'obj' that can be referenced by it's name.
+//by invoking the name with a parameter you can then pass in an argument on your @include.
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+// you can write nested styling in scss
+.buttonHolder {
+  //this is how you access your mixin 'obj' invoke it's name to use its styles
+  // column represents $direction and allows for you to change its value in different places
+  @include flexCenter(column);
+  background-color: green;
+  .testButton{
+    background-color: $primaryBtn;
+    border: indigo;
+    height: 20px;
+    &:hover {
+      background-color: hotpink;
+    }
+  }
+}

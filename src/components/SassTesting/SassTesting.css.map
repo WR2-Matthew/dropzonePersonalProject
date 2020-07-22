@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAaA,AAAA,aAAa,CAAC;EAPZ,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;EACnB,cAAc,EAOM,MAAM;EAC1B,gBAAgB,EAAE,KAAK;CASxB;;AAbD,AAKE,aALW,CAKX,WAAW,CAAA;EACT,gBAAgB,EClBP,GAAG;EDmBZ,MAAM,EAAE,MAAM;EACd,MAAM,EAAE,IAAI;CAIb;;AAZH,AASI,aATS,CAKX,WAAW,AAIR,MAAM,CAAC;EACN,gBAAgB,EAAE,OAAO;CAC1B",
+    "sources": [
+        "SassTesting.scss",
+        "_variables.scss"
+    ],
+    "names": [],
+    "file": "SassTesting.css"
+}

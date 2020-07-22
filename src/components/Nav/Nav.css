@@ -1,0 +1,65 @@
+.navHolder {
+  width: 99.7vw;
+  height: 10vh;
+  background-color: #0C6291;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-style: solid;
+  border-color: black;
+  -webkit-box-shadow: 0 5px 2px -2px #5e5d5d;
+          box-shadow: 0 5px 2px -2px #5e5d5d;
+}
+
+.navTitleHolder {
+  width: 40vw;
+  height: 10vh;
+  margin-left: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navLogo {
+  height: 75px;
+  width: 75px;
+  background-color: #0C6291;
+}
+
+.navTitle {
+  margin-left: 20px;
+  font-family: fantasy;
+}
+
+.navList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40vw;
+  margin-right: 40px;
+}
+
+.navLinks {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+/*# sourceMappingURL=Nav.css.map */

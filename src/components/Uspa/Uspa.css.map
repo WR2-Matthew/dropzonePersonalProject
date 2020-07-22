@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "Uspa.scss",
+        "../../Sass/_mixin.scss"
+    ],
+    "names": [],
+    "file": "Uspa.css"
+}

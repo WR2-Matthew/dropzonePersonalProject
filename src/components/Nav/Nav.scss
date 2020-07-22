@@ -1,0 +1,39 @@
+@import '../../Sass/variables';
+@import '../../Sass/mixin';
+
+.navHolder {
+  width: 99.7vw;
+  height: 10vh;
+  background-color: $mainBlueColor;
+  @include flexOptionOne(space-between);
+  @include borderOne();
+
+.navTitleHolder {
+  width: 40vw;
+  height: 10vh;
+  margin-left: 40px;
+  @include flexOptionOne(none)
+}
+
+.navLogo {
+  height: 75px;
+  width: 75px;
+  background-color: $mainBlueColor;
+}
+
+.navTitle {
+  margin-left: 20px;
+  font-family: fantasy;
+}
+
+.navList {
+  @include flexOptionOne(space-between);
+  width: 40vw;
+  margin-right: 40px;
+}
+
+.navLinks {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}

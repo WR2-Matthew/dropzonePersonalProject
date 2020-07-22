@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "Logbook.scss",
+        "../../Sass/_variables.scss"
+    ],
+    "names": [],
+    "file": "Logbook.css"
+}
