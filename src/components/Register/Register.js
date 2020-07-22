@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import './Register.css';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { registerUsers } from '../../redux/actionCreators';
 
 const defaultState = {
   firstName: '',
@@ -9,9 +13,9 @@ const defaultState = {
   lNameErr: '',
   emailErr: '',
   pswdErr: ''
-}
+};
 
-export default class Register extends Component {
+class Register extends Component {
   constructor(props) {
     super(props);
 
@@ -42,11 +46,11 @@ export default class Register extends Component {
     }
 
     if (!this.state.email.includes('@')) {
-      emailErr = 'Invalid Email'
+      emailErr = '* Invalid Email'
     }
 
-    if (this.state.password.length < 8) {
-      pswdErr = 'must be 8 or more characters'
+    if (this.state.password.length < 7) {
+      pswdErr = '* Must be 8 or more characters'
     }
 
     if (emailErr || fNameErr || lNameErr || pswdErr) {
@@ -66,41 +70,74 @@ export default class Register extends Component {
     }
   };
 
+  register = (firstName, lastName, email, password) => {
+    this.props.registerUsers(firstName, lastName, email, password)
+  };
+
   render() {
     const { firstName, lastName, email, password, fNameErr, lNameErr, emailErr, pswdErr } = this.state;
     return (
-      <form onSubmit={this.handleSubmit} id='form' >
-        <div>
-          <label>First Name:</label>
-          <input name='firstName' value={firstName} onChange={(e) => this.handleChange(e)} />
-          <div>{fNameErr}</div>
+      <div className='registerHolder'  >
+        <div className='registerFormHolder'>
+
+          <h1>Register Account</h1>
+
+          <div className='registerForm'>
+
+            <div className='registerLink'>
+              <button onClick={() => this.props.history.push('/')} >X</button>
+            </div>
+
+            <form onSubmit={this.handleSubmit} id='form' >
+              <div className='registerInputs' >
+                <label>First Name:</label>
+                <input name='firstName' value={firstName} onChange={(e) => this.handleChange(e)} />
+                <div className='registerInputErr' >{fNameErr}</div>
+              </div>
+
+              <div className='registerInputs' >
+                <label>Last Name:</label>
+                <input name='lastName' value={lastName} onChange={(e) => this.handleChange(e)} />
+                <div className='registerInputErr' >{lNameErr}</div>
+              </div>
+
+              <div className='registerInputs' >
+                <label>Email:</label>
+                <input name='email' value={email} onChange={(e) => this.handleChange(e)} />
+                <div className='registerInputErr' >{emailErr}</div>
+              </div>
+
+              <div className='registerInputs' >
+                <label>Password:</label>
+                <input name='password' type='password' value={password} onChange={(e) => this.handleChange(e)} />
+                <div className='registerInputErr' >{pswdErr}</div>
+              </div>
+
+              <div>
+                <button type='submit' form='form' value='submit' onClick={() => this.register(firstName, lastName, email, password)} >Register</button>
+              </div>
+
+            </form>
+
+            <div>
+              <p>Already have an account? <Link to='/login' >Login Here</Link></p>
+            </div>
+
+          </div>
+
         </div>
 
-        <div>
-          <label>Last Name:</label>
-          <input name='lastName' value={lastName} onChange={(e) => this.handleChange(e)} />
-          <div>{lNameErr}</div>
-        </div>
+      </div>
 
-        <div>
-          <label>Email:</label>
-          <input name='email' value={email} onChange={(e) => this.handleChange(e)} />
-          <div>{emailErr}</div>
-        </div>
-
-        <div>
-          <label>Password:</label>
-          <input name='password' value={password} onChange={(e) => this.handleChange(e)} />
-          <div>{pswdErr}</div>
-        </div>
-
-        <div>
-          <button type='submit' form='form' value='submit'>Register</button>
-        </div>
-      </form>
     )
   }
+};
+
+const mapDispatchToProps = {
+  registerUsers
 }
+
+export default connect(null, mapDispatchToProps)(Register);
 
 
 
@@ -205,13 +242,13 @@ export default class Register extends Component {
 //             {/* <p>* required</p> */}
 //           </div>
 
-//           <div>
-//             <button onClick={() => register(firstName, lastName, email, password)} >Register</button>
-//           </div>
+          // <div>
+          //   <button onClick={() => register(firstName, lastName, email, password)} >Register</button>
+          // </div>
 
-//           <div>
-//             <p>Already have an account? <Link>Login Here</Link></p>
-//           </div>
+          // <div>
+          //   <p>Already have an account? <Link>Login Here</Link></p>
+          // </div>
 
 //         </div>
 //       </div>

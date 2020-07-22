@@ -3,8 +3,8 @@ const express = require('express'),
   massive = require('massive'),
   app = express(),
   session = require('express-session'),
-  authCtrl = require('./controllers/AuthController')
-{ CONNECTION_STRING, SERVER_PORT, SESSION_SECRET } = process.env
+  authCtrl = require('./controllers/AuthController'),
+  { CONNECTION_STRING, SERVER_PORT, SESSION_SECRET } = process.env;
 
 app.use(express.json())
 app.use(session({
@@ -12,7 +12,7 @@ app.use(session({
   saveUninitialized: true,
   secret: SESSION_SECRET,
   cookie: { maxAge: 1000 * 60 * 60 * 24 * 7 }
-}))
+}));
 
 massive({
   connectionString: CONNECTION_STRING,
@@ -24,8 +24,9 @@ massive({
   console.log("DB connected!")
 }).catch(error => {
   console.log(error)
-})
+});
 
-app.post('/auth/login', login.authCtrl)
+app.post('/auth/login', authCtrl.login);
+app.post('/auth/register', authCtrl.register);
 
-app.listen(SERVER_PORT, () => console.log(`Rating on port ${SERVER_PORT}!!`))
+app.listen(SERVER_PORT, () => console.log(`Rating on port ${SERVER_PORT}!!`));
