@@ -3,7 +3,8 @@ const express = require('express'),
   massive = require('massive'),
   app = express(),
   session = require('express-session'),
-  { CONNECTION_STRING, SERVER_PORT, SESSION_SECRET } = process.env
+  authCtrl = require('./controllers/AuthController')
+{ CONNECTION_STRING, SERVER_PORT, SESSION_SECRET } = process.env
 
 app.use(express.json())
 app.use(session({
@@ -24,5 +25,7 @@ massive({
 }).catch(error => {
   console.log(error)
 })
+
+app.post('/auth/login', login.authCtrl)
 
 app.listen(SERVER_PORT, () => console.log(`Rating on port ${SERVER_PORT}!!`))

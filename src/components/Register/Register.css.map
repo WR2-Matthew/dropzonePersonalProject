@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "Register.scss",
+        "../../Sass/_variables.scss",
+        "../../Sass/_mixin.scss"
+    ],
+    "names": [],
+    "file": "Register.css"
+}

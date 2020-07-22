@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { loginUsers } from '../../redux/actionCreators';
 import './Login.css';
 
 function Login(props) {
 
-  let [username, setUsername] = useState('');
+  let [email, setEmail] = useState('');
   let [password, setPassword] = useState('');
 
-  login = () => {
-
+  function loginUser(email, password) {
+    props.loginUsers(email, password)
   }
 
   return (
@@ -22,18 +23,18 @@ function Login(props) {
           </div>
 
           <div className='loginInputs' >
-            <label>Username:</label>
-            <input value={username} onChange={(e) => setUsername(e.target.value)} />
+            <label>email:</label>
+            <input value={email} onChange={(e) => setEmail(e.target.value)} />
             <label>Password:</label>
             <input value={password} onChange={(e) => setPassword(e.target.value)} />
           </div>
 
           <div>
-            <button onClick={() => login()} >Login</button>
+            <button onClick={() => loginUser(email, password)} >Login</button>
           </div>
 
-          <div >
-            <p></p>
+          <div>
+            <p>Do not have an account? <Link to='/register' >Register Here</Link></p>
           </div>
         </div>
       </div>
@@ -41,4 +42,8 @@ function Login(props) {
   )
 };
 
-export default connect(null,)(Login);
+const mapDispatchToProps = {
+  loginUsers
+}
+
+export default connect(null, mapDispatchToProps)(Login);
