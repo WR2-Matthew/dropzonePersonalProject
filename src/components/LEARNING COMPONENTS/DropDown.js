@@ -24,10 +24,6 @@ class DropDown extends Component {
     this.setState({ selectedDropzone: e.target.value })
   };
 
-  // handleSubmitDropzone = (e) => {
-  //   e.preventDefault();
-  // };
-
   getByState = (arr, comp) => {
     const unique = arr
 
@@ -50,33 +46,32 @@ class DropDown extends Component {
 
     const dropzoneByState = this.getByState(dropzones, 'state_located');
 
-    // const filterDropDown = dropzones.filter(function (result) {
-    //   return result.state_located === selectedDropzone;
-    // });
+    function compare(a, b) {
+      const dzA = a.state_located.toUpperCase();
+      const dzB = b.state_located.toUpperCase();
 
-    // const mappedDz = filterDropDown.map((e, i) => {
-    //   return (
-    //     <div key={i}>
-    //       <p>{e.name}</p>
-    //       <p>{e.state_located}</p>
-    //     </div>
-    //   )
-    // })
-    console.log(selectedDropzone)
+      let comparison = 0;
+      if (dzA > dzB) {
+        comparison = 1;
+      } else if (dzA < dzB) {
+        comparison = -1
+      }
+      return comparison
+    }
+
+    const dzSorted = dropzoneByState.sort(compare)
 
     return (
       <div>
         <form>
           <select name='dropzones' value={selectedDropzone} onChange={this.handleChangeDropzone}>
-            {dropzoneByState.map((dz, i) => (
+            {dzSorted.map((dz, i) => (
               <option key={i} value={dz.state_located}>
                 {dz.state_located}
               </option>
             ))}
           </select>
-          {/* <input type='submit' value='Submit' /> */}
         </form>
-        {/* {!mappedDz ? dropzones : mappedDz} */}
 
       </div>
     )
