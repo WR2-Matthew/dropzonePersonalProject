@@ -1,10 +1,25 @@
 import React from 'react';
+import './Dashboard.css';
 
 function Dashboard() {
 
   return (
-    <div>
-      <h1>Dashboard</h1>
+    <div className='dashboardHolder'>
+      <div>
+        <div>
+          <div>
+            <input placeholder='DZ Name' />
+          </div>
+
+          <div>
+
+          </div>
+        </div>
+
+        <div>
+
+        </div>
+      </div>
     </div>
   )
 };

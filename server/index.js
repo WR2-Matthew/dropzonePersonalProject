@@ -4,6 +4,7 @@ const express = require('express'),
   app = express(),
   session = require('express-session'),
   authCtrl = require('./controllers/AuthController'),
+  dzCtrl = require('./controllers/DzController'),
   { CONNECTION_STRING, SERVER_PORT, SESSION_SECRET } = process.env;
 
 app.use(express.json())
@@ -28,5 +29,7 @@ massive({
 
 app.post('/auth/login', authCtrl.login);
 app.post('/auth/register', authCtrl.register);
+
+app.get('/api/dropzones', dzCtrl.getAllDropzones);
 
 app.listen(SERVER_PORT, () => console.log(`Rating on port ${SERVER_PORT}!!`));

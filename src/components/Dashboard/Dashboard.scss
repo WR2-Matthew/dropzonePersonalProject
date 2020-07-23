@@ -1,0 +1,8 @@
+@import '../../Sass/mixin';
+@import '../../Sass/variables';
+
+.dashboardHolder {
+  background-color: $mainBackground;
+  height: 90vh;
+  width: 100vw;
+}
