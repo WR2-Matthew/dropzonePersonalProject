@@ -71,12 +71,12 @@ class Login extends Component {
           <h1>Login to account!</h1>
           <div className='loginForm'>
             <div className='loginLink' >
-              <button onClick={() => this.props.history.push('/')} >X</button>
+              <button className='loginButton' onClick={() => this.props.history.push('/')} >X</button>
             </div>
 
-            <form onSubmit={this.handleSubmit} id='form'>
+            <form className='formHolder' onSubmit={this.handleSubmit} id='form'>
               <div className='loginInputs' >
-                <label>email:</label>
+                <label>Email:</label>
                 <input name='email' value={email} onChange={(e) => this.handleChange(e)} />
                 <div className='loginInputErr'>{emailErr}</div>
               </div>
@@ -86,14 +86,15 @@ class Login extends Component {
                 <input type='password' name='password' value={password} onChange={(e) => this.handleChange(e)} />
                 <div className='loginInputErr'>{pswdErr}</div>
               </div>
-              <div>
-                <button type='submit' form='form' value='submit' onClick={() => this.validate()} >Login</button>
+
+              <div className='loginButtonHolder'>
+                <button className='loginRegButton' type='submit' form='form' value='submit' onClick={() => this.validate()} >Login</button>
               </div>
             </form>
 
 
             <div>
-              <p>Do not have an account? <Link to='/register' >Register Here</Link></p>
+              <p>Do not have an account? <Link className='loginRouter' to='/register' >Register Here!</Link></p>
             </div>
           </div>
         </div>

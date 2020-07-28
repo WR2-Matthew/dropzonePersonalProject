@@ -33,6 +33,9 @@ massive({
 
 app.post('/auth/login', authCtrl.login);
 app.post('/auth/register', authCtrl.register);
+app.post('/auth/logout', authCtrl.logout);
+app.get('/auth/session', authCtrl.session);
+
 
 app.get('/api/dropzones', dzCtrl.getAllDropzones);
 

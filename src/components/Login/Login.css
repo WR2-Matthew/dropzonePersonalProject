@@ -19,9 +19,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -37,9 +37,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -53,6 +53,31 @@
   border-color: black;
   -webkit-box-shadow: 0 5px 2px -2px #5e5d5d;
           box-shadow: 0 5px 2px -2px #5e5d5d;
+}
+
+.loginLink {
+  width: 34vw;
+  height: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 50px;
+}
+
+.loginButton {
+  background-color: #0C6291;
+  color: white;
+}
+
+.formHolder {
+  height: 45vh;
+  width: 33vw;
 }
 
 .loginInputs {
@@ -71,14 +96,46 @@
           flex-direction: column;
 }
 
+.loginInputs label {
+  margin-top: 15px;
+  font-weight: 600;
+}
+
 .loginInputs input {
   outline: 0;
   border-width: 0 0 2px;
   border-color: black;
   background-color: #FFF8F3;
+  width: 300px;
+  margin-top: 15px;
 }
 
 .loginInputErr {
   font-size: xx-small;
+}
+
+.loginButtonHolder {
+  height: 10vh;
+  width: 33vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.loginRegButton {
+  background-color: #0C6291;
+  color: white;
+}
+
+.loginRouter {
+  text-decoration: none;
+  font-weight: 600;
+  color: #0C6291;
 }
 /*# sourceMappingURL=Login.css.map */

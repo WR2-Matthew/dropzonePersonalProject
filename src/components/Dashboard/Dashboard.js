@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
 import Dropdown from '../Dropdown/DropDown';
 import { connect } from 'react-redux';
-import { getDropzones } from '../../redux/actionCreators';
+import { getDropzones, getUser } from '../../redux/actionCreators';
+import Dropzones from '../Dropzones/Dropzones';
+import Modal from '../../LEARNING COMPONENTS/Modal'
 
-function Dashboard(props) {
+const Dashboard = (props) => {
 
-  let [selectedDz, setSelectedDz] = useState(null);
+  let [selectedDz, setSelectedDz] = useState('');
   let [nameSearched, setNameSearched] = useState('');
   let [overall, setOverall] = useState(false);
   let [camping, setCamping] = useState(false);
@@ -21,6 +23,7 @@ function Dashboard(props) {
 
   useEffect(() => {
     props.getDropzones()
+    props.getUser()
   }, []);
 
   function handleChangeState(e) {
@@ -82,6 +85,8 @@ function Dashboard(props) {
         </div>
 
         <div className='dashChecksHolder'>
+
+          <h4>Search By What Is Important To You:</h4>
           <div className='dashCheckBoxesHolder'>
             <label className='checkBoxLabels'>Overall</label>
             <input className='checkBoxInputs'
@@ -132,7 +137,6 @@ function Dashboard(props) {
               checked={party}
               onChange={() => checkValue('party')} />
           </div>
-
 
           <div className='dashCheckBoxesHolder'>
             <label className='checkBoxLabels'>Bunkhouse</label>
@@ -190,15 +194,33 @@ function Dashboard(props) {
         </div>
 
         <div className='dashAddDzHolder'>
-
+          <h1>ADD NEW DROPZONE</h1>
         </div>
       </div>
+
+      <div className='dashDropzoneHolder' >
+        {!props.dropzones ? null :
+          props.dropzones.map((dropzone, i) => {
+            return (
+              <Modal key={i}
+                name={dropzone.name}
+                state={dropzone.state_located}
+                picture={dropzone.pictures}
+              />)
+          })}
+      </div>
+
+      {/* <div>
+        <Modal />
+      </div> */}
+
     </div>
   )
 };
 
 const mapDispatchToProps = {
-  getDropzones
+  getDropzones,
+  getUser
 };
 
 function mapStateToProps(state) {

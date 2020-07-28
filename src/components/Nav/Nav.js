@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Nav.css';
+import { connect } from 'react-redux';
+import { getUser, logoutUser } from '../../redux/actionCreators';
 
-function Nav() {
+function Nav(props) {
+
+  useEffect(() => {
+    console.log(props.user)
+  }, [props.user]);
+
 
   return (
     <div className='navHolder'>
@@ -25,14 +32,29 @@ function Nav() {
             <p className='navListItem'>USPA Membership</p>
           </Link>
           <p>|</p>
-          <Link className='navLinks' to='/login'>
-            <p className='navListItem'>Sign In</p>
-          </Link>
+          {!props.user ?
+            <Link className='navLinks' to='/login'>
+              <p className='navListItem'>Sign In</p>
+            </Link>
+            : <button onClick={props.logoutUser} className='logoutButton'>Logout</button>
+          }
         </ul>
       </div>
     </div>
   )
 };
 
-export default Nav;
+const mapDispatchToProps = {
+  getUser,
+  logoutUser
+}
+
+
+function mapStateToProps(state) {
+  return {
+    user: state.userReducer.user.data
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Nav);
 

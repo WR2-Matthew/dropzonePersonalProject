@@ -1,10 +1,7 @@
-.dropdownHolder {
-  height: 40px;
-  width: 200px;
-}
-
 .dropdownHolder select {
   height: 40px;
   width: 200px;
+  border: 3px solid black;
+  border-radius: 5px;
 }
 /*# sourceMappingURL=Dropdown.css.map */

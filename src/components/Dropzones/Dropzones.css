@@ -1,0 +1,41 @@
+.dropzoneHolder {
+  height: 33vh;
+  width: 183w;
+  background-color: white;
+  border-style: solid;
+  border-color: black;
+  -webkit-box-shadow: 0 5px 2px -2px #5e5d5d;
+          box-shadow: 0 5px 2px -2px #5e5d5d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+.dropzoneName {
+  margin: 0px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.dropzoneState {
+  margin: 0px;
+  margin-bottom: 10px;
+}
+
+.dropzoneImage {
+  height: 130px;
+  width: 13vw;
+}
+/*# sourceMappingURL=Dropzones.css.map */

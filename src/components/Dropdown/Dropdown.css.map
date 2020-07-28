@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAEA,AAAA,eAAe,CAAC;ECWd,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,KAAK;CDPb;;AALD,AAEE,eAFa,CAEb,MAAM,CAAC;ECSP,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,KAAK;CDRX",
+    "mappings": "AAEA,AACE,eADa,CACb,MAAM,CAAC;ECUP,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,eAAe;EACvB,aAAa,EAAE,GAAG;CDXjB",
     "sources": [
         "Dropdown.scss",
         "../../Sass/_mixin.scss"

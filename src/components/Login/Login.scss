@@ -11,31 +11,72 @@
 .loginFormHolder {
 width: 34vw;
 height: 100vh;
-@include flexOptionOne(center);
+@include flexOptionOne(none);
 flex-direction: column;
 }
 
 .loginForm {
   width: 33vw;
   height: 80vh;
-  @include flexOptionOne(center);
+  @include flexOptionOne(space-evenly);
   flex-direction: column;
   background-color: #FFF8F3;
   border-radius: 10%;
   @include borderOne()
 }
 
+.loginLink {
+  width: 34vw;
+  height: 20vh;
+  @include flexOptionOne(flex-end);
+  margin-right: 50px;
+}
+
+.loginButton {
+  background-color: #0C6291;
+  color: white;
+}
+
+.formHolder {
+  height: 45vh;
+  width: 33vw;
+
+}
+
 .loginInputs {
   @include flexOptionOne(center);
   flex-direction: column;
+  label {
+    margin-top: 15px;
+    font-weight: 600;
+  }
   input {
     outline: 0;
     border-width: 0 0 2px;
     border-color: black;
     background-color: #FFF8F3;
+    width: 300px;
+    margin-top: 15px;
   }
 }
 
 .loginInputErr {
   font-size: xx-small;
+}
+
+.loginButtonHolder {
+  height: 10vh;
+  width: 33vw;
+  @include flexOptionOne(center);
+}
+
+.loginRegButton {
+  background-color: #0C6291;
+  color: white;
+}
+
+.loginRouter {
+ text-decoration: none;
+ font-weight: 600;
+ color: #0C6291;
 }

@@ -1,0 +1,28 @@
+@import '../../Sass/mixin';
+
+.dropzoneHolder {
+  height: 33vh;
+  width: 183w;
+  background-color: white;
+  @include borderOne();
+  @include flexOptionOne(none);
+  flex-direction: column;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+.dropzoneName {
+  margin: 0px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.dropzoneState {
+  margin: 0px;
+  margin-bottom: 10px;
+}
+
+.dropzoneImage {
+  height: 130px;
+  width: 13vw;
+}

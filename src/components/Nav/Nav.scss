@@ -7,6 +7,7 @@
   background-color: $mainBlueColor;
   @include flexOptionOne(space-between);
   @include borderOne();
+}
 
 .navTitleHolder {
   width: 40vw;
@@ -36,4 +37,11 @@
   text-decoration: none;
   cursor: pointer;
   color: black;
+}
+
+.logoutButton {
+  border: none;
+  background-color: $mainBlueColor;
+  font-size: 15px;
+  cursor: pointer;
 }

@@ -62,4 +62,11 @@
   cursor: pointer;
   color: black;
 }
+
+.logoutButton {
+  border: none;
+  background-color: #0C6291;
+  font-size: 15px;
+  cursor: pointer;
+}
 /*# sourceMappingURL=Nav.css.map */

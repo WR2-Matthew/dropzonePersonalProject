@@ -37,8 +37,6 @@
 }
 
 .dashSearchBar {
-  height: 40px;
-  width: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -51,6 +49,23 @@
 }
 
 .dashSearch {
+  height: 40px;
+  width: 200px;
+  border: 3px solid black;
+  border-radius: 5px;
+}
+
+.dashChecksHolder {
+  height: 20vh;
+  width: 24vw;
+  border-style: solid;
+  border-color: black;
+  -webkit-box-shadow: 0 5px 2px -2px #5e5d5d;
+          box-shadow: 0 5px 2px -2px #5e5d5d;
+  background-color: white;
+  border-radius: 10px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -60,7 +75,47 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 40px;
-  width: 200px;
+}
+
+.dashChecksHolder .checkBoxInputs {
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+
+.dashAddDzHolder {
+  height: 20vh;
+  width: 24vw;
+  border-style: solid;
+  border-color: black;
+  -webkit-box-shadow: 0 5px 2px -2px #5e5d5d;
+          box-shadow: 0 5px 2px -2px #5e5d5d;
+  background-color: white;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dashDropzoneHolder {
+  margin-top: 100px;
+  height: 40vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 /*# sourceMappingURL=Dashboard.css.map */

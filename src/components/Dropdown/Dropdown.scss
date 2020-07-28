@@ -1,7 +1,6 @@
 @import '../../Sass/mixin';
 
 .dropdownHolder {
-  @include searchSize();
   select {
     @include searchSize();
   }
