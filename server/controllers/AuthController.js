@@ -7,7 +7,7 @@ module.exports = {
 
     const userCheck = await db.auth.check_email_exists(email);
     if (userCheck[0]) {
-      res.status(409).send('Email already assigned to an account.')
+      return res.status(409).send('Email already assigned to an account.')
     }
 
     const salt = bcrypt.genSaltSync(10);

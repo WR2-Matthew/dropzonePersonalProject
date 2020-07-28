@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,eAAe,CAAC;ECWd,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,KAAK;CDPb;;AALD,AAEE,eAFa,CAEb,MAAM,CAAC;ECSP,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,KAAK;CDRX",
+    "sources": [
+        "Dropdown.scss",
+        "../../Sass/_mixin.scss"
+    ],
+    "names": [],
+    "file": "Dropdown.css"
+}

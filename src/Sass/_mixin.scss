@@ -9,3 +9,8 @@
   border-color: black;
   box-shadow: 0 5px 2px -2px rgb(94, 93, 93);
 }
+
+@mixin searchSize() {
+  height: 40px;
+  width: 200px;
+}

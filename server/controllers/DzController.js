@@ -4,6 +4,7 @@ module.exports = {
 
     const dropzones = await db.dropzone.get_all_dropzones();
     // console.log(dropzones)
+
     res.status(200).send(dropzones);
   }
 }

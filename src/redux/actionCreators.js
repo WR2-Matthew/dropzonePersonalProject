@@ -1,4 +1,4 @@
-import { LOGIN_USER, REGISTER_USER } from './constraints';
+import { LOGIN_USER, REGISTER_USER, GET_DROPZONES } from './constraints';
 import axios from 'axios';
 
 export function loginUsers(email, password) {
@@ -22,5 +22,13 @@ export function registerUsers(firstName, lastName, email, password) {
     payload: {
       user: registeredUser
     }
-  }
+  };
+};
+
+export function getDropzones() {
+  const dropzones = axios.get('/api/dropzones');
+  return {
+    type: GET_DROPZONES,
+    payload: dropzones
+  };
 };

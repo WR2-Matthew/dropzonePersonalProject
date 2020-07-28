@@ -6,3 +6,32 @@
   height: 90vh;
   width: 100vw;
 }
+
+.dashHeaderHolder {
+  height: 25vh;
+  width: 100vw;
+  @include flexOptionOne(space-evenly);
+}
+
+.dashSearchHolder {
+  height: 20vh;
+  width: 24vw;
+  @include flexOptionOne(space-evenly);  
+  flex-direction: column;
+}
+
+.dashSearchBar {
+  @include searchSize();
+  @include flexOptionOne(center)
+}
+
+.dashSearch {
+  @include flexOptionOne(center);
+  @include searchSize();
+  // background: url(https://img.icons8.com/cotton/2x/search--v2.png) no-repeat 1px 1px ;
+}
+
+.dashFilterState {
+  
+
+}

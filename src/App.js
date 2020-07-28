@@ -4,7 +4,8 @@ import { withRouter } from 'react-router-dom';
 import routes from './routes';
 import Nav from './components/Nav/Nav';
 // import Sass from './components/SassTesting/SassTesting';
-import Test from './components/LEARNING COMPONENTS/DropDown';
+// import Dropdown from './components/LEARNING COMPONENTS/DropDown';
+// import DZA from './LEARNING COMPONENTS/DropzoneAmazon';
 
 function App(props) {
   return (
@@ -13,8 +14,9 @@ function App(props) {
         ? null
         : <Nav />}
       {/* <Sass /> */}
-      <Test />
-      {/* {routes} */}
+      {/* <Dropdown /> */}
+      {/* <DZA /> */}
+      {routes}
     </div>
   );
 }

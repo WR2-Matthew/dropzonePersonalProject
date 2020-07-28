@@ -1,50 +1,45 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import './Dropdown.css';
+import { connect } from 'react-redux';
 
 class DropDown extends Component {
   constructor() {
     super()
 
     this.state = {
-      dropzones: [],
-      selectedDropzone: []
+      zones: []
+    }
+  };
+
+  componentDidUpdate = (prevProps, prevState) => {
+    if (prevProps !== this.props) {
+      this.getByState(this.props.dropzones, 'state_located')
     }
   }
 
-  componentDidMount = () => {
-    axios
-      .get('/api/dropzones')
-      .then(res => {
-        this.setState({ dropzones: res.data })
-        // console.log(this.state.dropzones)
-      })
-  };
-
-  handleChangeDropzone = (e) => {
-    this.setState({ selectedDropzone: e.target.value })
-  };
-
   getByState = (arr, comp) => {
-    const unique = arr
+    if (!arr) {
+      return
+    } else {
+      const unique = arr
 
-      .map(dz => dz[comp])
+        .map(dz => dz[comp])
 
-      .map((state, i, array) => {
-        console.log(state)
-        return array.indexOf(state) === i && i
-      })
+        .map((state, i, array) => {
+          // console.log(state)
+          return array.indexOf(state) === i && i
+        })
 
-      .filter(e => arr[e])
+        .filter(e => arr[e])
 
-      .map(e => arr[e])
-    // console.log(unique)
-    return unique
+        .map(e => arr[e])
+      // console.log(unique)
+      return this.setState({ zones: unique })
+    }
   }
 
   render() {
-    const { dropzones, selectedDropzone } = this.state;
-
-    const dropzoneByState = this.getByState(dropzones, 'state_located');
+    const { selectedDz, handleChangeDropzoneFn } = this.props
 
     function compare(a, b) {
       const dzA = a.state_located.toUpperCase();
@@ -59,12 +54,12 @@ class DropDown extends Component {
       return comparison
     }
 
-    const dzSorted = dropzoneByState.sort(compare)
+    const dzSorted = this.state.zones.sort(compare)
 
     return (
-      <div>
-        <form>
-          <select name='dropzones' value={selectedDropzone} onChange={this.handleChangeDropzone}>
+      <div className='dropdownHolder'>
+        <form className='dropdownHolder'>
+          <select name='dropzones' value={selectedDz} onChange={(e) => handleChangeDropzoneFn(e)}>
             {dzSorted.map((dz, i) => (
               <option key={i} value={dz.state_located}>
                 {dz.state_located}
@@ -76,9 +71,15 @@ class DropDown extends Component {
       </div>
     )
   }
-}
+};
 
-export default DropDown;
+function mapStateToProps(state) {
+  return {
+    dropzones: state.dzReducer.dropzones.data
+  }
+};
+
+export default connect(mapStateToProps)(DropDown);
 
 
 
@@ -132,34 +133,6 @@ export default DropDown;
 // };
 
 // export default DropDown;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -230,51 +203,6 @@ export default DropDown;
 
 
 // export default DropDown;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
