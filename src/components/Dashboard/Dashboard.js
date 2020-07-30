@@ -3,8 +3,7 @@ import './Dashboard.css';
 import Dropdown from '../Dropdown/DropDown';
 import { connect } from 'react-redux';
 import { getDropzones, getUser } from '../../redux/actionCreators';
-import Dropzones from '../Dropzones/Dropzones';
-import Modal from '../../LEARNING COMPONENTS/Modal'
+import Modal from '../../components/Modal/Modal';
 
 const Dashboard = (props) => {
 
@@ -65,8 +64,8 @@ const Dashboard = (props) => {
     else if (id === 'landingArea') {
       setLandingArea(!landingArea)
     }
-  }
-
+  };
+  console.log(props.dropzones)
   return (
     <div className='dashboardHolder'>
       <div className='dashHeaderHolder'>
@@ -200,19 +199,31 @@ const Dashboard = (props) => {
 
       <div className='dashDropzoneHolder' >
         {!props.dropzones ? null :
-          props.dropzones.map((dropzone, i) => {
+          props.dropzones.map((e, i) => {
             return (
               <Modal key={i}
-                name={dropzone.name}
-                state={dropzone.state_located}
-                picture={dropzone.pictures}
+                picture={e.pictures}
+                name={e.dz_name}
+                state={e.state_located}
+                town={e.town_located}
+                address={e.address}
+                overall={e.overall_rt}
+                bunkhouse={e.bunkhouse_rt}
+                camping={e.camping_rt}
+                facilities={e.facilities_rt}
+                userHasRated={e.has_rated}
+                inclusion={e.inclusion_rt}
+                landingArea={e.landing_area_rt}
+                party={e.party_rt}
+                planes={e.planes_rt}
+                rentals={e.rental_gear_rt}
+                safety={e.sky_safety_rt}
+                price={e.jump_ticket_price}
+                altitude={e.altitude}
               />)
-          })}
+          })
+        }
       </div>
-
-      {/* <div>
-        <Modal />
-      </div> */}
 
     </div>
   )

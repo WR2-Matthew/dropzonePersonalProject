@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "EditDropzone.scss",
+        "../../Sass/_mixin.scss",
+        "../../Sass/_variables.scss"
+    ],
+    "names": [],
+    "file": "EditDropzone.css"
+}

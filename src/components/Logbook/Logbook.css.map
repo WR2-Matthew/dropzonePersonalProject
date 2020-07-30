@@ -1,9 +1,10 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAGA,AAAA,cAAc,CAAC;EACb,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,KAAK;EACZ,gBAAgB,ECLD,OAAO;CDMvB",
     "sources": [
         "Logbook.scss",
-        "../../Sass/_variables.scss"
+        "../../Sass/_variables.scss",
+        "../../Sass/_mixin.scss"
     ],
     "names": [],
     "file": "Logbook.css"

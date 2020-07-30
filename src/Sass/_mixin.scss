@@ -16,3 +16,19 @@
   border: 3px solid black;
   border-radius: 5px;
 }
+
+@mixin flexWrap() {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px;
+}
+
+@mixin modalSize($height) {
+  height: $height;
+  width: 75vw;
+}
+
+@mixin buttons {
+  background-color: #0C6291;
+  color: white;
+}

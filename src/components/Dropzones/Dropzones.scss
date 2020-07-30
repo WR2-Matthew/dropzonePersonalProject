@@ -2,27 +2,34 @@
 
 .dropzoneHolder {
   height: 33vh;
-  width: 183w;
+  width: 13vw;
   background-color: white;
   @include borderOne();
   @include flexOptionOne(none);
   flex-direction: column;
   border-radius: 20px;
   margin: 20px;
+  cursor: pointer;
 }
 
 .dropzoneName {
   margin: 0px;
   margin-bottom: 20px;
   margin-top: 10px;
+  @include flexWrap()
 }
 
 .dropzoneState {
   margin: 0px;
   margin-bottom: 10px;
+  @include flexWrap()
 }
 
 .dropzoneImage {
   height: 130px;
   width: 13vw;
+}
+
+.dropzoneStarComp {
+  margin: 25px;
 }

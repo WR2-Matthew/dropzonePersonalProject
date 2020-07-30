@@ -5,5 +5,7 @@ address varchar(125),
 pictures varchar(3000),
 altitude int,
 state_located varchar(25),
-jump_ticket_price decimal
+jump_ticket_price decimal,
+town_located varchar(40),
+dz_name varchar(60)
 );

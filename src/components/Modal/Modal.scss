@@ -1,0 +1,80 @@
+@import '../../Sass//mixin';
+@import '../../Sass/variables';
+
+.modalButtonHolder {
+  @include modalSize(1vh);
+  @include flexOptionOne(flex-end);
+}
+
+.modalExitButton {
+ @include buttons()
+}
+
+.modalDzNameHolder {
+  @include modalSize(9vh);
+  @include flexOptionOne(center);
+}
+
+.modalDzName {
+  font-weight: 800;
+  font-size: 60px;
+  color: $mainBlueColor;
+}
+
+.modalDzAddressHolder {
+  @include modalSize(8vh);
+  @include flexOptionOne(center);
+}
+
+.modalDzAddress {
+  font-weight: 500;
+  font-size: 20px;
+  margin-top: 0px;
+}
+
+.modalRatingsHolder {
+  @include modalSize(3vh);
+  @include flexOptionOne(center);
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.starComp {
+font-size: 40px;
+}
+
+.modalDzImageHolder {
+  @include flexOptionOne(center);
+  @include modalSize(220px);
+}
+
+.modalDzImage {
+  height: 200px;
+  width: 300px;
+}
+
+.modalDzDetails {
+  @include flexOptionOne(center);
+  @include modalSize(20px);
+}
+
+.modalStarHolder {
+  @include modalSize(19vh);
+  @include flexOptionOne(none);
+  flex-wrap: wrap;
+}
+
+.individualRatingHolder {
+  height: 60px;
+  margin: 12px;
+  width: 12vw;
+  @include flexOptionOne(center);
+  flex-direction: column;
+  label {
+    font-weight: 600;
+  }
+}
+
+.modalRatingButton {
+@include buttons()
+}

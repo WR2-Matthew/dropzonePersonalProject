@@ -1,1 +1,6 @@
-/* No CSS *//*# sourceMappingURL=Logbook.css.map */
+.logbookHolder {
+  height: 90vh;
+  width: 100vw;
+  background-color: #F5E8CC;
+}
+/*# sourceMappingURL=Logbook.css.map */

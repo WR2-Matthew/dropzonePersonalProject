@@ -1,1 +1,8 @@
 @import '../../Sass/variables';
+@import '../../Sass/mixin';
+
+.logbookHolder {
+  height: 90vh;
+  width: 100vw;
+  background-color: $mainBackground;
+}
