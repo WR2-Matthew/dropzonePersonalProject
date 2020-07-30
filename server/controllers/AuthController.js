@@ -25,6 +25,8 @@ module.exports = {
       lastName: user.last_name,
       member: user.uspa_card
     }
+
+    res.status(200).send(req.session.user);
   },
 
   login: async (req, res) => {

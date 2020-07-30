@@ -70,6 +70,9 @@ app.get('/auth/session', authCtrl.session);
 //DROPZONE ENDPOINT
 app.get('/api/dropzones', dzCtrl.getAllDropzones);
 
+//RATING ENDPOINT
+app.post('/api/rate/dropzone', dzCtrl.addRating)
+
 app.listen(SERVER_PORT, () => console.log(`Rating on port ${SERVER_PORT}!!`));
 
 

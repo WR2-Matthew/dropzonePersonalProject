@@ -3,7 +3,7 @@ import './Dashboard.css';
 import Dropdown from '../Dropdown/DropDown';
 import { connect } from 'react-redux';
 import { getDropzones, getUser } from '../../redux/actionCreators';
-import Modal from '../../components/Modal/Modal';
+import Modal from '../Modal/Modal';
 
 const Dashboard = (props) => {
 
@@ -23,7 +23,7 @@ const Dashboard = (props) => {
   useEffect(() => {
     props.getDropzones()
     props.getUser()
-  }, []);
+  }, [props.getDropzones]);
 
   function handleChangeState(e) {
     setSelectedDz(e.target.value)
@@ -65,7 +65,9 @@ const Dashboard = (props) => {
       setLandingArea(!landingArea)
     }
   };
+
   console.log(props.dropzones)
+
   return (
     <div className='dashboardHolder'>
       <div className='dashHeaderHolder'>
@@ -220,6 +222,7 @@ const Dashboard = (props) => {
                 safety={e.sky_safety_rt}
                 price={e.jump_ticket_price}
                 altitude={e.altitude}
+                dropzoneId={e.dropzone_id}
               />)
           })
         }
@@ -236,7 +239,8 @@ const mapDispatchToProps = {
 
 function mapStateToProps(state) {
   return {
-    dropzones: state.dzReducer.dropzones.data
+    dropzones: state.dzReducer.dropzones.data,
+    user: state.userReducer.user.data
   }
 };
 

@@ -1,4 +1,4 @@
-import { GET_DROPZONES } from "./constraints";
+import { GET_DROPZONES, RATE_DZ } from "./constraints";
 
 const initialState = {
   dropzones: []
@@ -10,8 +10,14 @@ export default function dzReducer(state = initialState, action) {
     case GET_DROPZONES + '_PENDING':
       return state;
     case GET_DROPZONES + '_FULFILLED':
-      return { ...state, dropzones: payload }
+      return { ...state, dropzones: payload };
     case GET_DROPZONES + '_REJECTED':
+      return state;
+    case RATE_DZ + '_PENDING':
+      return state;
+    case RATE_DZ + '_FULFILLED':
+      return { ...state, dropzones: payload };
+    case RATE_DZ + '_REJECTED':
       return state;
     default:
       return state;

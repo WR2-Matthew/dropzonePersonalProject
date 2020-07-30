@@ -6,11 +6,7 @@ import { getUser, logoutUser } from '../../redux/actionCreators';
 
 function Nav(props) {
 
-  useEffect(() => {
-    console.log(props.user)
-  }, [props.user]);
-
-
+  console.log(props.user)
   return (
     <div className='navHolder'>
       <div className='navTitleHolder'>

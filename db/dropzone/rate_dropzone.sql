@@ -1,3 +1,31 @@
+insert into ratings (
+  dz_id,
+  user_id,
+  bunkhouse_rt,
+  camping_rt,
+  facilities_rt,
+  inclusion_rt,
+  landing_area_rt,
+  party_rt,
+  rental_gear_rt,
+  planes_rt,
+  sky_safety_rt,
+  has_rated
+) values (
+  $1, 
+  $2,
+  $3,
+  $4,
+  $5,
+  $6,
+  $7,
+  $8,
+  $9,
+  $10,
+  $11,
+  true
+);
+
 select d.dropzone_id, d.dz_name, d.creator_id, d.pictures, d.altitude, d.state_located, d.jump_ticket_price, d.town_located, d.dz_name, 
  avg(r.camping_rt) as camping_rt, 
  avg(r.sky_safety_rt) as sky_safety_rt,
@@ -13,3 +41,4 @@ select d.dropzone_id, d.dz_name, d.creator_id, d.pictures, d.altitude, d.state_l
  from dropzones d
  join ratings r on r.dz_id = d.dropzone_id
 group by d.dropzone_id, r.dz_id, r.user_id, r.has_rated;
+
