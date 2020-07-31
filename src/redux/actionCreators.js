@@ -1,6 +1,7 @@
-import { LOGIN_USER, REGISTER_USER, GET_DROPZONES, GET_SESSION, LOGOUT_USER, RATE_DZ } from './constraints';
+import { LOGIN_USER, REGISTER_USER, GET_DROPZONES, GET_SESSION, LOGOUT_USER, RATE_DZ, CREATE_DZ, GET_JUMPS } from './constraints';
 import axios from 'axios';
 
+//USER FUNCTIONS
 export function loginUsers(email, password) {
   const body = { email, password };
   const loggedUser = axios.post('/auth/login', body);
@@ -36,6 +37,8 @@ export function logoutUser() {
   };
 };
 
+
+//DROPZONE FUNCTIONS
 export function getDropzones() {
   const dropzones = axios.get('/api/dropzones');
   return {
@@ -45,10 +48,31 @@ export function getDropzones() {
 };
 
 export function rateDropzones(bunkhouse, camping, facilities, inclusion, landingArea, party, rental, planes, skySafety, userId, dropzoneId) {
+  console.log('hittt')
   const body = { bunkhouse, camping, facilities, inclusion, landingArea, party, rental, planes, skySafety };
   const ratings = axios.post(`/api/rate/dropzone?dropzone=${dropzoneId}&user=${userId}`, body);
   return {
     type: RATE_DZ,
     payload: ratings
-  }
+  };
+};
+
+export function createDropzone(name, address, town, state, altitude, price, photo, userId) {
+  console.log('hit')
+  const body = { name, address, town, state, altitude, price, photo };
+  const created = axios.post(`api/create/dropzone/${userId}`, body)
+  return {
+    type: CREATE_DZ,
+    payload: created
+  };
+};
+
+
+//JUMP FUNCTIONS
+export function getAllJumps(userId) {
+  const jumps = axios.get(`/api/jumps/${userId}`)
+  return {
+    type: GET_JUMPS,
+    payload: jumps
+  };
 };

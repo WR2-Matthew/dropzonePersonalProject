@@ -30,7 +30,7 @@ module.exports = {
   },
 
   login: async (req, res) => {
-    console.log('hit')
+    // console.log('hit')
     const { email, password } = req.body;
     const db = req.app.get('db')
 
@@ -55,7 +55,7 @@ module.exports = {
       member: user.uspa_card
     };
 
-    console.log(req.session.user)
+    // console.log(req.session.user)
 
     res.status(200).send(req.session.user);
   },

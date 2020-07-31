@@ -4,6 +4,7 @@ import Dropdown from '../Dropdown/DropDown';
 import { connect } from 'react-redux';
 import { getDropzones, getUser } from '../../redux/actionCreators';
 import Modal from '../Modal/Modal';
+import ModalTwo from '../AddDzModal/AddDzModal';
 
 const Dashboard = (props) => {
 
@@ -33,6 +34,7 @@ const Dashboard = (props) => {
     setNameSearched(e.target.value)
   };
 
+  //switch to switch statement
   function checkValue(id) {
     if (id === 'overall') {
       setOverall(!overall)
@@ -194,9 +196,8 @@ const Dashboard = (props) => {
           </div>
         </div>
 
-        <div className='dashAddDzHolder'>
-          <h1>ADD NEW DROPZONE</h1>
-        </div>
+        <ModalTwo className='dashAddDzHolder' />
+
       </div>
 
       <div className='dashDropzoneHolder' >

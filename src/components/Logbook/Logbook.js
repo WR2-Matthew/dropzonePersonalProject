@@ -1,13 +1,38 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Logbook.css'
+import { connect } from 'react-redux';
+import { getAllJumps } from '../../redux/actionCreators';
 
-function Logbook() {
+function Logbook(props) {
 
+  useEffect(() => {
+    if (props.user) {
+      props.getAllJumps(props.user.id)
+    }
+  }, [props.user])
+
+  console.log(props.jumps)
   return (
     <div className='logbookHolder'>
-      <h1>Logbook</h1>
+      {!props.user ? <h1>You must login to view your logbook!</h1>
+        :
+        <div className='logbookDetailsHolder'>
+
+        </div>
+      }
     </div>
   )
 };
 
-export default Logbook;
+const mapDispatchToProps = {
+  getAllJumps
+};
+
+function mapStateToProps(state) {
+  return {
+    jumps: state.jumpReducer.jumps.data,
+    user: state.userReducer.user.data
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Logbook);

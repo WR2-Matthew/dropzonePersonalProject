@@ -4,3 +4,5 @@ export const GET_DROPZONES = 'GET_DROPZONES';
 export const GET_SESSION = 'GET_SESSION';
 export const LOGOUT_USER = 'LOGOUT_USER';
 export const RATE_DZ = 'RATE_DZ';
+export const CREATE_DZ = 'CREATE_DZ';
+export const GET_JUMPS = 'GET_JUMPS';

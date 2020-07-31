@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { v4 as randomString } from 'uuid';
 import { useDropzone } from 'react-dropzone';
 import axios from 'axios';
+import './AmazonDropzone.css';
 
 function Amazon(props) {
 
@@ -11,10 +12,11 @@ function Amazon(props) {
 
   const [files, setFiles] = useState([]);
   const [isUploading, setUploading] = useState(upload);
-  const [photo, setPhoto] = useState('');
+  // const [photo, setPhoto] = useState('');
 
   // We are creating a file name that consists of a random string, and the name of the file that was just uploaded with the spaces removed and hyphens inserted instead. This is done using the .replace function with a specific regular expression. This will ensure that each file uploaded has a unique name which will prevent files from overwriting other files due to duplicate names.
-  const getSignedRequest = ([files]) => {
+  const getSignedRequest = (e, [files]) => {
+    e.preventDefault()
     setUploading(!isUploading)
     console.log(files)
     const fileName = `${randomString()}-${files.name.replace(/\s/g, '-')}`
@@ -44,7 +46,7 @@ function Amazon(props) {
       .put(signedRequest, files, options)
       .then(() => {
         setUploading({ isUploading: false, url });
-        setPhoto(url)
+        props.photoFn(url)
         if (url) {
           alert('ready!!')
         }
@@ -87,17 +89,17 @@ function Amazon(props) {
         </div>
       </div>
     )
-    console.log(files)
+
     return (
-      <div id='photos' >
-        <h1>Upload</h1>
+      <div className='dropzonePhotoHolder' >
+        <h2 className='dropzoneAddPhotoHolder'>Upload Photo</h2>
         {images}
         <div {...getRootProps()}>
           <input {...getInputProps()} />
           {
             isDragActive ?
-              <p>Drop the files here ...</p> :
-              <p>Drag 'n' drop some files here, or click to select files</p>
+              <h4 className='dropzoneAddPhoto' >Click Here To Add Photos</h4> :
+              <h4 className='dropzoneAddPhoto' >Click Here To Select Files</h4>
           }
         </div>
       </div>
@@ -106,13 +108,17 @@ function Amazon(props) {
 
   return (
     <div>
-      <div id="drop" >
-        Drag Pic Of House
-         {MyDropzone()}
-      </div>
+      <form>
+        <div className='amazonDropHolder'>
+          <div className='amazonDrop' >
+            {MyDropzone()}
+          </div>
 
-      <button id='submit-photo' onClick={() => getSignedRequest(files)} >Subit Photo</button>
-
+          <div className='amazonDropzoneButtonHolder' >
+            <button className='submitPhoto' onClick={(e) => getSignedRequest(e, files)} >Submit Photo</button>
+          </div>
+        </div>
+      </form>
     </div>
   )
 };

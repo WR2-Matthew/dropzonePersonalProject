@@ -24,6 +24,7 @@ function RateDz(props) {
 
 
     else {
+      console.log('hit')
       props.rateDropzones(bunkhouse, camping, facilities, inclusion, landingArea, party, rental, planes, skySafety, props.user.id, props.dropzoneId)
       props.setEditDzFn(false)
       setCamping(0)

@@ -2,7 +2,7 @@
   background-color: #F5E8CC;
   height: 90vh;
   width: 100vw;
-  background-repeat: repeat-y;
+  /* background-repeat: repeat; */
 }
 
 .dashHeaderHolder {

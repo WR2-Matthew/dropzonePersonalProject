@@ -1,0 +1,27 @@
+@import '../../Sass/mixin';
+@import '../../Sass/variables';
+
+.amazonDrop, .dropzoneAddPhoto {
+  @include modalSize(15vh);
+  @include flexOptionOne(center);
+}
+
+.dropzoneAddPhoto {
+  @include borderOne()
+}
+
+.dropzoneAddPhotoHolder {
+  @include modalSize(4vh);
+  margin-top: 70px;
+  @include flexOptionOne(center);
+}
+
+.amazonDropHolder {
+   @include modalSize(25vh);
+   @include flexOptionOne(center);
+   flex-direction: column;
+}
+
+.amazonDropzoneButtonHolder {
+  margin-top: 75px;
+}
