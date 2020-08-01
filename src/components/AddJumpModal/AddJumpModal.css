@@ -1,1 +1,140 @@
-/* No CSS *//*# sourceMappingURL=AddJumpModal.css.map */
+.logbookAddJumpHolder {
+  cursor: pointer;
+}
+
+.mainFormDiv, .mainJumpDetails {
+  height: 10vh;
+  width: 75vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.addJumpForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.mainFormDiv {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.addJumpInfoHolder {
+  height: 10vh;
+  width: 75vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.addJumpInfoHolder input {
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: black;
+}
+
+.dzJumpDetailsHolder {
+  height: 20vh;
+  width: 75vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.mainJumpDetailHolder {
+  height: 15vh;
+  width: 75vw;
+}
+
+.jumpDetailsHolder {
+  height: 10vh;
+  width: 75vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 250px;
+}
+
+.jumpDetails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.jumpDetails input {
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: black;
+}
+
+.addJumpCreateButton {
+  height: 2vh;
+  width: 75vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.addJumpCreateButton button {
+  background-color: #0C6291;
+  color: white;
+  border-style: solid;
+  border-color: black;
+  -webkit-box-shadow: 0 5px 2px -2px #5e5d5d;
+          box-shadow: 0 5px 2px -2px #5e5d5d;
+}
+/*# sourceMappingURL=AddJumpModal.css.map */

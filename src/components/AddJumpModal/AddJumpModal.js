@@ -39,6 +39,12 @@ function AddJumpModal(props) {
           isOpen={modalOpen}
           onRequestClose={() => {
             setModalOpen(false)
+            setDate('')
+            setDz('')
+            setDiscipline('')
+            setPhoto('')
+            setPlane('')
+            setDetails('')
           }}
           style={
             {
@@ -51,7 +57,15 @@ function AddJumpModal(props) {
           <form className='addJumpForm'>
             <div className='mainFormDiv' >
               <div className='modalButtonHolder'>
-                <button className='modalExitButton' onClick={() => setModalOpen(false)}>X</button>
+                <button className='modalExitButton' onClick={() => {
+                  setModalOpen(false)
+                  setDate('')
+                  setDz('')
+                  setDiscipline('')
+                  setPhoto('')
+                  setPlane('')
+                  setDetails('')
+                }}>X</button>
               </div>
 
               <div className='mainJumpDetails'>
@@ -73,7 +87,7 @@ function AddJumpModal(props) {
               <AmazonDropzone photoFn={setPhoto} />
             </div>
 
-            <div className='mainJumpDetails'>
+            <div className='mainJumpDetailHolder'>
               <div className='jumpDetailsHolder'>
                 <div className='jumpDetails'>
                   <input placeholder='Plane Jumped From' name='plane' value={plane} onChange={(e) => setPlane(e.target.value)} />

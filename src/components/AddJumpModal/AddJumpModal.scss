@@ -1,2 +1,59 @@
 @import '../../Sass/variables';
 @import '../../Sass/mixin';
+
+.logbookAddJumpHolder {
+  cursor: pointer;
+}
+
+.mainFormDiv,  .mainJumpDetails{
+  @include modalSize(10vh);
+  @include flexOptionOne(center);
+}
+
+.addJumpForm {
+  @include flexOptionOne(center);
+  flex-direction: column;
+}
+
+.mainFormDiv {
+  flex-direction: column;
+}
+
+.addJumpInfoHolder {
+  @include modalSize(10vh);
+  @include flexOptionOne(center);
+  input {
+    @include inputStyles();
+  }
+}
+
+.dzJumpDetailsHolder {
+  @include modalSize(20vh);
+  @include flexOptionOne(none);
+  flex-direction: column;
+}
+
+.mainJumpDetailHolder {
+  @include modalSize(15vh);
+}
+
+.jumpDetailsHolder {
+  @include modalSize(10vh);
+  @include flexOptionOne(space-evenly);
+  margin-top: 250px;
+}
+
+.jumpDetails {
+  @include flexOptionOne(space-evenly);
+  input {
+    @include inputStyles();
+  }
+}
+
+.addJumpCreateButton {
+  @include modalSize(2vh);
+  @include flexOptionOne(center);
+  button {
+    @include buttons();
+  }
+}

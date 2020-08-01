@@ -6,15 +6,19 @@
   @include flexOptionOne(center);
 }
 
+.signInNotificationHolder {
+  @include modalSize(70vh);
+  @include flexOptionOne(center);
+  flex-direction: column;
+}
+
 .dashAddDzHolder {
   cursor: pointer;
 }
 
 .modalTwoDzNameHolder, .dzJumpDetail {
   input {
-    outline: 0;
-    border-width: 0 0 2px;
-    border-color: black;
+    @include inputStyles();
   }
 }
 
