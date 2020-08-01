@@ -84,8 +84,8 @@ function Amazon(props) {
 
     const images = files.map((file) =>
       <div key={file.name} >
-        <div>
-          <img src={file.preview} style={{ width: "150px" }} alt="preview" />
+        <div className='amazonHoldImage'>
+          <img className='amazonImage' src={file.preview} style={{ width: "150px" }} alt="preview" />
         </div>
       </div>
     )
@@ -94,13 +94,17 @@ function Amazon(props) {
       <div className='dropzonePhotoHolder' >
         <h2 className='dropzoneAddPhotoHolder'>Upload Photo</h2>
         {images}
-        <div {...getRootProps()}>
-          <input {...getInputProps()} />
+        <div className='amazonImageHolder' {...getRootProps()}>
+          <input id='dropzoneInput' {...getInputProps()} />
           {
             isDragActive ?
               <h4 className='dropzoneAddPhoto' >Click Here To Add Photos</h4> :
               <h4 className='dropzoneAddPhoto' >Click Here To Select Files</h4>
           }
+        </div>
+
+        <div className='amazonDropzoneButtonHolder' >
+          <button className='submitPhoto' onClick={(e) => getSignedRequest(e, files)} >Submit Photo</button>
         </div>
       </div>
     )
@@ -112,10 +116,6 @@ function Amazon(props) {
         <div className='amazonDropHolder'>
           <div className='amazonDrop' >
             {MyDropzone()}
-          </div>
-
-          <div className='amazonDropzoneButtonHolder' >
-            <button className='submitPhoto' onClick={(e) => getSignedRequest(e, files)} >Submit Photo</button>
           </div>
         </div>
       </form>

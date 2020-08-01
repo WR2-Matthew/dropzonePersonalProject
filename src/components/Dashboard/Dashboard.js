@@ -10,6 +10,7 @@ const Dashboard = (props) => {
 
   let [selectedDz, setSelectedDz] = useState('');
   let [nameSearched, setNameSearched] = useState('');
+  let [defaultSelected, setDefaultSelected] = useState('Select State:')
   let [overall, setOverall] = useState(false);
   let [camping, setCamping] = useState(false);
   let [skySafety, setSkySafety] = useState(false);
@@ -34,37 +35,28 @@ const Dashboard = (props) => {
     setNameSearched(e.target.value)
   };
 
-  //switch to switch statement
   function checkValue(id) {
-    if (id === 'overall') {
-      setOverall(!overall)
-    }
-    else if (id === 'camping') {
-      setCamping(!camping)
-    }
-    else if (id === 'skySafety') {
-      setSkySafety(!skySafety)
-    }
-    else if (id === 'inclusion') {
-      setInclusion(!inclusion)
-    }
-    else if (id === 'party') {
-      setParty(!party)
-    }
-    else if (id === 'bunkhouse') {
-      setBunkhouse(!bunkhouse)
-    }
-    else if (id === 'rental') {
-      setRental(!rental)
-    }
-    else if (id === 'facilities') {
-      setFacilities(!facilities)
-    }
-    else if (id === 'planes') {
-      setPlanes(!planes)
-    }
-    else if (id === 'landingArea') {
-      setLandingArea(!landingArea)
+    switch (id) {
+      case 'overall':
+        setOverall(!overall);
+      case 'camping':
+        setCamping(!camping);
+      case 'skySafety':
+        setSkySafety(!skySafety);
+      case 'inclusion':
+        setInclusion(!inclusion);
+      case 'party':
+        setParty(!party);
+      case 'bunkhouse':
+        setBunkhouse(!bunkhouse);
+      case 'rental':
+        setRental(!rental);
+      case 'facilities':
+        setFacilities(!facilities);
+      case 'planes':
+        setPlanes(!planes);
+      case 'landingArea':
+        setLandingArea(!landingArea);
     }
   };
 
@@ -82,12 +74,13 @@ const Dashboard = (props) => {
           <div className='dashFilterState'>
             <Dropdown selectedDz={selectedDz}
               handleChangeDropzoneFn={handleChangeState}
+              defaultSelected={defaultSelected}
             />
           </div>
 
         </div>
 
-        <div className='dashChecksHolder'>
+        {/* <div className='dashChecksHolder'>
 
           <h4>Search By What Is Important To You:</h4>
           <div className='dashCheckBoxesHolder'>
@@ -193,8 +186,8 @@ const Dashboard = (props) => {
               id='checkLZ'
               checked={landingArea}
               onChange={() => checkValue('landingArea')} />
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
 
         <ModalTwo className='dashAddDzHolder' />
 
@@ -247,3 +240,39 @@ function mapStateToProps(state) {
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
 
+
+
+
+
+
+
+// if (id === 'overall') {
+    //   setOverall(!overall)
+    // }
+    // else if (id === 'camping') {
+    //   setCamping(!camping)
+    // }
+    // else if (id === 'skySafety') {
+    //   setSkySafety(!skySafety)
+    // }
+    // else if (id === 'inclusion') {
+    //   setInclusion(!inclusion)
+    // }
+    // else if (id === 'party') {
+    //   setParty(!party)
+    // }
+    // else if (id === 'bunkhouse') {
+    //   setBunkhouse(!bunkhouse)
+    // }
+    // else if (id === 'rental') {
+    //   setRental(!rental)
+    // }
+    // else if (id === 'facilities') {
+    //   setFacilities(!facilities)
+    // }
+    // else if (id === 'planes') {
+    //   setPlanes(!planes)
+    // }
+    // else if (id === 'landingArea') {
+    //   setLandingArea(!landingArea)
+    // }

@@ -76,30 +76,32 @@ function ModalTwo(props) {
           }>
           {!props.user ? <h1>Must be logged in to create a dropzone!</h1>
             :
-            <form>
-              <div className='modalButtonHolder'>
-                <button className='modalExitButton' onClick={() => setModalOpen(false)}>X</button>
-              </div>
-
-              <div className='mainDzDetails' >
-                <div className='modalTwoDzNameHolder' >
-                  <input placeholder='Dropzone Name' name='dzName' value={dzName} onChange={(e) => handleChangeName(e)} />
-                  {/* <label><b>Dropzone Name:</b></label> */}
+            <form className='addDzForm'>
+              <div>
+                <div className='modalButtonHolder'>
+                  <button className='modalExitButton' onClick={() => setModalOpen(false)}>X</button>
                 </div>
 
-                <div className='modalTwoDzNameHolder' >
-                  <input placeholder='Dropzone Address' name='dzAddress' value={dzAddress} onChange={(e) => handleChangeAddress(e)} />
-                  {/* <label><b>Dropzone Street:</b></label> */}
-                </div>
+                <div className='mainDzDetails' >
+                  <div className='modalTwoDzNameHolder' >
+                    <input placeholder='Dropzone Name' name='dzName' value={dzName} onChange={(e) => handleChangeName(e)} />
+                    {/* <label><b>Dropzone Name:</b></label> */}
+                  </div>
 
-                <div className='modalTwoDzNameHolder' >
-                  <input placeholder='Dropzone Town' name='town' value={town} onChange={(e) => handleChangeTown(e)} />
-                  {/* <label><b>Town:</b></label> */}
-                </div>
+                  <div className='modalTwoDzNameHolder' >
+                    <input placeholder='Dropzone Address' name='dzAddress' value={dzAddress} onChange={(e) => handleChangeAddress(e)} />
+                    {/* <label><b>Dropzone Street:</b></label> */}
+                  </div>
 
-                <div className='modalTwoDzNameHolder' >
-                  <input placeholder='Dropzone State' name='state' value={state} onChange={(e) => handleChangeState(e)} />
-                  {/* <label><b>State:</b></label> */}
+                  <div className='modalTwoDzNameHolder' >
+                    <input placeholder='Dropzone Town' name='town' value={town} onChange={(e) => handleChangeTown(e)} />
+                    {/* <label><b>Town:</b></label> */}
+                  </div>
+
+                  <div className='modalTwoDzNameHolder' >
+                    <input placeholder='Dropzone State' name='state' value={state} onChange={(e) => handleChangeState(e)} />
+                    {/* <label><b>State:</b></label> */}
+                  </div>
                 </div>
               </div>
 
@@ -107,19 +109,22 @@ function ModalTwo(props) {
                 <AmazonDropzone photoFn={setPhoto} />
               </div>
 
-              <div className='dzJumpDetailHolder'>
-                <div className='dzJumpDetails' >
-                  <input placeholder='Jump Ticket Price' name='price' value={price} onChange={(e) => handleChangePrice(e)} />
+              <div className='dzJumpDetailsHolder' >
+                <div className='dzJumpDetail'>
+                  <div className='dzJumpDets' >
+                    <input placeholder='Jump Ticket Price' name='price' value={price} onChange={(e) => handleChangePrice(e)} />
+                  </div>
+
+                  <div className='dzJumpDetails' >
+                    <input placeholder='Exit Altitude' name='altitude' value={altitude} onChange={(e) => handleChangeAltitude(e)} />
+                  </div>
                 </div>
 
-                <div className='dzJumpDetails' >
-                  <input placeholder='Exit Altitude' name='altitude' value={altitude} onChange={(e) => handleChangeAltitude(e)} />
+                <div className='addModalCreateButton'>
+                  <button onClick={(e) => submitForm(e)}>Create Dropzone!</button>
                 </div>
               </div>
 
-              <div>
-                <button onClick={(e) => submitForm(e)}>Create Dropzone!</button>
-              </div>
             </form>
           }
 

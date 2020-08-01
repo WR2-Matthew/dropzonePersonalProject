@@ -93,10 +93,10 @@ class Register extends Component {
           <div className='registerForm'>
 
             <div className='registerLink'>
-              <button onClick={() => this.props.history.push('/')} >X</button>
+              <button className='registerButton' onClick={() => this.props.history.push('/')} >X</button>
             </div>
 
-            <form onSubmit={this.handleSubmit} id='form' >
+            <form className='formHolder' onSubmit={this.handleSubmit} id='form' >
               <div className='registerInputs' >
                 <label>First Name:</label>
                 <input name='firstName' value={firstName} onChange={(e) => this.handleChange(e)} />
@@ -121,14 +121,14 @@ class Register extends Component {
                 <div className='registerInputErr' >{pswdErr}</div>
               </div>
 
-              <div>
-                <button type='submit' form='form' value='submit' onClick={() => this.validate()} >Register</button>
+              <div className='regButtonHolder'>
+                <button className='regLoginButton' type='submit' form='form' value='submit' onClick={() => this.validate()} >Register</button>
               </div>
 
             </form>
 
-            <div>
-              <p>Already have an account? <Link to='/login' >Login Here</Link></p>
+            <div className='regLink'>
+              <p><b>Already have an account?</b> <Link className='regRouter' to='/login' >Login Here!</Link></p>
             </div>
 
           </div>

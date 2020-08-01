@@ -3,9 +3,7 @@
 
 .registerHolder {
   @include flexOptionOne(center);
-  background-color: $mainBackground;
-  height: 100vh;
-  width: 100vw;
+  @include loginRegForm();
 }
 
 .registerFormHolder {
@@ -25,17 +23,61 @@
   @include borderOne()
 }
 
+.registerLink {
+  width: 34vw;
+  height: 20vh;
+  @include flexOptionOne(flex-end);
+  margin-right: 50px;
+}
+
+.registerButton {
+  background-color: $mainBlueColor;
+  color: white;
+}
+
+.formHolder {
+  height: 45vh;
+  width: 33vw;
+}
+
 .registerInputs {
   @include flexOptionOne(center);
   flex-direction: column;
+  label {
+    margin-top: 15px;
+    font-weight: 600;
+  }
   input {
     outline: 0;
     border-width: 0 0 2px;
     border-color: black;
     background-color: #FFF8F3;
+    width: 300px;
+    margin-top: 15px;
   }
 }
 
 .registerInputErr {
   font-size: xx-small;
+}
+
+.regButtonHolder {
+  height: 10vh;
+  width: 33vw;
+  @include flexOptionOne(center);
+}
+
+.regLoginButton {
+  @include buttons();
+}
+
+.regLink {
+  height: 5vh;
+  margin-top: 46px;
+}
+
+.regRouter {
+  text-decoration: none;
+  font-weight: 600;
+  color: $mainBlueColor;
 }

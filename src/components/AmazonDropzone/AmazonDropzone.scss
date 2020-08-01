@@ -7,13 +7,33 @@
 }
 
 .dropzoneAddPhoto {
-  @include borderOne()
+  @include borderOne();
+  background-color: $mainBlueColor;
+  color: white;
 }
 
 .dropzoneAddPhotoHolder {
   @include modalSize(4vh);
-  margin-top: 70px;
+  margin-top: 15px;
   @include flexOptionOne(center);
+}
+
+ .dropzonePhotoHolder {
+  @include modalSize(30vh);
+}
+
+.amazonImageHolder {
+  @include modalSize(15vh)
+}
+
+.amazonHoldImage {
+  @include flexOptionOne(center);
+  @include modalSize(15vh);
+}
+
+.amazonImage {
+  height: 160px;
+  width: 160px;
 }
 
 .amazonDropHolder {
@@ -23,5 +43,11 @@
 }
 
 .amazonDropzoneButtonHolder {
-  margin-top: 75px;
+  @include modalSize(2vh);
+  @include flexOptionOne(center);
+  margin-top: 15px;
+}
+
+.submitPhoto {
+  @include buttons();
 }

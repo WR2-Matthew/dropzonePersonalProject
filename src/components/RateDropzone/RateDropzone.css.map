@@ -1,11 +1,11 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAGA,AAAA,aAAa,EAAE,SAAS,CAAC;ECuBvB,MAAM,EDtBa,IAAI;ECuBvB,KAAK,EAAE,IAAI;EA1BX,OAAO,EAAE,IAAI;EACb,eAAe,EDGQ,MAAM;ECF7B,WAAW,EAAE,MAAM;EDGnB,SAAS,EAAE,IAAI;CAChB;;AAED,AAAA,WAAW,CAAC;EACV,MAAM,EAAE,IAAI;EACZ,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,IAAI;ECXX,OAAO,EAAE,IAAI;EACb,eAAe,EDWQ,MAAM;ECV7B,WAAW,EAAE,MAAM;EDWnB,cAAc,EAAE,MAAM;CAIvB;;AATD,AAME,WANS,CAMT,KAAK,CAAC;EACJ,WAAW,EAAE,GAAG;CACjB;;AAGH,AAAA,wBAAwB,CAAC;ECWvB,gBAAgB,EAAE,OAAO;EACzB,KAAK,EAAE,KAAK;EACZ,YAAY,EAAE,KAAK;EACnB,YAAY,EAAE,KAAK;EACnB,UAAU,EAAE,CAAC,CAAC,GAAG,CAAC,GAAG,CAAE,IAAG,CAAC,OAAe;CDb3C",
     "sources": [
-        "EditDropzone.scss",
+        "RateDropzone.scss",
         "../../Sass/_mixin.scss",
         "../../Sass/_variables.scss"
     ],
     "names": [],
-    "file": "EditDropzone.css"
+    "file": "RateDropzone.css"
 }

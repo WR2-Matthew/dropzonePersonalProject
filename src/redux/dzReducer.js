@@ -1,4 +1,4 @@
-import { GET_DROPZONES, RATE_DZ, CREATE_DZ } from "./constraints";
+import { GET_DROPZONES, RATE_DZ, CREATE_DZ, SEARCH_DROPZONES } from "./constraints";
 
 const initialState = {
   dropzones: []
@@ -25,6 +25,12 @@ export default function dzReducer(state = initialState, action) {
       return { ...state, dropzones: payload };
     case CREATE_DZ + '_REJECTED':
       return state;
+    // case SEARCH_DROPZONES + '_PENDING':
+    //   return state;
+    // case SEARCH_DROPZONES + '_FULFILLED':
+    //   return { ...state, dropzones: payload };
+    // case SEARCH_DROPZONES + '_REJECTED':
+    //   return state;
     default:
       return state;
   }

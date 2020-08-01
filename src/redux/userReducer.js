@@ -28,7 +28,7 @@ export default function userReducer(state = initialState, action) {
     case LOGOUT_USER + '_PENDING':
       return state;
     case LOGOUT_USER + '_FULFILLED':
-      return { ...state, user: initialState }
+      return { ...state, user: {} }
     case LOGOUT_USER + '_REJECTED':
       return state;
     default:

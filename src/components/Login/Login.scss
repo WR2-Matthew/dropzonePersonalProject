@@ -3,15 +3,13 @@
 
 .loginHolder {
   @include flexOptionOne(center);
-  background-color: $mainBackground;
-  height: 100vh;
-  width: 100vw;
+  @include loginRegForm();
 }
 
 .loginFormHolder {
 width: 34vw;
 height: 100vh;
-@include flexOptionOne(none);
+@include flexOptionOne(center);
 flex-direction: column;
 }
 
@@ -33,14 +31,13 @@ flex-direction: column;
 }
 
 .loginButton {
-  background-color: #0C6291;
+  background-color: $mainBlueColor;
   color: white;
 }
 
 .formHolder {
   height: 45vh;
   width: 33vw;
-
 }
 
 .loginInputs {
@@ -71,12 +68,11 @@ flex-direction: column;
 }
 
 .loginRegButton {
-  background-color: #0C6291;
-  color: white;
+  @include buttons()
 }
 
 .loginRouter {
  text-decoration: none;
  font-weight: 600;
- color: #0C6291;
+ color: $mainBlueColor;
 }

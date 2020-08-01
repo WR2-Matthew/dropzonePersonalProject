@@ -39,8 +39,9 @@ class DropDown extends Component {
   }
 
   render() {
-    const { selectedDz, handleChangeDropzoneFn } = this.props
+    const { selectedDz, handleChangeDropzoneFn, defaultSelected } = this.props;
 
+    console.log(defaultSelected)
     function compare(a, b) {
       const dzA = a.state_located.toUpperCase();
       const dzB = b.state_located.toUpperCase();
@@ -59,12 +60,20 @@ class DropDown extends Component {
     return (
       <div className='dropdownHolder'>
         <form className='dropdownHolder'>
-          <select name='dropzones' value={selectedDz} onChange={(e) => handleChangeDropzoneFn(e)}>
+          <select
+            name='dropzones'
+            // value={selectedDz}
+            defaultValue={{ label: "Select State", value: 0 }, selectedDz}
+            onChange={(e) => handleChangeDropzoneFn(e)}>
+            <option>
+              {defaultSelected}
+            </option>
             {dzSorted.map((dz, i) => (
               <option key={i} value={dz.state_located}>
                 {dz.state_located}
               </option>
             ))}
+
           </select>
         </form>
 

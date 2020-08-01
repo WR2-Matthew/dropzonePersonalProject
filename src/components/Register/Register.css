@@ -55,6 +55,31 @@
           box-shadow: 0 5px 2px -2px #5e5d5d;
 }
 
+.registerLink {
+  width: 34vw;
+  height: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 50px;
+}
+
+.registerButton {
+  background-color: #0C6291;
+  color: white;
+}
+
+.formHolder {
+  height: 45vh;
+  width: 33vw;
+}
+
 .registerInputs {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -71,14 +96,55 @@
           flex-direction: column;
 }
 
+.registerInputs label {
+  margin-top: 15px;
+  font-weight: 600;
+}
+
 .registerInputs input {
   outline: 0;
   border-width: 0 0 2px;
   border-color: black;
   background-color: #FFF8F3;
+  width: 300px;
+  margin-top: 15px;
 }
 
 .registerInputErr {
   font-size: xx-small;
+}
+
+.regButtonHolder {
+  height: 10vh;
+  width: 33vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.regLoginButton {
+  background-color: #0C6291;
+  color: white;
+  border-style: solid;
+  border-color: black;
+  -webkit-box-shadow: 0 5px 2px -2px #5e5d5d;
+          box-shadow: 0 5px 2px -2px #5e5d5d;
+}
+
+.regLink {
+  height: 5vh;
+  margin-top: 46px;
+}
+
+.regRouter {
+  text-decoration: none;
+  font-weight: 600;
+  color: #0C6291;
 }
 /*# sourceMappingURL=Register.css.map */

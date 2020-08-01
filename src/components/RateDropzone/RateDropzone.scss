@@ -1,2 +1,23 @@
 @import '../../Sass/mixin';
 @import '../../Sass/variables';
+
+.rateDzHolder, .rateForm {
+  @include modalSize(19vh);
+  @include flexOptionOne(center);
+  flex-wrap: wrap;
+}
+
+.rateHolder {
+  height: 60px;
+  margin: 12px;
+  width: 12vw;
+  @include flexOptionOne(center);
+  flex-direction: column;
+  label {
+    font-weight: 600;
+  }
+}
+
+.modalRatingSubmitButton {
+  @include buttons();
+}

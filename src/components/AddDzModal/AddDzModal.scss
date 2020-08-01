@@ -6,11 +6,37 @@
   @include flexOptionOne(center);
 }
 
-.modalTwoDzNameHolder {
-  flex-direction: column;
+.dashAddDzHolder {
+  cursor: pointer;
+}
+
+.modalTwoDzNameHolder, .dzJumpDetail {
   input {
     outline: 0;
     border-width: 0 0 2px;
     border-color: black;
+  }
+}
+
+.addDzForm {
+  @include flexOptionOne(center);
+  flex-direction: column;
+}
+
+.dzJumpDetailsHolder {
+  @include modalSize(15vh);
+  margin-top: 250px;
+}
+
+.dzJumpDetail {
+  @include modalSize(10vh);
+  @include flexOptionOne(space-evenly);
+}
+
+.addModalCreateButton {
+  @include modalSize(1vh);
+  @include flexOptionOne(center);
+  button {
+    @include buttons();
   }
 }

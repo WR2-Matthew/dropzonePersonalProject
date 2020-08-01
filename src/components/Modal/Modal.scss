@@ -60,7 +60,7 @@ font-size: 40px;
 
 .modalStarHolder {
   @include modalSize(19vh);
-  @include flexOptionOne(none);
+  @include flexOptionOne(center);
   flex-wrap: wrap;
 }
 

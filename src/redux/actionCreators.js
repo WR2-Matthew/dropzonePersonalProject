@@ -1,4 +1,4 @@
-import { LOGIN_USER, REGISTER_USER, GET_DROPZONES, GET_SESSION, LOGOUT_USER, RATE_DZ, CREATE_DZ, GET_JUMPS } from './constraints';
+import { LOGIN_USER, REGISTER_USER, GET_DROPZONES, GET_SESSION, LOGOUT_USER, RATE_DZ, CREATE_DZ, GET_JUMPS, SEARCH_DROPZONES } from './constraints';
 import axios from 'axios';
 
 //USER FUNCTIONS
@@ -67,6 +67,13 @@ export function createDropzone(name, address, town, state, altitude, price, phot
   };
 };
 
+// export function dropzoneQuerySearch(name, search) {
+//   const searched = axios.get(`/api/dropzones?name=${name}&search=${search}`)
+//   return {
+//     type: SEARCH_DROPZONES,
+//     payload: searched
+//   }
+// };
 
 //JUMP FUNCTIONS
 export function getAllJumps(userId) {

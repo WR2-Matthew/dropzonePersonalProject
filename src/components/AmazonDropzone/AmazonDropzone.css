@@ -17,12 +17,14 @@
   border-color: black;
   -webkit-box-shadow: 0 5px 2px -2px #5e5d5d;
           box-shadow: 0 5px 2px -2px #5e5d5d;
+  background-color: #0C6291;
+  color: white;
 }
 
 .dropzoneAddPhotoHolder {
   height: 4vh;
   width: 75vw;
-  margin-top: 70px;
+  margin-top: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,6 +34,35 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.dropzonePhotoHolder {
+  height: 30vh;
+  width: 75vw;
+}
+
+.amazonImageHolder {
+  height: 15vh;
+  width: 75vw;
+}
+
+.amazonHoldImage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 15vh;
+  width: 75vw;
+}
+
+.amazonImage {
+  height: 160px;
+  width: 160px;
 }
 
 .amazonDropHolder {
@@ -53,6 +84,26 @@
 }
 
 .amazonDropzoneButtonHolder {
-  margin-top: 75px;
+  height: 2vh;
+  width: 75vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 15px;
+}
+
+.submitPhoto {
+  background-color: #0C6291;
+  color: white;
+  border-style: solid;
+  border-color: black;
+  -webkit-box-shadow: 0 5px 2px -2px #5e5d5d;
+          box-shadow: 0 5px 2px -2px #5e5d5d;
 }
 /*# sourceMappingURL=AmazonDropzone.css.map */

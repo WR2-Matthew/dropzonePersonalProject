@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import StarComponent from 'react-star-rating-component';
 import { connect } from 'react-redux';
+import './RateDropzone.css';
 import { rateDropzones } from '../../redux/actionCreators';
 
 function RateDz(props) {
@@ -43,7 +44,7 @@ function RateDz(props) {
     <div className='rateDzHolder' >
       <form className='rateForm'>
         <div className='rateHolder' >
-          <p>Rate DZ's Bunkhouse:</p>
+          <label>DZ's Bunkhouse:</label>
           <StarComponent
             className='rateDzStarComp'
             name="bunkhouse"
@@ -55,7 +56,7 @@ function RateDz(props) {
         </div>
 
         <div className='rateHolder' >
-          <p>Rate DZ's Camping:</p>
+          <label>DZ's Camping:</label>
           <StarComponent
             className='rateDzStarComp'
             name="camping"
@@ -67,7 +68,7 @@ function RateDz(props) {
         </div>
 
         <div className='rateHolder' >
-          <p>Rate DZ's Facilities:</p>
+          <label>DZ's Facilities:</label>
           <StarComponent
             className='rateDzStarComp'
             name="facilities"
@@ -79,7 +80,7 @@ function RateDz(props) {
         </div>
 
         <div className='rateHolder' >
-          <p>Rate DZ's Inclusion:</p>
+          <label>DZ's Inclusion:</label>
           <StarComponent
             className='rateDzStarComp'
             name="inclusion"
@@ -91,7 +92,7 @@ function RateDz(props) {
         </div>
 
         <div className='rateHolder' >
-          <p>Rate DZ's Landing Area:</p>
+          <label>DZ's Landing Area:</label>
           <StarComponent
             className='rateDzStarComp'
             name="landingArea"
@@ -103,7 +104,7 @@ function RateDz(props) {
         </div>
 
         <div className='rateHolder' >
-          <p>Rate DZ's Party:</p>
+          <label>DZ's Party:</label>
           <StarComponent
             className='rateDzStarComp'
             name="party"
@@ -115,7 +116,7 @@ function RateDz(props) {
         </div>
 
         <div className='rateHolder' >
-          <p>Rate DZ's Planes:</p>
+          <label>DZ's Planes:</label>
           <StarComponent
             className='rateDzStarComp'
             name="planes"
@@ -127,7 +128,7 @@ function RateDz(props) {
         </div>
 
         <div className='rateHolder' >
-          <p>Rate DZ's Rental Gear:</p>
+          <label>DZ's Rental Gear:</label>
           <StarComponent
             className='rateDzStarComp'
             name="rental"
@@ -139,7 +140,7 @@ function RateDz(props) {
         </div>
 
         <div className='rateHolder' >
-          <p>Rate DZ's Safety:</p>
+          <label>DZ's Safety:</label>
           <StarComponent
             className='rateDzStarComp'
             name="skySafety"
@@ -151,10 +152,10 @@ function RateDz(props) {
         </div>
 
         <div className='rateHolder' >
-          <button onClick={(e) => submitForm(e)}>Submit Dropzone Rating's</button>
+          <button className='modalRatingSubmitButton' onClick={(e) => submitForm(e)}>Submit Dropzone Rating's</button>
         </div>
       </form>
-    </div>
+    </div >
   )
 };
 

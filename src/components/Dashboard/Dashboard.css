@@ -2,7 +2,7 @@
   background-color: #F5E8CC;
   height: 90vh;
   width: 100vw;
-  /* background-repeat: repeat; */
+  background-repeat: repeat-y;
 }
 
 .dashHeaderHolder {
@@ -51,7 +51,7 @@
 
 .dashSearch {
   height: 40px;
-  width: 200px;
+  width: 300px;
   border: 3px solid black;
   border-radius: 5px;
 }

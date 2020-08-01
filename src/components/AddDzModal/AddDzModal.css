@@ -12,16 +12,72 @@
           align-items: center;
 }
 
-.modalTwoDzNameHolder {
+.dashAddDzHolder {
+  cursor: pointer;
+}
+
+.modalTwoDzNameHolder input, .dzJumpDetail input {
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: black;
+}
+
+.addDzForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
 }
 
-.modalTwoDzNameHolder input {
-  outline: 0;
-  border-width: 0 0 2px;
+.dzJumpDetailsHolder {
+  height: 15vh;
+  width: 75vw;
+  margin-top: 250px;
+}
+
+.dzJumpDetail {
+  height: 10vh;
+  width: 75vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.addModalCreateButton {
+  height: 1vh;
+  width: 75vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.addModalCreateButton button {
+  background-color: #0C6291;
+  color: white;
+  border-style: solid;
   border-color: black;
+  -webkit-box-shadow: 0 5px 2px -2px #5e5d5d;
+          box-shadow: 0 5px 2px -2px #5e5d5d;
 }
 /*# sourceMappingURL=AddDzModal.css.map */
