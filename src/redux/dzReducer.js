@@ -25,12 +25,6 @@ export default function dzReducer(state = initialState, action) {
       return { ...state, dropzones: payload };
     case CREATE_DZ + '_REJECTED':
       return state;
-    // case SEARCH_DROPZONES + '_PENDING':
-    //   return state;
-    // case SEARCH_DROPZONES + '_FULFILLED':
-    //   return { ...state, dropzones: payload };
-    // case SEARCH_DROPZONES + '_REJECTED':
-    //   return state;
     default:
       return state;
   }

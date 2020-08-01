@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAGA,AAAA,cAAc,CAAC;EACb,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,KAAK;EACZ,gBAAgB,ECLD,OAAO;CDMvB",
+    "mappings": "AAGA,AAAA,cAAc,CAAC;EACb,gBAAgB,ECHD,OAAO;EDItB,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,KAAK;EACZ,UAAU,EAAE,KAAK;EACjB,WAAW,EAAE,KAAK;CACnB",
     "sources": [
         "Logbook.scss",
         "../../Sass/_variables.scss",

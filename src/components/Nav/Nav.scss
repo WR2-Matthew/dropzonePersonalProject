@@ -7,6 +7,7 @@
   background-color: $mainBlueColor;
   @include flexOptionOne(space-between);
   @include borderOne();
+  position: fixed;
 }
 
 .navTitleHolder {

@@ -28,7 +28,12 @@ const Dashboard = (props) => {
   }, [props.getDropzones]);
 
   function handleChangeState(e) {
-    setSelectedDz(e.target.value)
+    if (e.target.value === 'Select State:') {
+      setSelectedDz('')
+    }
+    else {
+      setSelectedDz(e.target.value)
+    }
   };
 
   function handleChangeName(e) {
@@ -90,7 +95,7 @@ const Dashboard = (props) => {
 
         </div>
 
-        {/* <div className='dashChecksHolder'>
+        <div className='dashChecksHolder'>
 
           <h4>Search By What Is Important To You:</h4>
           <div className='dashCheckBoxesHolder'>
@@ -196,40 +201,126 @@ const Dashboard = (props) => {
               id='checkLZ'
               checked={landingArea}
               onChange={() => checkValue('landingArea')} />
-          </div> */}
-        {/* </div> */}
+          </div>
+        </div>
 
         <ModalTwo className='dashAddDzHolder' />
 
       </div>
-
+      {/* MAKE INTO SWITCH STATEMENTS WITH TWO CONDITIONS */}
       <div className='dashDropzoneHolder' >
-        {!props.dropzones ? null :
-          props.dropzones.map((e, i) => {
-            return (
-              <Modal key={i}
-                picture={e.pictures}
-                name={e.dz_name}
-                state={e.state_located}
-                town={e.town_located}
-                address={e.address}
-                overall={e.overall_rt}
-                bunkhouse={e.bunkhouse_rt}
-                camping={e.camping_rt}
-                facilities={e.facilities_rt}
-                userHasRated={e.has_rated}
-                inclusion={e.inclusion_rt}
-                landingArea={e.landing_area_rt}
-                party={e.party_rt}
-                planes={e.planes_rt}
-                rentals={e.rental_gear_rt}
-                safety={e.sky_safety_rt}
-                price={e.jump_ticket_price}
-                altitude={e.altitude}
-                dropzoneId={e.dropzone_id}
-              />)
-          })
-        }
+        {!props.dropzones
+          ? null
+          : !selectedDz && !nameSearched
+            ? props.dropzones.map((e, i) => {
+              return (
+                <Modal key={i}
+                  picture={e.pictures}
+                  name={e.dz_name}
+                  state={e.state_located}
+                  town={e.town_located}
+                  address={e.address}
+                  overall={e.overall_rt}
+                  bunkhouse={e.bunkhouse_rt}
+                  camping={e.camping_rt}
+                  facilities={e.facilities_rt}
+                  userHasRated={e.has_rated}
+                  inclusion={e.inclusion_rt}
+                  landingArea={e.landing_area_rt}
+                  party={e.party_rt}
+                  planes={e.planes_rt}
+                  rentals={e.rental_gear_rt}
+                  safety={e.sky_safety_rt}
+                  price={e.jump_ticket_price}
+                  altitude={e.altitude}
+                  dropzoneId={e.dropzone_id}
+                />)
+            })
+            : !nameSearched && selectedDz
+              ? props.dropzones.filter(dropzone => (
+                dropzone.state_located === selectedDz
+              ))
+                .map((e, i) => {
+                  return (
+                    <Modal key={i}
+                      picture={e.pictures}
+                      name={e.dz_name}
+                      state={e.state_located}
+                      town={e.town_located}
+                      address={e.address}
+                      overall={e.overall_rt}
+                      bunkhouse={e.bunkhouse_rt}
+                      camping={e.camping_rt}
+                      facilities={e.facilities_rt}
+                      userHasRated={e.has_rated}
+                      inclusion={e.inclusion_rt}
+                      landingArea={e.landing_area_rt}
+                      party={e.party_rt}
+                      planes={e.planes_rt}
+                      rentals={e.rental_gear_rt}
+                      safety={e.sky_safety_rt}
+                      price={e.jump_ticket_price}
+                      altitude={e.altitude}
+                      dropzoneId={e.dropzone_id}
+                    />)
+                })
+              : nameSearched && !selectedDz
+                ? props.dropzones.filter(dropzone => (
+                  dropzone.dz_name.includes(nameSearched)
+                ))
+                  .map((e, i) => {
+                    return (
+                      <Modal key={i}
+                        picture={e.pictures}
+                        name={e.dz_name}
+                        state={e.state_located}
+                        town={e.town_located}
+                        address={e.address}
+                        overall={e.overall_rt}
+                        bunkhouse={e.bunkhouse_rt}
+                        camping={e.camping_rt}
+                        facilities={e.facilities_rt}
+                        userHasRated={e.has_rated}
+                        inclusion={e.inclusion_rt}
+                        landingArea={e.landing_area_rt}
+                        party={e.party_rt}
+                        planes={e.planes_rt}
+                        rentals={e.rental_gear_rt}
+                        safety={e.sky_safety_rt}
+                        price={e.jump_ticket_price}
+                        altitude={e.altitude}
+                        dropzoneId={e.dropzone_id}
+                      />)
+                  })
+                : nameSearched && selectedDz
+                  ? props.dropzones.filter(dropzone => (
+                    dropzone.dz_name.includes(nameSearched) && dropzone.state_located === selectedDz
+                  ))
+                    .map((e, i) => {
+                      return (
+                        <Modal key={i}
+                          picture={e.pictures}
+                          name={e.dz_name}
+                          state={e.state_located}
+                          town={e.town_located}
+                          address={e.address}
+                          overall={e.overall_rt}
+                          bunkhouse={e.bunkhouse_rt}
+                          camping={e.camping_rt}
+                          facilities={e.facilities_rt}
+                          userHasRated={e.has_rated}
+                          inclusion={e.inclusion_rt}
+                          landingArea={e.landing_area_rt}
+                          party={e.party_rt}
+                          planes={e.planes_rt}
+                          rentals={e.rental_gear_rt}
+                          safety={e.sky_safety_rt}
+                          price={e.jump_ticket_price}
+                          altitude={e.altitude}
+                          dropzoneId={e.dropzone_id}
+                        />)
+                    })
+                  : null}
       </div>
 
     </div>

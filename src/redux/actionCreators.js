@@ -67,14 +67,6 @@ export function createDropzone(name, address, town, state, altitude, price, phot
   };
 };
 
-// export function dropzoneQuerySearch(name, search) {
-//   const searched = axios.get(`/api/dropzones?name=${name}&search=${search}`)
-//   return {
-//     type: SEARCH_DROPZONES,
-//     payload: searched
-//   }
-// };
-
 //JUMP FUNCTIONS
 export function getAllJumps(userId) {
   const jumps = axios.get(`/api/jumps/${userId}`)

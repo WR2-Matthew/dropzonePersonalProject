@@ -1,6 +1,8 @@
 .logbookHolder {
+  background-color: #F5E8CC;
   height: 90vh;
   width: 100vw;
-  background-color: #F5E8CC;
+  min-height: 100vh;
+  padding-top: 100px;
 }
 /*# sourceMappingURL=Logbook.css.map */

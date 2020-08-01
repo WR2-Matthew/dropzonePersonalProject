@@ -2,7 +2,9 @@
 @import '../../Sass/mixin';
 
 .logbookHolder {
+  background-color: $mainBackground;
   height: 90vh;
   width: 100vw;
-  background-color: $mainBackground;
+  min-height: 100vh;
+  padding-top: 100px;
 }
