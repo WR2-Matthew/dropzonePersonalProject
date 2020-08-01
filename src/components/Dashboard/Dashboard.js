@@ -39,28 +39,38 @@ const Dashboard = (props) => {
     switch (id) {
       case 'overall':
         setOverall(!overall);
+        break;
       case 'camping':
         setCamping(!camping);
+        break;
       case 'skySafety':
         setSkySafety(!skySafety);
+        break;
       case 'inclusion':
         setInclusion(!inclusion);
+        break;
       case 'party':
         setParty(!party);
+        break;
       case 'bunkhouse':
         setBunkhouse(!bunkhouse);
+        break;
       case 'rental':
         setRental(!rental);
+        break;
       case 'facilities':
         setFacilities(!facilities);
+        break;
       case 'planes':
         setPlanes(!planes);
+        break;
       case 'landingArea':
         setLandingArea(!landingArea);
+        break;
     }
   };
 
-  console.log(props.dropzones)
+  console.log(selectedDz)
 
   return (
     <div className='dashboardHolder'>

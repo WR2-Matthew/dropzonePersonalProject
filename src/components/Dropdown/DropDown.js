@@ -41,7 +41,6 @@ class DropDown extends Component {
   render() {
     const { selectedDz, handleChangeDropzoneFn, defaultSelected } = this.props;
 
-    console.log(defaultSelected)
     function compare(a, b) {
       const dzA = a.state_located.toUpperCase();
       const dzB = b.state_located.toUpperCase();
