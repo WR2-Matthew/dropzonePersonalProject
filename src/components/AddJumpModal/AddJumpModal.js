@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import './AddJumpModal.css';
 import { connect } from 'react-redux';
+import { addJump } from '../../redux/actionCreators';
 import AmazonDropzone from '../AmazonDropzone/AmazonDropzone';
 
 function AddJumpModal(props) {
@@ -12,10 +13,19 @@ function AddJumpModal(props) {
   let [discipline, setDiscipline] = useState('');
   let [photo, setPhoto] = useState('');
   let [plane, setPlane] = useState('');
-  let [details, setDeatils] = useState('');
+  let [details, setDetails] = useState('');
 
-  function submitForm() {
+  function submitForm(e) {
+    e.preventDefault();
 
+    if (!date || !dz || !discipline || !photo || !plane || !details) {
+      alert("All field's must be filled out to add jump!");
+    }
+
+    else {
+      props.addJump(date, dz, discipline, photo, plane, details, props.userId);
+      setModalOpen(false);
+    };
   };
 
   return (
@@ -50,11 +60,11 @@ function AddJumpModal(props) {
                 </div>
 
                 <div className='addJumpInfoHolder'>
-                  <input placeholder='Date of Jump' name='date' value={discipline} onChange={(e) => setDiscipline(e.target.value)} />
+                  <input placeholder="Jump's Discipline" name='discipline' value={discipline} onChange={(e) => setDiscipline(e.target.value)} />
                 </div>
 
                 <div className='addJumpInfoHolder'>
-                  <input placeholder='Date of Jump' name='date' value={dz} onChange={(e) => setDz(e.target.value)} />
+                  <input placeholder='Dropzone' name='dz' value={dz} onChange={(e) => setDz(e.target.value)} />
                 </div>
               </div>
             </div>
@@ -66,16 +76,16 @@ function AddJumpModal(props) {
             <div className='mainJumpDetails'>
               <div className='jumpDetailsHolder'>
                 <div className='jumpDetails'>
-                  <input placeholder='Date of Jump' name='date' value={date} onChange={(e) => setDate(e.target.value)} />
+                  <input placeholder='Plane Jumped From' name='plane' value={plane} onChange={(e) => setPlane(e.target.value)} />
                 </div>
 
                 <div className='jumpDetails'>
-                  <input placeholder='Date of Jump' name='date' value={date} onChange={(e) => setDate(e.target.value)} />
+                  <input placeholder='Details of Jump' name='details' value={details} onChange={(e) => setDetails(e.target.value)} />
                 </div>
               </div>
 
               <div className='addJumpCreateButton'>
-                {/* <button onClick={(e) => submitForm(e)}>Add Jump!</button> */}
+                <button onClick={(e) => submitForm(e)}>Add Jump!</button>
               </div>
             </div>
 
@@ -87,4 +97,8 @@ function AddJumpModal(props) {
   )
 };
 
-export default connect()(AddJumpModal);
+const mapDispatchToProps = {
+  addJump
+};
+
+export default connect(null, mapDispatchToProps)(AddJumpModal);

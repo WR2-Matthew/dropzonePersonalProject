@@ -1,4 +1,4 @@
-import { GET_DROPZONES, RATE_DZ, CREATE_DZ, SEARCH_DROPZONES } from "./constraints";
+import { GET_DROPZONES, RATE_DZ, CREATE_DZ } from "./constraints";
 
 const initialState = {
   dropzones: []

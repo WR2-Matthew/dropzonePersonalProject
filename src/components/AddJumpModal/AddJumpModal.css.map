@@ -2,7 +2,9 @@
     "version": 3,
     "mappings": "",
     "sources": [
-        "AddJumpModal.scss"
+        "AddJumpModal.scss",
+        "../../Sass/_variables.scss",
+        "../../Sass/_mixin.scss"
     ],
     "names": [],
     "file": "AddJumpModal.css"

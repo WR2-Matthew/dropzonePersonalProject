@@ -77,5 +77,6 @@ app.post('/api/rate/dropzone', dzCtrl.addRating)
 
 //JUMPS ENDPOINT
 app.get('/api/jumps/:userId', jumpCtrl.getJumps)
+app.post('/api/create/jump/:userId', jumpCtrl.createJump)
 
 app.listen(SERVER_PORT, () => console.log(`Rating on port ${SERVER_PORT}!!`));

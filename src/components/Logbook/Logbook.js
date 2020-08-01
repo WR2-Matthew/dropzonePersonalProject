@@ -30,7 +30,7 @@ function Logbook(props) {
           </div>
 
           <div>
-            <AddJumpModal />
+            <AddJumpModal userId={props.user.id} />
           </div>
 
         </div>

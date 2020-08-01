@@ -5,5 +5,15 @@ module.exports = {
 
     const jumps = await db.jumps.get_jumps(userId)
     res.status(200).send(jumps)
+  },
+
+  createJump: async (req, res) => {
+    const db = req.app.get('db');
+    const { date, dz, discipline, photo, plane, details } = req.body;
+    const { userId } = req.params;
+
+    const newJumps = await db.jumps.add_jump(userId, date, dz, discipline, photo, plane, details);
+    console.log(newJumps)
+    // res.status(200).send(newJumps);
   }
-}
+};

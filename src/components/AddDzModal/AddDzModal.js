@@ -70,7 +70,7 @@ function ModalTwo(props) {
           style={
             {
               overlay: {
-                backgroundColor: 'transparent'
+                backgroundColor: 'transparent',
               }
             }
           }>
