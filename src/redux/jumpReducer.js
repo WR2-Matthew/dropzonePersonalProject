@@ -16,6 +16,7 @@ export default function jumpReducer(state = initialState, action) {
     case ADD_JUMP + '_PENDING':
       return state;
     case ADD_JUMP + '_FULFILLED':
+      console.log(payload)
       return { ...state, jumps: payload };
     case ADD_JUMP + '_REJECTED':
       return state;

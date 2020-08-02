@@ -1,46 +1,74 @@
-import React, { useEffect, useState } from 'react';
+import React, { Component } from 'react';
 import './Logbook.css'
 import { connect } from 'react-redux';
-import { getAllJumps } from '../../redux/actionCreators';
+import { getAllJumps, getUser } from '../../redux/actionCreators';
 import AddJumpModal from '../AddJumpModal/AddJumpModal';
+import Jumps from '../Jumps/Jumps';
 
-function Logbook(props) {
+class Logbook extends Component {
+  constructor(props) {
+    super(props);
 
-  let [dzSearched, setDzSearched] = useState('');
+    this.state = {
+      dzSearched: ''
+    };
+  };
 
-  useEffect(() => {
-    if (props.user) {
-      props.getAllJumps(props.user.id)
+  componentDidMount = () => {
+    this.props.getUser();
+  };
+
+  componentDidUpdate = (prevProps) => {
+    console.log('hit')
+    if (prevProps.jumps === undefined) {
+      this.props.getAllJumps(this.props.user.id)
     }
-  }, [props.user])
+  };
 
-  function handleChangeDz(e) {
-    setDzSearched(e.target.value)
-  }
+  handleChangeDz = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
 
-  console.log(props.jumps)
-  return (
-    <div className='logbookHolder'>
-      {!props.user ? <h1>You must login to view your logbook!</h1>
-        :
-        <div className='logbookFunctionalityHolder'>
+  render() {
+    const { dzSearched } = this.state;
+    const { jumps, user } = this.props;
 
-          <div className='logbookSearchHolder' >
-            <input className='logbookSearch' placeholder='Dropzone Jumped At' value={dzSearched} onChange={(e) => handleChangeDz(e)} />
-          </div>
+    console.log(jumps)
 
+    return (
+      <div className='logbookHolder' >
+        {!user ? <h1> You must login to view your logbook!</h1 >
+          :
           <div>
-            <AddJumpModal userId={props.user.id} />
-          </div>
+            <div className='logbookFunctionalityHolder'>
 
-        </div>
-      }
-    </div>
-  )
+              <div className='logbookSearchHolder' >
+                <input className='logbookSearch' placeholder='Dropzone Jumped At' name='dzSearched' value={dzSearched} onChange={(e) => this.handleChangeDz(e)} />
+              </div>
+
+              <div>
+                <AddJumpModal userId={this.props.user.id} />
+              </div>
+
+            </div>
+
+            <div>
+
+            </div>
+
+
+          </div>
+        }
+      </div >
+    )
+  };
 };
 
 const mapDispatchToProps = {
-  getAllJumps
+  getAllJumps,
+  getUser
 };
 
 function mapStateToProps(state) {

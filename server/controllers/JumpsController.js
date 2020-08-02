@@ -13,7 +13,7 @@ module.exports = {
     const { userId } = req.params;
 
     const newJumps = await db.jumps.add_jump(userId, date, dz, discipline, photo, plane, details);
-    console.log(newJumps)
-    // res.status(200).send(newJumps);
+    // console.log(newJumps)
+    res.status(200).send(newJumps);
   }
 };

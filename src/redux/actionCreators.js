@@ -69,6 +69,7 @@ export function createDropzone(name, address, town, state, altitude, price, phot
 
 //JUMP FUNCTIONS
 export function getAllJumps(userId) {
+  console.log('hit')
   const jumps = axios.get(`/api/jumps/${userId}`);
   return {
     type: GET_JUMPS,

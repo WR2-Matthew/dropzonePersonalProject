@@ -10,4 +10,5 @@ insert into jumps (
   $1, $2, $3, $4, $5, $6, $7
 );
 
-returning *;
+select * from jumps
+where person_id = $1;

@@ -10,7 +10,7 @@ const Dashboard = (props) => {
 
   let [selectedDz, setSelectedDz] = useState('');
   let [nameSearched, setNameSearched] = useState('');
-  let [defaultSelected, setDefaultSelected] = useState('Select State:')
+  let [defaultSelected] = useState('Select State:')
   let [overall, setOverall] = useState(false);
   let [camping, setCamping] = useState(false);
   let [skySafety, setSkySafety] = useState(false);
@@ -74,8 +74,6 @@ const Dashboard = (props) => {
         break;
     }
   };
-
-  console.log(selectedDz)
 
   return (
     <div className='dashboardHolder'>
