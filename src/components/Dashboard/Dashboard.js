@@ -236,7 +236,7 @@ const Dashboard = (props) => {
             })
             : !nameSearched && selectedDz
               ? props.dropzones.filter(dropzone => (
-                dropzone.state_located === selectedDz
+                dropzone.state_located.toLowerCase() === selectedDz.toLowerCase()
               ))
                 .map((e, i) => {
                   return (
@@ -264,7 +264,7 @@ const Dashboard = (props) => {
                 })
               : nameSearched && !selectedDz
                 ? props.dropzones.filter(dropzone => (
-                  dropzone.dz_name.includes(nameSearched)
+                  dropzone.dz_name.toLowerCase().includes(nameSearched.toLowerCase())
                 ))
                   .map((e, i) => {
                     return (
@@ -292,7 +292,7 @@ const Dashboard = (props) => {
                   })
                 : nameSearched && selectedDz
                   ? props.dropzones.filter(dropzone => (
-                    dropzone.dz_name.includes(nameSearched) && dropzone.state_located === selectedDz
+                    dropzone.dz_name.toLowerCase().includes(nameSearched.toLowerCase()) && dropzone.state_located.toLowerCase() === selectedDz.toLowerCase()
                   ))
                     .map((e, i) => {
                       return (

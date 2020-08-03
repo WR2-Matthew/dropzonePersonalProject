@@ -24,9 +24,12 @@ function Nav(props) {
             <p className='navListItem'>Home</p>
           </Link>
           <p>|</p>
-          <Link className='navLinks' to={`/logbook`} >
-            <p className='navListItem'>LogBook</p>
-          </Link>
+          {!props.user
+            ? <Link className='navLinks' to={'/login/required'}><p className='navListItem'>LogBook</p></Link>
+            : <Link className='navLinks' to={`/logbook`} >
+              <p className='navListItem'>LogBook</p>
+            </Link>
+          }
           <p>|</p>
           <Link className='navLinks' to={`/membership`} >
             <p className='navListItem'>USPA Membership</p>

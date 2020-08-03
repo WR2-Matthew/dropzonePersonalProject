@@ -10,19 +10,24 @@ class Logbook extends Component {
     super(props);
 
     this.state = {
-      dzSearched: ''
+      dzSearched: '',
+      loading: false
     };
   };
 
   componentDidMount = () => {
     this.props.getUser();
+    this.setState({
+      loading: true
+    })
   };
 
-  componentDidUpdate = (prevProps) => {
+  componentDidUpdate = (prevProps, prevState) => {
     console.log('hit')
-    if (prevProps.jumps === undefined) {
+    if (prevState.loading !== this.state.loading) {
       this.props.getAllJumps(this.props.user.id)
     }
+
   };
 
   handleChangeDz = (e) => {
@@ -36,12 +41,14 @@ class Logbook extends Component {
     const { jumps, user } = this.props;
 
     console.log(jumps)
+    console.log(user)
 
     return (
       <div className='logbookHolder' >
-        {!user ? <h1> You must login to view your logbook!</h1 >
-          :
-          <div>
+        {!user
+          ? <h1> You must login to view your logbook!</h1 >
+
+          : <div>
             <div className='logbookFunctionalityHolder'>
 
               <div className='logbookSearchHolder' >
@@ -53,14 +60,21 @@ class Logbook extends Component {
               </div>
 
             </div>
-
             <div>
 
+              {jumps.map((jump, i) => {
+                return (
+                  <Jumps />
+
+                )
+              })}
             </div>
-
-
           </div>
         }
+
+
+
+
       </div >
     )
   };

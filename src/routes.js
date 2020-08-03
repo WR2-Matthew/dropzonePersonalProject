@@ -5,13 +5,15 @@ import Login from './components/Login/Login';
 import Dashboard from './components/Dashboard/Dashboard';
 import Logbook from './components/Logbook/Logbook';
 import Uspa from './components/Uspa/Uspa';
+import LoginRequired from './components/LoginRequired/LoginRequired';
 
 export default (
   <Switch>
     <Route exact path='/' component={Dashboard} />
-    <Route path='/login' component={Login} />
+    <Route exact path='/login' component={Login} />
     <Route path='/register' component={Register} />
     <Route path='/logbook' component={Logbook} />
     <Route path='/membership/:id' component={Uspa} />
+    <Route path='/login/required' component={LoginRequired} />
   </Switch>
 );
