@@ -77,8 +77,8 @@ export function getAllJumps(userId) {
   };
 };
 
-export function addJump(date, dz, discipline, photo, plane, details, userId) {
-  const body = { date, dz, discipline, photo, plane, details };
+export function addJump(date, dz, discipline, photo, plane, details, number, userId) {
+  const body = { date, dz, discipline, photo, plane, details, number };
   const newJump = axios.post(`/api/create/jump/${userId}`, body);
   return {
     type: ADD_JUMP,

@@ -9,10 +9,10 @@ module.exports = {
 
   createJump: async (req, res) => {
     const db = req.app.get('db');
-    const { date, dz, discipline, photo, plane, details } = req.body;
+    const { date, dz, discipline, photo, plane, details, number } = req.body;
     const { userId } = req.params;
 
-    const newJumps = await db.jumps.add_jump(userId, date, dz, discipline, photo, plane, details);
+    const newJumps = await db.jumps.add_jump(userId, date, dz, discipline, photo, plane, details, number);
     // console.log(newJumps)
     res.status(200).send(newJumps);
   },

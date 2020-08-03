@@ -44,13 +44,14 @@
 }
 
 .jumpDetailsHolder {
-  @include modalSize(10vh);
-  @include flexOptionOne(space-evenly);
+  @include flexOptionOne(center);
   margin-top: 250px;
 }
 
 .jumpDetails {
-  @include flexOptionOne(space-evenly);
+  @include flexOptionOne(center);
+  @include modalSize(10vh);
+
   input {
     @include inputStyles();
   }

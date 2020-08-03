@@ -14,16 +14,17 @@ function AddJumpModal(props) {
   let [photo, setPhoto] = useState('');
   let [plane, setPlane] = useState('');
   let [details, setDetails] = useState('');
+  let [number, setNumber] = useState('');
 
   function submitForm(e) {
     e.preventDefault();
 
-    if (!date || !dz || !discipline || !photo || !plane || !details) {
+    if (!date || !dz || !discipline || !photo || !plane || !details || !number) {
       alert("All field's must be filled out to add jump!");
     }
 
     else {
-      props.addJump(date, dz, discipline, photo, plane, details, props.userId);
+      props.addJump(date, dz, discipline, photo, plane, details, number, props.userId);
       setModalOpen(false);
     };
   };
@@ -45,6 +46,7 @@ function AddJumpModal(props) {
             setPhoto('')
             setPlane('')
             setDetails('')
+            setNumber('')
           }}
           style={
             {
@@ -65,6 +67,7 @@ function AddJumpModal(props) {
                   setPhoto('')
                   setPlane('')
                   setDetails('')
+                  setNumber('')
                 }}>X</button>
               </div>
 
@@ -91,6 +94,10 @@ function AddJumpModal(props) {
               <div className='jumpDetailsHolder'>
                 <div className='jumpDetails'>
                   <input placeholder='Plane Jumped From' name='plane' value={plane} onChange={(e) => setPlane(e.target.value)} />
+                </div>
+
+                <div className='jumpDetails'>
+                  <input placeholder='Jump Number' name='number' value={number} onChange={(e) => setNumber(e.target.value)} />
                 </div>
 
                 <div className='jumpDetails'>
