@@ -70,7 +70,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-left: 14px;
+  margin-left: 12px;
 }
 
 .jumpModalInfo, .jumpModalInfoDetails {

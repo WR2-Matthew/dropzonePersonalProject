@@ -3,7 +3,6 @@ import './Jumps.css'
 
 function Jumps(props) {
 
-  console.log('jumps')
   return (
     <div className='jumpsHolder' onClick={() => props.modalFn(true)}>
       <h4 className='jumpNumber'><b>Jump Number:</b>{props.number}</h4>

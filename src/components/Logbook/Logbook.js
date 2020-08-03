@@ -23,7 +23,7 @@ class Logbook extends Component {
   };
 
   componentDidUpdate = (prevProps, prevState) => {
-    console.log('hit')
+    // console.log('hit')
     if (prevState.loading !== this.state.loading) {
       this.props.getAllJumps(this.props.user.id)
     }
@@ -40,8 +40,8 @@ class Logbook extends Component {
     const { dzSearched } = this.state;
     const { jumps, user } = this.props;
 
-    console.log(jumps)
-    console.log(user)
+    // console.log(jumps)
+    // console.log(user)
 
     return (
       <div className='logbookHolder' >

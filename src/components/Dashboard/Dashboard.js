@@ -25,7 +25,7 @@ const Dashboard = (props) => {
   useEffect(() => {
     props.getDropzones()
     props.getUser()
-  }, [props.getDropzones]);
+  }, [props.dropzones]);
 
   function handleChangeState(e) {
     if (e.target.value === 'Select State:') {
@@ -74,6 +74,8 @@ const Dashboard = (props) => {
         break;
     }
   };
+
+  // console.log(props.dropzones)
 
   return (
     <div className='dashboardHolder'>
@@ -218,17 +220,17 @@ const Dashboard = (props) => {
                   state={e.state_located}
                   town={e.town_located}
                   address={e.address}
-                  overall={e.overall_rt}
-                  bunkhouse={e.bunkhouse_rt}
-                  camping={e.camping_rt}
-                  facilities={e.facilities_rt}
+                  overall={e.overall_avg}
+                  bunkhouse={e.bunkhouse_avg}
+                  camping={e.camping_avg}
+                  facilities={e.facilities_avg}
                   userHasRated={e.has_rated}
-                  inclusion={e.inclusion_rt}
-                  landingArea={e.landing_area_rt}
-                  party={e.party_rt}
-                  planes={e.planes_rt}
-                  rentals={e.rental_gear_rt}
-                  safety={e.sky_safety_rt}
+                  inclusion={e.inclusion_avg}
+                  landingArea={e.landing_area_avg}
+                  party={e.party_avg}
+                  planes={e.planes_avg}
+                  rentals={e.rental_gear_avg}
+                  safety={e.sky_safety_avg}
                   price={e.jump_ticket_price}
                   altitude={e.altitude}
                   dropzoneId={e.dropzone_id}
@@ -246,17 +248,17 @@ const Dashboard = (props) => {
                       state={e.state_located}
                       town={e.town_located}
                       address={e.address}
-                      overall={e.overall_rt}
-                      bunkhouse={e.bunkhouse_rt}
-                      camping={e.camping_rt}
-                      facilities={e.facilities_rt}
+                      overall={e.overall_avg}
+                      bunkhouse={e.bunkhouse_avg}
+                      camping={e.camping_avg}
+                      facilities={e.facilities_avg}
                       userHasRated={e.has_rated}
-                      inclusion={e.inclusion_rt}
-                      landingArea={e.landing_area_rt}
-                      party={e.party_rt}
-                      planes={e.planes_rt}
-                      rentals={e.rental_gear_rt}
-                      safety={e.sky_safety_rt}
+                      inclusion={e.inclusion_avg}
+                      landingArea={e.landing_area_avg}
+                      party={e.party_avg}
+                      planes={e.planes_avg}
+                      rentals={e.rental_gear_avg}
+                      safety={e.sky_safety_avg}
                       price={e.jump_ticket_price}
                       altitude={e.altitude}
                       dropzoneId={e.dropzone_id}
@@ -274,17 +276,17 @@ const Dashboard = (props) => {
                         state={e.state_located}
                         town={e.town_located}
                         address={e.address}
-                        overall={e.overall_rt}
-                        bunkhouse={e.bunkhouse_rt}
-                        camping={e.camping_rt}
-                        facilities={e.facilities_rt}
+                        overall={e.overall_avg}
+                        bunkhouse={e.bunkhouse_avg}
+                        camping={e.camping_avg}
+                        facilities={e.facilities_avg}
                         userHasRated={e.has_rated}
-                        inclusion={e.inclusion_rt}
-                        landingArea={e.landing_area_rt}
-                        party={e.party_rt}
-                        planes={e.planes_rt}
-                        rentals={e.rental_gear_rt}
-                        safety={e.sky_safety_rt}
+                        inclusion={e.inclusion_avg}
+                        landingArea={e.landing_area_avg}
+                        party={e.party_avg}
+                        planes={e.planes_avg}
+                        rentals={e.rental_gear_avg}
+                        safety={e.sky_safety_avg}
                         price={e.jump_ticket_price}
                         altitude={e.altitude}
                         dropzoneId={e.dropzone_id}
@@ -302,17 +304,17 @@ const Dashboard = (props) => {
                           state={e.state_located}
                           town={e.town_located}
                           address={e.address}
-                          overall={e.overall_rt}
-                          bunkhouse={e.bunkhouse_rt}
-                          camping={e.camping_rt}
-                          facilities={e.facilities_rt}
+                          overall={e.overall_avg}
+                          bunkhouse={e.bunkhouse_avg}
+                          camping={e.camping_avg}
+                          facilities={e.facilities_avg}
                           userHasRated={e.has_rated}
-                          inclusion={e.inclusion_rt}
-                          landingArea={e.landing_area_rt}
-                          party={e.party_rt}
-                          planes={e.planes_rt}
-                          rentals={e.rental_gear_rt}
-                          safety={e.sky_safety_rt}
+                          inclusion={e.inclusion_avg}
+                          landingArea={e.landing_area_avg}
+                          party={e.party_avg}
+                          planes={e.planes_avg}
+                          rentals={e.rental_gear_avg}
+                          safety={e.sky_safety_avg}
                           price={e.jump_ticket_price}
                           altitude={e.altitude}
                           dropzoneId={e.dropzone_id}

@@ -19,7 +19,7 @@ function AddJumpModal(props) {
   function submitForm(e) {
     e.preventDefault();
 
-    if (!date || !dz || !discipline || !photo || !plane || !details || !number) {
+    if (!date || !dz || !discipline || !plane || !details || !number) {
       alert("All field's must be filled out to add jump!");
     }
 

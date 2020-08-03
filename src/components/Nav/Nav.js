@@ -10,7 +10,7 @@ function Nav(props) {
     getUser()
   });
 
-  console.log(props.user)
+  // console.log(props.user)
   return (
     <div className='navHolder'>
       <div className='navTitleHolder'>

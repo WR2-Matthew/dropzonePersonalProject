@@ -61,8 +61,8 @@ class DropDown extends Component {
         <form className='dropdownHolder'>
           <select
             name='dropzones'
-            // value={selectedDz}
-            defaultValue={{ label: "Select State", value: 0 }, selectedDz}
+            value={selectedDz}
+            // defaultValue={{ label: "Select State", value: 0 }, selectedDz}
             onChange={(e) => handleChangeDropzoneFn(e)}>
             <option>
               {defaultSelected}
