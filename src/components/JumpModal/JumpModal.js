@@ -8,6 +8,7 @@ import { deleteJump } from '../../redux/actionCreators';
 function JumpModal(props) {
 
   let [modalOpen, setModalOpen] = useState('');
+  let [editing, setEditing] = useState(false);
 
   return (
     <div>
