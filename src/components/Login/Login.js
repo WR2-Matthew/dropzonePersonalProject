@@ -59,6 +59,7 @@ class Login extends Component {
   };
 
   loginUser = (email, password) => {
+    console.log('hit')
     this.props.loginUsers(email, password)
     this.props.history.push('/')
   }

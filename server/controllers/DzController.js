@@ -19,12 +19,14 @@ module.exports = {
 
   createDropzone: async (req, res) => {
     const db = req.app.get('db');
-    const { name, address, town, state, altitude, price, photo } = req.body;
+    const { name, address, town, state, altitude, price, photo, camping, skySafety, inclusion, party, bunkhouse, rental, facilities, planes, landingArea } = req.body;
     const { userId } = req.params;
 
-    const dropzoneId = await db.dropzone.create_dropzone(userId, name, address, town, state, altitude, price, photo);
-    console.log(dropzoneId)
-    const newDz = await db.dropzone.create_dropzone_rating(dropzoneId)
-    console.log(newDz, 'newnew')
+    const [dropzoneId] = await db.dropzone.create_dropzone(userId, name, address, town, state, altitude, price, photo);
+    // console.log(dropzoneId.dropzone_id)
+    const dzId = dropzoneId.dropzone_id
+    const newDz = await db.dropzone.create_dropzone_rating(dzId, camping, skySafety, inclusion, party, bunkhouse, rental, facilities, planes, landingArea)
+    // console.log(newDz, 'newnew')
+    res.status(200).send(newDz);
   }
 };

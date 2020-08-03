@@ -30,7 +30,7 @@ module.exports = {
   },
 
   login: async (req, res) => {
-    // console.log('hit')
+    console.log('hit')
     const { email, password } = req.body;
     const db = req.app.get('db')
 

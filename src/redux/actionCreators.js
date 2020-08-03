@@ -57,9 +57,9 @@ export function rateDropzones(bunkhouse, camping, facilities, inclusion, landing
   };
 };
 
-export function createDropzone(name, address, town, state, altitude, price, photo, userId) {
+export function createDropzone(name, address, town, state, altitude, price, photo, userId, camping, skySafety, inclusion, party, bunkhouse, rental, facilities, planes, landingArea) {
   console.log('hit')
-  const body = { name, address, town, state, altitude, price, photo };
+  const body = { name, address, town, state, altitude, price, photo, camping, skySafety, inclusion, party, bunkhouse, rental, facilities, planes, landingArea };
   const created = axios.post(`api/create/dropzone/${userId}`, body);
   return {
     type: CREATE_DZ,

@@ -48,7 +48,7 @@ function Amazon(props) {
         setUploading({ isUploading: false, url });
         props.photoFn(url)
         if (url) {
-          alert('ready!!')
+
         }
       })
       .catch(err => {

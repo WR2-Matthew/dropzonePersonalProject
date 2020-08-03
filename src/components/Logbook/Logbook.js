@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Logbook.css'
 import { connect } from 'react-redux';
-import { getAllJumps, getUser } from '../../redux/actionCreators';
+import { getAllJumps } from '../../redux/actionCreators';
 import AddJumpModal from '../AddJumpModal/AddJumpModal';
 import JumpModal from '../JumpModal/JumpModal';
 
@@ -16,7 +16,6 @@ class Logbook extends Component {
   };
 
   componentDidMount = () => {
-    this.props.getUser();
     this.setState({
       loading: true
     })
@@ -27,7 +26,6 @@ class Logbook extends Component {
     if (prevState.loading !== this.state.loading) {
       this.props.getAllJumps(this.props.user.id)
     }
-
   };
 
   handleChangeDz = (e) => {
@@ -107,8 +105,7 @@ class Logbook extends Component {
 };
 
 const mapDispatchToProps = {
-  getAllJumps,
-  getUser
+  getAllJumps
 };
 
 function mapStateToProps(state) {

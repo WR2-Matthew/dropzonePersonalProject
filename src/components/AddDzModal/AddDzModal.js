@@ -4,6 +4,7 @@ import './AddDzModal.css';
 import AmazonDropzone from '../AmazonDropzone/AmazonDropzone';
 import { connect } from 'react-redux';
 import { createDropzone } from '../../redux/actionCreators';
+import AddDzStarRating from '../AddDzStarRating/AddDzStarRating';
 
 function ModalTwo(props) {
 
@@ -15,21 +16,40 @@ function ModalTwo(props) {
   let [altitude, setAltitude] = useState('');
   let [price, setPrice] = useState('');
   let [photo, setPhoto] = useState('');
+  let [camping, setCamping] = useState(0);
+  let [skySafety, setSkySafety] = useState(0);
+  let [inclusion, setInclusion] = useState(0);
+  let [party, setParty] = useState(0);
+  let [bunkhouse, setBunkhouse] = useState(0);
+  let [rental, setRental] = useState(0);
+  let [facilities, setFacilities] = useState(0);
+  let [planes, setPlanes] = useState(0);
+  let [landingArea, setLandingArea] = useState(0);
 
   function submitForm(e) {
     e.preventDefault()
     // console.log('hit')
 
-    if (!dzName || !dzAddress || !town || !state || !altitude || !price || !photo) {
+    if (!dzName || !dzAddress || !town || !state || !altitude || !price || !photo || !camping || !skySafety || !inclusion || !party || !bunkhouse || !rental || !facilities || !planes || !landingArea) {
       alert("All field's must be filled out to create dropzone!")
     }
 
     else {
       // console.log('hit')
-      props.createDropzone(dzName, dzAddress, town, state, altitude, price, photo, props.user.id)
+      props.createDropzone(dzName, dzAddress, town, state, altitude, price, photo, props.user.id, camping, skySafety, inclusion, party, bunkhouse, rental, facilities, planes, landingArea)
       setModalOpen(false)
     }
   };
+
+  // console.log(camping, 'camping')
+  // console.log(skySafety, 'skySafety')
+  // console.log(inclusion, 'inclusion')
+  // console.log(bunkhouse, 'bunkhouse')
+  // console.log(party, 'party')
+  // console.log(rental, 'rental')
+  // console.log(facilities, 'facilities')
+  // console.log(planes, 'planes')
+  // console.log(landingArea, 'landingArea')
 
   return (
     <div>
@@ -115,6 +135,27 @@ function ModalTwo(props) {
                     <input placeholder='Exit Altitude' name='altitude' value={altitude} onChange={(e) => setAltitude(e.target.value)} />
                   </div>
                 </div>
+
+                <AddDzStarRating
+                  camping={camping}
+                  campingFn={setCamping}
+                  safety={skySafety}
+                  safetyFn={setSkySafety}
+                  inclusion={inclusion}
+                  inclusionFn={setInclusion}
+                  party={party}
+                  partyFn={setParty}
+                  bunkhouse={bunkhouse}
+                  bunkhouseFn={setBunkhouse}
+                  rental={rental}
+                  rentalFn={setRental}
+                  facilities={facilities}
+                  facilitiesFn={setFacilities}
+                  planes={planes}
+                  planesFn={setPlanes}
+                  landingArea={landingArea}
+                  landingAreaFn={setLandingArea}
+                />
 
                 <div className='addModalCreateButton'>
                   <button onClick={(e) => submitForm(e)}>Create Dropzone!</button>

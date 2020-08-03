@@ -2,15 +2,13 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Nav.css';
 import { connect } from 'react-redux';
-import { getUser, logoutUser } from '../../redux/actionCreators';
+import { logoutUser } from '../../redux/actionCreators';
 
 function Nav(props) {
 
-  useEffect(() => {
-    getUser()
-  });
 
-  // console.log(props.user)
+
+  console.log(props.user)
   return (
     <div className='navHolder'>
       <div className='navTitleHolder'>
@@ -48,16 +46,15 @@ function Nav(props) {
 };
 
 const mapDispatchToProps = {
-  getUser,
   logoutUser
-}
+};
 
 
 function mapStateToProps(state) {
   return {
     user: state.userReducer.user.data
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Nav);
 

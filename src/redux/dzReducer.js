@@ -22,6 +22,7 @@ export default function dzReducer(state = initialState, action) {
     case CREATE_DZ + '_PENDING':
       return state;
     case CREATE_DZ + '_FULFILLED':
+      console.log(payload)
       return { ...state, dropzones: payload };
     case CREATE_DZ + '_REJECTED':
       return state;
