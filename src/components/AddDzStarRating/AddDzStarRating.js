@@ -1,5 +1,6 @@
 import React from 'react';
 import StarComponent from 'react-star-rating-component';
+import './AddDzStarRating.css';
 
 function AddDzStarRating(props) {
 
