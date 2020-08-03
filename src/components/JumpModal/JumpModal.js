@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import Jumps from '../Jumps/Jumps';
 import './JumpModal.css';
+import { connect } from 'react-redux';
+import { deleteJump } from '../../redux/actionCreators';
 
 function JumpModal(props) {
 
@@ -75,10 +77,22 @@ function JumpModal(props) {
             </div>
           </div>
 
+          <div className='jumpModalFunctionButtons' >
+            <button className='jumpModalButton'>Edit Jump</button>
+            <button onClick={() => {
+              props.deleteJump(props.id)
+              setModalOpen(false)
+            }} className='jumpModalButton'>Remove Jump</button>
+          </div>
+
         </Modal>
       </div>
     </div >
   )
 };
 
-export default JumpModal;
+const mapDispatchToProps = {
+  deleteJump
+}
+
+export default connect(null, mapDispatchToProps)(JumpModal);

@@ -60,19 +60,40 @@ class Logbook extends Component {
             </div>
 
             <div className='logbookJumpHolder' >
-              {jumps.map((jump, i) => {
-                return (
-                  <JumpModal key={i}
-                    date={jump.date}
-                    discipline={jump.discipline}
-                    dropzone={jump.dropzone}
-                    image={jump.image}
-                    details={jump.jump_details}
-                    plane={jump.plane}
-                    number={jump.jump_number}
-                  />
-                )
-              })}
+              {!dzSearched
+                ? jumps.map((jump, i) => {
+                  return (
+                    <JumpModal key={i}
+                      date={jump.date}
+                      discipline={jump.discipline}
+                      dropzone={jump.dropzone}
+                      image={jump.image}
+                      details={jump.jump_details}
+                      plane={jump.plane}
+                      number={jump.jump_number}
+                      id={jump.jump_id}
+                    />
+                  )
+                })
+                : jumps.filter(jump => (
+                  jump.dropzone.toLowerCase() === dzSearched.toLowerCase()
+                ))
+                  .map((jump, i) => {
+                    return (
+                      <JumpModal key={i}
+                        date={jump.date}
+                        discipline={jump.discipline}
+                        dropzone={jump.dropzone}
+                        image={jump.image}
+                        details={jump.jump_details}
+                        plane={jump.plane}
+                        number={jump.jump_number}
+                        id={jump.jump_id}
+                      />
+                    )
+                  })
+              }
+
             </div>
           </div>
         }

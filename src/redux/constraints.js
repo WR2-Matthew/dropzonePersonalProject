@@ -6,4 +6,5 @@ export const LOGOUT_USER = 'LOGOUT_USER';
 export const RATE_DZ = 'RATE_DZ';
 export const CREATE_DZ = 'CREATE_DZ';
 export const GET_JUMPS = 'GET_JUMPS';
-export const ADD_JUMP = 'ADD_JUMP'
+export const ADD_JUMP = 'ADD_JUMP';
+export const DELETE_JUMP = 'DELETE_JUMP';

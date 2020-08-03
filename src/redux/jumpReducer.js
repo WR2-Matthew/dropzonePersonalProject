@@ -1,4 +1,4 @@
-import { GET_JUMPS, ADD_JUMP } from "./constraints";
+import { GET_JUMPS, ADD_JUMP, DELETE_JUMP } from "./constraints";
 
 const initialState = {
   jumps: []
@@ -19,6 +19,12 @@ export default function jumpReducer(state = initialState, action) {
       console.log(payload)
       return { ...state, jumps: payload };
     case ADD_JUMP + '_REJECTED':
+      return state;
+    case DELETE_JUMP + '_PENDING':
+      return state;
+    case DELETE_JUMP + '_FULFILLED':
+      return { ...state, jumps: payload };
+    case DELETE_JUMP + '_REJECTED':
       return state;
     default:
       return state;
