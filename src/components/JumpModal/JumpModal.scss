@@ -1,0 +1,48 @@
+@import '../../Sass/variables';
+@import '../../Sass/mixin';
+
+.jumpModalHolder {
+  @include flexOptionOne(center);
+  flex-direction: column;
+}
+
+.jumpNumberHolder {
+  @include modalSize(10vh);
+  @include flexOptionOne(center);
+  .jumpNumber{
+    font-weight: 700;
+    font-size: 40px;
+    color: $mainBlueColor;
+    border-bottom: 1px solid $mainBlueColor;
+    display: inline;
+   }
+}
+
+.jumpModalDetailsHolder {
+  @include flexOptionOne(center);
+  @include modalSize(59vh);
+  flex-direction: row;
+}
+
+.jumpModalInfoHolder {
+  width: 37vw;
+  height: 50vh;
+  @include flexOptionOne(center);
+  flex-direction: column;
+  margin-left: 14px;
+}
+
+.jumpModalInfo, .jumpModalInfoDetails {
+  width: 37vw;
+  height: 5vh;
+}
+
+.jumpModalInfoDetails {
+  height: 10vh;
+  margin-right: 5px;
+}
+
+.jumpModalImage {
+  height: 40vh;
+  width: 38vw;
+}

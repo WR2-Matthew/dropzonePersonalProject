@@ -3,7 +3,7 @@ import './Logbook.css'
 import { connect } from 'react-redux';
 import { getAllJumps, getUser } from '../../redux/actionCreators';
 import AddJumpModal from '../AddJumpModal/AddJumpModal';
-import Jumps from '../Jumps/Jumps';
+import JumpModal from '../JumpModal/JumpModal';
 
 class Logbook extends Component {
   constructor(props) {
@@ -45,27 +45,32 @@ class Logbook extends Component {
 
     return (
       <div className='logbookHolder' >
-        {!user
+        {!user || !jumps
           ? <h1> You must login to view your logbook!</h1 >
 
-          : <div>
+          : <div className='logbookHolder' >
             <div className='logbookFunctionalityHolder'>
 
               <div className='logbookSearchHolder' >
                 <input className='logbookSearch' placeholder='Dropzone Jumped At' name='dzSearched' value={dzSearched} onChange={(e) => this.handleChangeDz(e)} />
               </div>
 
-              <div>
-                <AddJumpModal userId={this.props.user.id} />
-              </div>
+              <AddJumpModal userId={this.props.user.id} />
 
             </div>
-            <div>
 
+            <div className='logbookJumpHolder' >
               {jumps.map((jump, i) => {
                 return (
-                  <Jumps />
-
+                  <JumpModal key={i}
+                    date={jump.date}
+                    discipline={jump.discipline}
+                    dropzone={jump.dropzone}
+                    image={jump.image}
+                    details={jump.jump_details}
+                    plane={jump.plane}
+                    number={jump.jump_number}
+                  />
                 )
               })}
             </div>

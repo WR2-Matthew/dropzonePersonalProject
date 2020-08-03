@@ -31,7 +31,7 @@ function AddJumpModal(props) {
   return (
     <div>
       <div className='logbookAddJumpHolder' onClick={() => setModalOpen(true)} >
-        <h1>Add A Jump</h1>
+        <h1>ADD A Jump</h1>
       </div>
 
       <div className='modalThreeHolder'>

@@ -3,6 +3,56 @@
   height: 90vh;
   width: 100vw;
   min-height: 100vh;
-  padding-top: 100px;
+  padding-top: 50px;
+}
+
+.logbookFunctionalityHolder {
+  height: 25vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logbookSearchHolder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logbookSearch {
+  height: 40px;
+  width: 300px;
+  border: 3px solid black;
+  border-radius: 5px;
+}
+
+.logbookJumpHolder {
+  margin-top: 100px;
+  height: 40vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 /*# sourceMappingURL=Logbook.css.map */
