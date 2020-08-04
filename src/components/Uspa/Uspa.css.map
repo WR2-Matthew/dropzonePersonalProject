@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAEA,AAAA,WAAW,CAAC;EACV,gBAAgB,EAAE,gDAAgD;EAClE,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,KAAK;EACZ,UAAU,EAAE,KAAK;EACjB,WAAW,EAAE,KAAK;CAAE",
     "sources": [
         "Uspa.scss",
         "../../Sass/_mixin.scss"

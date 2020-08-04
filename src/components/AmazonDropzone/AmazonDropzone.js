@@ -20,6 +20,8 @@ function Amazon(props) {
     setUploading(!isUploading)
     console.log(files)
     const fileName = `${randomString()}-${files.name.replace(/\s/g, '-')}`
+    console.log(fileName)
+    console.log(files.type)
     //Try to get it from service after you get it working with the axios get from here
     axios.get('/sign-s3', {
       params: {

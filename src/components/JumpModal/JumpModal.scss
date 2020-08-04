@@ -33,8 +33,7 @@
 }
 
 .jumpModalInfo, .jumpModalInfoDetails {
-  width: 37vw;
-  height: 5vh;
+  @include jumpModalSize(37vw);
 }
 
 .jumpModalInfoDetails {
@@ -45,4 +44,37 @@
 .jumpModalImage {
   height: 40vh;
   width: 38vw;
+}
+
+.jumpModalInput {
+  @include jumpModalSize(37vw);
+  input {
+    @include inputStyles();
+  }  
+}
+
+.jumpModalInputDetails {
+  @include jumpModalSize(37vw);
+  input {
+    @include jumpModalSize(32vw);
+    @include inputStyles();
+  }
+}
+
+.jumpModalFunctionButtons {
+  @include modalSize(2vh);
+  @include flexOptionOne(space-evenly);
+}
+
+.newJumpModalButtons {
+  width: 500px;
+}
+
+.jumpModalButton {
+  @include buttons();
+}
+
+.jumpModalButtonDisgard {
+  @include buttons();
+  margin-left: 250px;
 }

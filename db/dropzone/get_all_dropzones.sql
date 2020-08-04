@@ -15,4 +15,5 @@
 -- group by d.dropzone_id, r.dz_id, r.user_id, r.has_rated;
 
 select * from dropzones d
-join averages a on a.dzone_id = d.dropzone_id;
+join averages a on a.dzone_id = d.dropzone_id
+order by d.dz_name;

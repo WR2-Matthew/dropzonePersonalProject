@@ -22,7 +22,7 @@ class Logbook extends Component {
   };
 
   componentDidUpdate = (prevProps, prevState) => {
-    // console.log('hit')
+    console.log('hit')
     if (prevState.loading !== this.state.loading) {
       this.props.getAllJumps(this.props.user.id)
     }
@@ -38,6 +38,7 @@ class Logbook extends Component {
     const { dzSearched } = this.state;
     const { jumps, user } = this.props;
 
+    console.log(dzSearched)
     // console.log(jumps)
     // console.log(user)
 
@@ -53,7 +54,7 @@ class Logbook extends Component {
                 <input className='logbookSearch' placeholder='Dropzone Jumped At' name='dzSearched' value={dzSearched} onChange={(e) => this.handleChangeDz(e)} />
               </div>
 
-              <AddJumpModal userId={this.props.user.id} />
+              <AddJumpModal userId={user.id} />
 
             </div>
 
@@ -70,6 +71,7 @@ class Logbook extends Component {
                       plane={jump.plane}
                       number={jump.jump_number}
                       id={jump.jump_id}
+                      userId={user.id}
                     />
                   )
                 })
@@ -87,6 +89,7 @@ class Logbook extends Component {
                         plane={jump.plane}
                         number={jump.jump_number}
                         id={jump.jump_id}
+                        userId={user.id}
                       />
                     )
                   })

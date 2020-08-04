@@ -1,1 +1,8 @@
-/* No CSS *//*# sourceMappingURL=Uspa.css.map */
+.uspaHolder {
+  background-color: #F5E8CC;
+  height: 90vh;
+  width: 100vw;
+  min-height: 100vh;
+  padding-top: 100px;
+}
+/*# sourceMappingURL=Uspa.css.map */

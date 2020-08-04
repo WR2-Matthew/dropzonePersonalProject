@@ -47,3 +47,8 @@
     border-width: 0 0 2px;
     border-color: black;
 }
+
+@mixin jumpModalSize($width) {
+  width: $width;
+  height: 5vh;
+}

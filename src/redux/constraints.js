@@ -8,3 +8,4 @@ export const CREATE_DZ = 'CREATE_DZ';
 export const GET_JUMPS = 'GET_JUMPS';
 export const ADD_JUMP = 'ADD_JUMP';
 export const DELETE_JUMP = 'DELETE_JUMP';
+export const EDIT_JUMP = 'EDIT_JUMP';

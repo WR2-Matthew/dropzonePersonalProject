@@ -1,4 +1,4 @@
-import { LOGIN_USER, REGISTER_USER, GET_DROPZONES, GET_SESSION, LOGOUT_USER, RATE_DZ, CREATE_DZ, GET_JUMPS, ADD_JUMP, DELETE_JUMP } from './constraints';
+import { LOGIN_USER, REGISTER_USER, GET_DROPZONES, GET_SESSION, LOGOUT_USER, RATE_DZ, CREATE_DZ, GET_JUMPS, ADD_JUMP, DELETE_JUMP, EDIT_JUMP } from './constraints';
 import axios from 'axios';
 
 //USER FUNCTIONS
@@ -91,5 +91,14 @@ export function deleteJump(id) {
   return {
     type: DELETE_JUMP,
     payload: deletedJump
+  };
+};
+
+export function saveChanges(date, dropzone, discipline, details, plane, id, userId) {
+  const body = { date, dropzone, discipline, details, plane, id }
+  const editedJump = axios.put(`/api/edit/jump/${userId}`, body)
+  return {
+    type: EDIT_JUMP,
+    payload: editedJump
   };
 };

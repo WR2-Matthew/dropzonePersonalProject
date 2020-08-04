@@ -24,5 +24,14 @@ module.exports = {
     const updated = await db.jumps.delete_jump(id);
     // console.log(updated)
     res.status(200).send(updated);
+  },
+
+  editJump: async (req, res) => {
+    const db = req.app.get('db');
+    const { date, dropzone, discipline, details, plane, id } = req.body;
+    const { userId } = req.params;
+
+    const editedJump = await db.jumps.edit_jump(date, dropzone, discipline, details, plane, id, userId);
+    res.status(200).send(editedJump);
   }
 };

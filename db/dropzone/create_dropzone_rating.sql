@@ -54,4 +54,5 @@ update averages
  where dzone_id = $1;
 
 select * from dropzones d
-join averages a on a.dzone_id = d.dropzone_id;
+join averages a on a.dzone_id = d.dropzone_id
+order by d.dz_name;

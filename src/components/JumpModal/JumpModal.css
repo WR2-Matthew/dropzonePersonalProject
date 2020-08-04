@@ -87,4 +87,65 @@
   height: 40vh;
   width: 38vw;
 }
+
+.jumpModalInput {
+  width: 37vw;
+  height: 5vh;
+}
+
+.jumpModalInput input {
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: black;
+}
+
+.jumpModalInputDetails {
+  width: 37vw;
+  height: 5vh;
+}
+
+.jumpModalInputDetails input {
+  width: 32vw;
+  height: 5vh;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: black;
+}
+
+.jumpModalFunctionButtons {
+  height: 2vh;
+  width: 75vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.newJumpModalButtons {
+  width: 500px;
+}
+
+.jumpModalButton {
+  background-color: #0C6291;
+  color: white;
+  border-style: solid;
+  border-color: black;
+  -webkit-box-shadow: 0 5px 2px -2px #5e5d5d;
+          box-shadow: 0 5px 2px -2px #5e5d5d;
+}
+
+.jumpModalButtonDisgard {
+  background-color: #0C6291;
+  color: white;
+  border-style: solid;
+  border-color: black;
+  -webkit-box-shadow: 0 5px 2px -2px #5e5d5d;
+          box-shadow: 0 5px 2px -2px #5e5d5d;
+  margin-left: 250px;
+}
 /*# sourceMappingURL=JumpModal.css.map */

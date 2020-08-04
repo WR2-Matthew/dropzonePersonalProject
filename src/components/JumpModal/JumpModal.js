@@ -3,15 +3,18 @@ import Modal from 'react-modal';
 import Jumps from '../Jumps/Jumps';
 import './JumpModal.css';
 import { connect } from 'react-redux';
-import { deleteJump } from '../../redux/actionCreators';
+import { deleteJump, saveChanges } from '../../redux/actionCreators';
 
 function JumpModal(props) {
 
   let [modalOpen, setModalOpen] = useState(false);
   let [editing, setEditing] = useState(false);
-  let [number, setNumber] = useState(props.number);
+  // let [number, setNumber] = useState(props.number);
   let [date, setDate] = useState(props.date);
-  let [dropzone, setDropzone] = useState(props.dropzone)
+  let [dropzone, setDropzone] = useState(props.dropzone);
+  let [details, setDetails] = useState(props.details);
+  let [discipline, setDiscipline] = useState(props.discipline);
+  let [plane, setPlane] = useState(props.plane);
 
   return (
     <div>
@@ -91,24 +94,24 @@ function JumpModal(props) {
 
               <div className='jumpModalDetailsHolder'>
                 <div className='jumpModalInfoHolder' >
-                  <div className='jumpModalInfo'>
+                  <div className='jumpModalInput'>
                     <p><b>Date:</b> <input name='date' value={date} onChange={(e) => setDate(e.target.value)} /></p>
                   </div>
 
-                  <div className='jumpModalInfo'>
-                    <p><b>Dropzone:</b> {props.dropzone}</p>
+                  <div className='jumpModalInput'>
+                    <p><b>Dropzone:</b> <input name='dropzone' value={dropzone} onChange={(e) => setDropzone(e.target.value)} /></p>
                   </div>
 
-                  <div className='jumpModalInfo'>
-                    <p><b>Discipline:</b> {props.discipline}</p>
+                  <div className='jumpModalInput'>
+                    <p><b>Discipline:</b> <input name='discipline' value={discipline} onChange={(e) => setDiscipline(e.target.value)} /></p>
                   </div>
 
-                  <div className='jumpModalInfo'>
-                    <p><b>Plane:</b> {props.plane}</p>
+                  <div className='jumpModalInput'>
+                    <p><b>Plane:</b> <input name='plane' value={plane} onChange={(e) => setPlane(e.target.value)} /></p>
                   </div>
 
-                  <div className='jumpModalInfoDetails'>
-                    <p><b>Jump Details:</b> {props.details}</p>
+                  <div className='jumpModalInputDetails'>
+                    <p><b>Jump Details:</b> <input name='details' value={details} onChange={(e) => setDetails(e.target.value)} /></p>
                   </div>
                 </div>
 
@@ -120,7 +123,17 @@ function JumpModal(props) {
           }
 
           <div className='jumpModalFunctionButtons' >
-            <button onClick={() => setEditing(!editing)} className='jumpModalButton'>Edit Jump</button>
+            {!editing
+              ? <button onClick={() => setEditing(!editing)} className='jumpModalButton'>Edit Jump</button>
+              : <div className='newJumpModalButtons'>
+                <button onClick={() => {
+                  props.saveChanges(date, dropzone, discipline, details, plane, props.id, props.userId)
+                  setEditing(!editing)
+                  setModalOpen(false)
+                }} className='jumpModalButton' >Save Changes</button>
+                <button onClick={() => setEditing(!editing)} className='jumpModalButtonDisgard'>Disregard</button>
+              </div>
+            }
             <button onClick={() => {
               props.deleteJump(props.id)
               setModalOpen(false)
@@ -134,7 +147,8 @@ function JumpModal(props) {
 };
 
 const mapDispatchToProps = {
-  deleteJump
+  deleteJump,
+  saveChanges
 }
 
 export default connect(null, mapDispatchToProps)(JumpModal);
