@@ -7,6 +7,7 @@ const express = require('express'),
   dzCtrl = require('./controllers/DzController'),
   jumpCtrl = require('./controllers/JumpsController'),
   aws = require('aws-sdk'),
+  path = require('path'),
   { CONNECTION_STRING, SERVER_PORT, SESSION_SECRET, S3_BUCKET, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION } = process.env;
 
 app.use(express.json())
@@ -83,5 +84,12 @@ app.put('/api/edit/jump/:userId', jumpCtrl.editJump)
 
 //NODEMAILER
 // app.post('/api/email', ctrl.email);
+
+//HOSTING
+app.use(express.static(__dirname + '/../build'))
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../build/index.html'))
+})
 
 app.listen(SERVER_PORT, () => console.log(`Rating on port ${SERVER_PORT}!!`));
