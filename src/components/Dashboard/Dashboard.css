@@ -60,6 +60,7 @@
 .dashChecksHolder {
   height: 20vh;
   width: 24vw;
+  padding: 10px;
   border-style: solid;
   border-color: black;
   -webkit-box-shadow: 0 5px 2px -2px #5e5d5d;

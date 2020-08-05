@@ -81,4 +81,7 @@ app.post('/api/create/jump/:userId', jumpCtrl.createJump)
 app.delete('/api/delete/jump/:id', jumpCtrl.deleteJump)
 app.put('/api/edit/jump/:userId', jumpCtrl.editJump)
 
+//NODEMAILER
+// app.post('/api/email', ctrl.email);
+
 app.listen(SERVER_PORT, () => console.log(`Rating on port ${SERVER_PORT}!!`));
