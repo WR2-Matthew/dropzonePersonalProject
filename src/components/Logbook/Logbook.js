@@ -51,7 +51,7 @@ class Logbook extends Component {
             <div className='logbookFunctionalityHolder'>
 
               <div className='logbookSearchHolder' >
-                <input className='logbookSearch' placeholder='Dropzone Jumped At' name='dzSearched' value={dzSearched} onChange={(e) => this.handleChangeDz(e)} />
+                <input className='logbookSearch' placeholder='Dropzone Jumped' name='dzSearched' value={dzSearched} onChange={(e) => this.handleChangeDz(e)} />
               </div>
 
               <AddJumpModal userId={user.id} />

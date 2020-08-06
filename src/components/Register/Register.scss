@@ -81,3 +81,26 @@
   font-weight: 600;
   color: $mainBlueColor;
 }
+
+@media(max-width: 390px) {
+  .registerForm {
+    width: 70vw;
+  }
+
+  .registerButton {
+    position: relative;
+    left: 80px;
+  }
+
+  .registerInputs {
+    input {
+      width: 45vw;
+    }
+  }
+
+  .regLink {
+    margin: 20px;
+    @include flexOptionOne(center);
+    margin-left: 40px
+  }
+}

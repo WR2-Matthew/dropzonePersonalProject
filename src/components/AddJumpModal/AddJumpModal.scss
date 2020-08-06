@@ -64,3 +64,15 @@
     @include buttons();
   }
 }
+
+@media(max-width: 390px) {
+  .logbookAddJumpHolder {
+    height: 70px;
+    width: 140px;
+    @include flexOptionOne(center);
+    h1 {
+      font-size: 20px;
+      margin: 20px;
+    }
+  }
+}

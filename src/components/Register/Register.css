@@ -147,4 +147,30 @@
   font-weight: 600;
   color: #0C6291;
 }
+
+@media (max-width: 390px) {
+  .registerForm {
+    width: 70vw;
+  }
+  .registerButton {
+    position: relative;
+    left: 80px;
+  }
+  .registerInputs input {
+    width: 45vw;
+  }
+  .regLink {
+    margin: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: 40px;
+  }
+}
 /*# sourceMappingURL=Register.css.map */

@@ -55,4 +55,13 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
+
+@media (max-width: 390px) {
+  .logbookSearch {
+    height: 25px;
+    width: 120px;
+    border: 3px solid black;
+    border-radius: 5px;
+  }
+}
 /*# sourceMappingURL=Logbook.css.map */

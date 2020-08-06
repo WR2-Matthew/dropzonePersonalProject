@@ -35,3 +35,13 @@
   height: 130px;
   width: 13vw;
 }
+
+@media(max-width: 390px) {
+  .jumpsHolder {
+    height: 33vh;
+    width: 40vw;
+  }
+  .jumpImg {
+    width: 38vw;
+  }
+}

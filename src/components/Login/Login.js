@@ -94,7 +94,7 @@ class Login extends Component {
             </form>
 
 
-            <div>
+            <div className='linkToReg'>
               <p><b>Do not have an account? </b><Link className='loginRouter' to='/register' >Register Here!</Link></p>
             </div>
           </div>

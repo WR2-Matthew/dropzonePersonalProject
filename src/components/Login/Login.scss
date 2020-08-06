@@ -76,3 +76,26 @@ flex-direction: column;
  font-weight: 600;
  color: $mainBlueColor;
 }
+
+@media(max-width: 390px) {
+  .loginForm {
+    width: 70vw;
+  }
+
+  .loginButton {
+    position: relative;
+    left: 80px;
+  }
+
+  .loginInputs {
+    input {
+      width: 45vw;
+    }
+  }
+
+  .linkToReg {
+    margin: 20px;
+    @include flexOptionOne(center);
+    margin-left: 40px
+  }
+}
