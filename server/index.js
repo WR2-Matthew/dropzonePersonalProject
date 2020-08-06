@@ -6,6 +6,7 @@ const express = require('express'),
   authCtrl = require('./controllers/AuthController'),
   dzCtrl = require('./controllers/DzController'),
   jumpCtrl = require('./controllers/JumpsController'),
+  trans = require('./controllers/Transporter'),
   aws = require('aws-sdk'),
   path = require('path'),
   { CONNECTION_STRING, SERVER_PORT, SESSION_SECRET, S3_BUCKET, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION } = process.env;
@@ -83,7 +84,7 @@ app.delete('/api/delete/jump/:id', jumpCtrl.deleteJump)
 app.put('/api/edit/jump/:userId', jumpCtrl.editJump)
 
 //NODEMAILER
-// app.post('/api/email', ctrl.email);
+app.post('/api/email', trans.email);
 
 //HOSTING
 app.use(express.static(__dirname + '/../build'))

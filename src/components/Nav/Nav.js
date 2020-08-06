@@ -37,7 +37,17 @@ function Nav(props) {
             <Link className='navLinks' to='/login'>
               <p className='navListItem'>Sign In</p>
             </Link>
-            : <button onClick={props.logoutUser} className='logoutButton'>Logout</button>
+            : <Link className='navLinks' to='/account'>
+              <p className='navListItem'> Account</p>
+            </Link>
+          }
+
+          {!props.user ? null : <p>|</p>}
+
+          {!props.user ? null
+            : <Link to='/' >
+              <button onClick={props.logoutUser} className='logoutButton'>Logout</button>
+            </Link>
           }
         </ul>
         <img onClick={() => setToggle(!toggle)} alt='burger' src={'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png'} className='mobileBurger' />
@@ -65,6 +75,11 @@ function Nav(props) {
               <Link className='navLinksMobile' to='/login'>
                 <p className='navListItemMobile'>Sign In</p>
               </Link>
+              : <Link className='navLinks' to='/account'>
+                <p className='navListItem'> Account</p>
+              </Link>
+            }
+            {!props.user ? null
               : <button onClick={props.logoutUser} className='logoutButton'>Logout</button>
             }
           </ul>
@@ -86,4 +101,3 @@ function mapStateToProps(state) {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Nav);
-

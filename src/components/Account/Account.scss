@@ -1,0 +1,27 @@
+@import '../../Sass/variables';
+@import '../../Sass/mixin';
+
+.accountHolder {
+  height: 90vh;
+  width: 100vw;
+  @include flexOptionOne(center);
+  min-height: 100vh;
+  padding-top: 50px;
+}
+
+.accountForm {
+  width: 33vw;
+  height: 80vh;
+  @include flexOptionOne(center);
+  flex-direction: column;
+  background-color: #FFF8F3;
+  border-radius: 10%;
+  @include borderOne();
+}
+
+.accountProfilePicture {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  @include borderOne();
+}

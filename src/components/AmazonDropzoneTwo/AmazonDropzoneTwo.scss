@@ -1,0 +1,8 @@
+@import '../../Sass/mixin';
+@import '../../Sass/variables';
+
+.amazonDropzoneHolder, .amazonDropHold {
+  height: 25vh;
+  width: 30vw;
+  @include flexOptionOne(center);
+}

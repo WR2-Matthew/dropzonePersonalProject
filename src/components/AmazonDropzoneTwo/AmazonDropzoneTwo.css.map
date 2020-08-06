@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,qBAAqB,EAAE,eAAe,CAAC;EACrC,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,IAAI;ECJX,OAAO,EAAE,IAAI;EACb,eAAe,EDIQ,MAAM;ECH7B,WAAW,EAAE,MAAM;CDIpB",
+    "sources": [
+        "AmazonDropzoneTwo.scss",
+        "../../Sass/_mixin.scss",
+        "../../Sass/_variables.scss"
+    ],
+    "names": [],
+    "file": "AmazonDropzoneTwo.css"
+}

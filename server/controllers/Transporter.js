@@ -3,6 +3,8 @@ const nodemailer = require('nodemailer'),
 
 module.exports = {
   email: async (req, res) => {
+    const { email } = req.body
+
     try {
       //The transporter is essentially the email that you are using to send
       //emails to your users. This is done using NodeMailers createTransport
@@ -22,7 +24,7 @@ module.exports = {
 
       let info = await transporter.sendMail({
         from: `OurDropzone <${EMAIL}>`,
-        to: 'reciever email goes here',
+        to: email,
         subject: 'Welcome to OurDropzone! Join the community of bada$$ humans who jump, party, and love!',
         text: 'Welcome to the #1 place for our family to come together to create a better safer more respected environment for us to do what we love.',
         html: `<div>Welcome to OurDropzone.com</div>

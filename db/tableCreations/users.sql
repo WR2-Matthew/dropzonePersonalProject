@@ -7,5 +7,6 @@ email varchar(100),
 first_name varchar(30),
 last_name varchar(50),
 uspa_card boolean,
-profile_picture varchar(4000)
+profile_picture varchar(4000),
+username varchar(22);
 );

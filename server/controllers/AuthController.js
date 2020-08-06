@@ -23,9 +23,10 @@ module.exports = {
       email: user.email,
       firstName: user.first_name,
       lastName: user.last_name,
-      member: user.uspa_card
+      member: user.uspa_card,
+      profilePicture: user.profile_picture
     }
-
+    // console.log(req.session.user)
     res.status(200).send(req.session.user);
   },
 
@@ -37,7 +38,7 @@ module.exports = {
     const userCheck = await db.auth.check_email_exists(email);
     const user = userCheck[0]
     if (!user) {
-      res.status(404).send('Username does not exist')
+      res.status(404).send('Email does not exist')
     };
 
     const passCheck = bcrypt.compareSync(password, user.password);
@@ -52,7 +53,8 @@ module.exports = {
       email: user.email,
       firstName: user.first_name,
       lastName: user.last_name,
-      member: user.uspa_card
+      member: user.uspa_card,
+      profilePicture: user.profile_picture
     };
 
     // console.log(req.session.user)

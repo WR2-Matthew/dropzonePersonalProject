@@ -1,1 +1,50 @@
-/* No CSS *//*# sourceMappingURL=Account.css.map */
+.accountHolder {
+  height: 90vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  padding-top: 50px;
+}
+
+.accountForm {
+  width: 33vw;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #FFF8F3;
+  border-radius: 10%;
+  border-style: solid;
+  border-color: black;
+  -webkit-box-shadow: 0 5px 2px -2px #5e5d5d;
+          box-shadow: 0 5px 2px -2px #5e5d5d;
+}
+
+.accountProfilePicture {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: black;
+  -webkit-box-shadow: 0 5px 2px -2px #5e5d5d;
+          box-shadow: 0 5px 2px -2px #5e5d5d;
+}
+/*# sourceMappingURL=Account.css.map */
