@@ -98,4 +98,24 @@
   -webkit-box-shadow: 0 5px 2px -2px #5e5d5d;
           box-shadow: 0 5px 2px -2px #5e5d5d;
 }
+
+@media (max-width: 390px) {
+  .dashAddDzHolder {
+    height: 70px;
+    width: 140px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .dashAddDzHolder h1 {
+    font-size: 20px;
+    margin: 20px;
+  }
+}
 /*# sourceMappingURL=AddDzModal.css.map */

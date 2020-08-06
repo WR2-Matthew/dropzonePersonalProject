@@ -34,6 +34,14 @@
   margin-right: 40px;
 }
 
+.mobileBurger {
+  display: none;
+}
+
+.navListMobile {
+  display: none;
+}
+
 .navLinks {
   text-decoration: none;
   cursor: pointer;
@@ -45,4 +53,70 @@
   background-color: $mainBlueColor;
   font-size: 15px;
   cursor: pointer;
+}
+
+@media(max-width: 390px) {
+  .navTitleHolder {
+    height: 10px;
+    width: 25vw;
+    margin-left: 40px;
+  @include flexOptionOne(none)
+  }
+
+  .navLogo {
+    height: 50px;
+    width: 50px;
+  }
+
+  .navTitle {
+    font-size: 20px;
+  }
+
+  .navRoutesHolder {
+    @include flexOptionOne(flex-end);
+    height: 30px;
+    width: 120px;
+    margin-left: 50px;
+  }
+
+  .navList {
+    display: none;
+  }
+
+  .mobileBurger {
+    height: 20px;
+    width: 50px;
+    display: initial;
+    position: fixed;
+  }
+
+  .navListMobile {
+    display: initial;
+    height: 240px;
+    width: 100px;
+    margin-top: 200px;
+    background-color: $mainBlueColor;
+    @include flexOptionOne(center);
+    flex-direction: column;
+    margin: 15px;
+    @include borderOne();
+    padding: 0px;
+
+  }
+
+  .navLinksMobile {
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+    margin: 15px;
+    p {
+      font-size: 15px;
+      margin: 0px;
+    }
+  }
+
+  .help {
+  position: relative;
+  top: 158px;
+}
 }

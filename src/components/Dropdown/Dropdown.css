@@ -5,5 +5,18 @@
   border-radius: 5px;
   height: 48px;
   width: 310px;
+  background-color: white;
+}
+
+@media (max-width: 390px) {
+  .dropdownHolder select {
+    height: 25px;
+    width: 120px;
+    border: 3px solid black;
+    border-radius: 5px;
+    height: 33px;
+    width: 130px;
+    background-color: white;
+  }
 }
 /*# sourceMappingURL=Dropdown.css.map */

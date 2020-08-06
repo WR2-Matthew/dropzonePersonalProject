@@ -62,3 +62,13 @@
   @include flexOptionOne(center);
   flex-wrap: wrap;
 }
+
+@media(max-width: 390px) {
+  .dashSearchBar {
+    @include flexOptionOne(center);
+  .dashSearch {
+    @include mediaSearchSize();
+  }    
+  }
+}
+

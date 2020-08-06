@@ -58,6 +58,14 @@
   margin-right: 40px;
 }
 
+.mobileBurger {
+  display: none;
+}
+
+.navListMobile {
+  display: none;
+}
+
 .navLinks {
   text-decoration: none;
   cursor: pointer;
@@ -69,5 +77,92 @@
   background-color: #0C6291;
   font-size: 15px;
   cursor: pointer;
+}
+
+@media (max-width: 390px) {
+  .navTitleHolder {
+    height: 10px;
+    width: 25vw;
+    margin-left: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: none;
+        -ms-flex-pack: none;
+            justify-content: none;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .navLogo {
+    height: 50px;
+    width: 50px;
+  }
+  .navTitle {
+    font-size: 20px;
+  }
+  .navRoutesHolder {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 30px;
+    width: 120px;
+    margin-left: 50px;
+  }
+  .navList {
+    display: none;
+  }
+  .mobileBurger {
+    height: 20px;
+    width: 50px;
+    display: initial;
+    position: fixed;
+  }
+  .navListMobile {
+    display: initial;
+    height: 240px;
+    width: 100px;
+    margin-top: 200px;
+    background-color: #0C6291;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 15px;
+    border-style: solid;
+    border-color: black;
+    -webkit-box-shadow: 0 5px 2px -2px #5e5d5d;
+            box-shadow: 0 5px 2px -2px #5e5d5d;
+    padding: 0px;
+  }
+  .navLinksMobile {
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+    margin: 15px;
+  }
+  .navLinksMobile p {
+    font-size: 15px;
+    margin: 0px;
+  }
+  .help {
+    position: relative;
+    top: 158px;
+  }
 }
 /*# sourceMappingURL=Nav.css.map */

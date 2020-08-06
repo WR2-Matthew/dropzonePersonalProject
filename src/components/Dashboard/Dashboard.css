@@ -121,4 +121,24 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
+
+@media (max-width: 390px) {
+  .dashSearchBar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .dashSearchBar .dashSearch {
+    height: 25px;
+    width: 120px;
+    border: 3px solid black;
+    border-radius: 5px;
+  }
+}
 /*# sourceMappingURL=Dashboard.css.map */

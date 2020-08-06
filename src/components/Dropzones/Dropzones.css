@@ -56,4 +56,14 @@
 .dropzoneStarComp {
   margin: 25px;
 }
+
+@media (max-width: 390px) {
+  .dropzoneHolder {
+    height: 33vh;
+    width: 40vw;
+  }
+  .dropzoneImage {
+    width: 38vw;
+  }
+}
 /*# sourceMappingURL=Dropzones.css.map */
