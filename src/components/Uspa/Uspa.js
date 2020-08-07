@@ -1,6 +1,7 @@
 import React from 'react';
 import './Uspa.css';
 import { connect } from 'react-redux';
+import { getUser } from '../../redux/actionCreators';
 
 function Uspa(props) {
 
@@ -34,4 +35,4 @@ function mapStateToProps(state) {
   }
 };
 
-export default connect(mapStateToProps)(Uspa);
+export default connect(mapStateToProps, { getUser })(Uspa);

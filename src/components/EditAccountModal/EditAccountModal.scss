@@ -52,11 +52,8 @@
 .accountSubButton {
   @include modalSize();
   @include flexOptionOne(center);
-  button {
-    @include buttons();
-  }
 }
 
-.editAccountButton {
+#editAccountButton {
   @include buttons();
 }

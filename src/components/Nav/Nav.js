@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Nav.css';
 import { connect } from 'react-redux';
-import { logoutUser } from '../../redux/actionCreators';
+import { logoutUser, getUser } from '../../redux/actionCreators';
 
 function Nav(props) {
 
@@ -90,7 +90,8 @@ function Nav(props) {
 };
 
 const mapDispatchToProps = {
-  logoutUser
+  logoutUser,
+  getUser
 };
 
 

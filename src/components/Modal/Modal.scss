@@ -76,5 +76,6 @@ font-size: 40px;
 }
 
 .modalRatingButton {
-@include buttons()
+@include buttons();
+margin: 15px;
 }

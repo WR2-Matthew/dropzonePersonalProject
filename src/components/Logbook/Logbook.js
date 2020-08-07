@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Logbook.css'
 import { connect } from 'react-redux';
-import { getAllJumps } from '../../redux/actionCreators';
+import { getAllJumps, getUser } from '../../redux/actionCreators';
 import AddJumpModal from '../AddJumpModal/AddJumpModal';
 import JumpModal from '../JumpModal/JumpModal';
 
@@ -108,7 +108,8 @@ class Logbook extends Component {
 };
 
 const mapDispatchToProps = {
-  getAllJumps
+  getAllJumps,
+  getUser
 };
 
 function mapStateToProps(state) {

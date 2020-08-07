@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Account.css';
 import { connect } from 'react-redux';
 import EditAccountModal from '../EditAccountModal/EditAccountModal';

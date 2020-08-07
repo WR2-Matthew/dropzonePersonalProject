@@ -100,6 +100,6 @@ module.exports = {
 
     const update = await db.auth.update_account(id, fName, lName, email, photo);
     const membership = await db.auth.membership_update(id, expiration, memberSince, licenseNumber, recognitions, awards, recExpiration)
-    console.log(membership[0])
+    res.status(200).send(membership);
   }
 };

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
 import Dropdown from '../Dropdown/DropDown';
 import { connect } from 'react-redux';
-import { getDropzones } from '../../redux/actionCreators';
+import { getDropzones, getUser } from '../../redux/actionCreators';
 import Modal from '../Modal/Modal';
 import ModalTwo from '../AddDzModal/AddDzModal';
 
@@ -328,6 +328,7 @@ const Dashboard = (props) => {
 
 const mapDispatchToProps = {
   getDropzones,
+  getUser
 };
 
 function mapStateToProps(state) {

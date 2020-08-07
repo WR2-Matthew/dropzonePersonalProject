@@ -11,7 +11,7 @@ import { getUser } from './redux/actionCreators'
 
 function App(props) {
   useEffect(() => {
-    getUser()
+    props.getUser()
   }, []);
   return (
     <div className="App">

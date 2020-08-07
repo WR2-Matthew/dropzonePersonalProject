@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './EditAccountModal.css';
 import Modal from 'react-modal';
 import AmazonDropzoneTwo from '../AmazonDropzoneTwo/AmazonDropzoneTwo';
@@ -21,11 +21,8 @@ function EditAccountModal(props) {
   let [photo, setPhoto] = useState(props.profilePicture);
 
   function submitChanges() {
-    const body = { fName, lName, email, photo, expiration, memberSince, licenseNumber, recognitions, awards, recExpiration }
-    axios.put(`/api/edit/account/${props.id}`, body)
-      .then(res => {
-        props.setUser(res.data)
-      })
+    console.log('hit')
+    props.setUser(fName, lName, email, photo, expiration, memberSince, licenseNumber, recognitions, awards, recExpiration, props.id);
   };
   console.log(photo)
 
@@ -102,7 +99,7 @@ function EditAccountModal(props) {
               </div>
 
               <div className='accountSubButton'>
-                <button className='editAccountButton' onClick={() => {
+                <button className='modalRatingButton' onClick={() => {
                   setModalOpen(false)
                   setFName(props.fName)
                   setLName(props.lName)
@@ -115,7 +112,7 @@ function EditAccountModal(props) {
                   setRecExpiration(props.recExp)
                 }}>Disregard Changes</button>
 
-                <button className='editAccountButton' onClick={() => {
+                <button className='modalRatingButton' onClick={() => {
                   submitChanges()
                   setModalOpen(false)
                 }} >Save Changes</button>

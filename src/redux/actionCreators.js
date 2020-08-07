@@ -37,10 +37,13 @@ export function logoutUser() {
   };
 };
 
-export function setUser(data) {
+export function setUser(fName, lName, email, photo, expiration, memberSince, licenseNumber, recognitions, awards, recExpiration, id) {
+  const body = { fName, lName, email, photo, expiration, memberSince, licenseNumber, recognitions, awards, recExpiration }
+  console.log('hit', photo)
+  const newUser = axios.put(`/api/edit/account/${id}`, body)
   return {
     type: SET_USER,
-    payload: data
+    payload: newUser
   }
 }
 
