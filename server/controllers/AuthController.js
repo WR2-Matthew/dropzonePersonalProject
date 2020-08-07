@@ -4,6 +4,7 @@ module.exports = {
   register: async (req, res) => {
     const { firstName, lastName, email, password } = req.body;
     const db = req.app.get('db');
+    const profilePic = 'https://www.kindpng.com/picc/m/21-214439_free-high-quality-person-icon-default-profile-picture.png'
 
     const userCheck = await db.auth.check_email_exists(email);
     if (userCheck[0]) {
@@ -13,9 +14,10 @@ module.exports = {
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(password, salt);
 
-    const registerUser = await db.auth.register_user(firstName, lastName, email, hash);
-    const user = registerUser[0]
-    console.log(user)
+    const registerUser = await db.auth.register_user(firstName, lastName, email, hash, profilePic);
+    const newUser = registerUser[0]
+    const join = await db.auth.join_membership(newUser.user_id)
+    const user = join[0]
     req.session.user = {
       id: user.user_id,
       admin: user.is_admin,
@@ -24,7 +26,14 @@ module.exports = {
       firstName: user.first_name,
       lastName: user.last_name,
       member: user.uspa_card,
-      profilePicture: user.profile_picture
+      profilePicture: user.profile_picture,
+      expirationDate: user.expiration_date,
+      memberSince: user.member_since,
+      licenseNumber: user.license_number,
+      recognitions: user.recognitions,
+      awards: user.awards,
+      memberNumber: user.member_number,
+      recExp: user.recognitions_exp
     }
     // console.log(req.session.user)
     res.status(200).send(req.session.user);
@@ -36,16 +45,19 @@ module.exports = {
     const db = req.app.get('db')
 
     const userCheck = await db.auth.check_email_exists(email);
-    const user = userCheck[0]
-    if (!user) {
+    const oldUser = userCheck[0]
+    if (!oldUser) {
       res.status(404).send('Email does not exist')
     };
 
-    const passCheck = bcrypt.compareSync(password, user.password);
+    const passCheck = bcrypt.compareSync(password, oldUser.password);
     if (!passCheck) {
       res.status(403).send('Password does not match')
     };
 
+    const join = await db.auth.login_user(oldUser.user_id);
+    const user = join[0];
+    // console.log(user)
     req.session.user = {
       id: user.user_id,
       admin: user.is_admin,
@@ -54,7 +66,14 @@ module.exports = {
       firstName: user.first_name,
       lastName: user.last_name,
       member: user.uspa_card,
-      profilePicture: user.profile_picture
+      profilePicture: user.profile_picture,
+      expirationDate: user.expiration_date,
+      memberSince: user.member_since,
+      licenseNumber: user.license_number,
+      recognitions: user.recognitions,
+      awards: user.awards,
+      memberNumber: user.member_number,
+      recExp: user.recognitions_exp
     };
 
     // console.log(req.session.user)
@@ -81,6 +100,6 @@ module.exports = {
 
     const update = await db.auth.update_account(id, fName, lName, email, photo);
     const membership = await db.auth.membership_update(id, expiration, memberSince, licenseNumber, recognitions, awards, recExpiration)
-    // console.log(membership[0])
+    console.log(membership[0])
   }
 };

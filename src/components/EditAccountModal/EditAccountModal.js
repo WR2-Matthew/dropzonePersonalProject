@@ -3,6 +3,8 @@ import './EditAccountModal.css';
 import Modal from 'react-modal';
 import AmazonDropzoneTwo from '../AmazonDropzoneTwo/AmazonDropzoneTwo';
 import axios from 'axios';
+import { setUser } from '../../redux/actionCreators';
+import { connect } from 'react-redux';
 
 function EditAccountModal(props) {
 
@@ -10,21 +12,22 @@ function EditAccountModal(props) {
   let [fName, setFName] = useState(props.fName);
   let [lName, setLName] = useState(props.lName);
   let [email, setEmail] = useState(props.email);
-  let [expiration, setExpiration] = useState('');
-  let [memberSince, setMemberSince] = useState('');
-  let [licenseNumber, setLicenseNumber] = useState('');
-  let [recognitions, setRecognitions] = useState('');
-  let [awards, setAwards] = useState('');
-  let [recExpiration, setRecExpiration] = useState('');
-  let [photo, setPhoto] = useState('');
+  let [expiration, setExpiration] = useState(props.expirationDate);
+  let [memberSince, setMemberSince] = useState(props.memberSince);
+  let [licenseNumber, setLicenseNumber] = useState(props.licenseNumber);
+  let [recognitions, setRecognitions] = useState(props.recognitions);
+  let [awards, setAwards] = useState(props.awards);
+  let [recExpiration, setRecExpiration] = useState(props.recExp);
+  let [photo, setPhoto] = useState(props.profilePicture);
 
   function submitChanges() {
     const body = { fName, lName, email, photo, expiration, memberSince, licenseNumber, recognitions, awards, recExpiration }
     axios.put(`/api/edit/account/${props.id}`, body)
       .then(res => {
-
+        props.setUser(res.data)
       })
   };
+  console.log(photo)
 
   return (
     <div className='editAccountModalHolder'>
@@ -99,20 +102,23 @@ function EditAccountModal(props) {
               </div>
 
               <div className='accountSubButton'>
-                <button onClick={() => {
+                <button className='editAccountButton' onClick={() => {
                   setModalOpen(false)
                   setFName(props.fName)
                   setLName(props.lName)
                   setEmail(props.email)
-                  setExpiration('')
-                  setMemberSince('')
-                  setLicenseNumber('')
-                  setRecognitions('')
-                  setAwards('')
-                  setRecExpiration('')
+                  setExpiration(props.expirationDate)
+                  setMemberSince(props.memberSince)
+                  setLicenseNumber(props.licenseNumber)
+                  setRecognitions(props.recognitions)
+                  setAwards(props.awards)
+                  setRecExpiration(props.recExp)
                 }}>Disregard Changes</button>
 
-                <button onClick={() => submitChanges()} >Save Changes</button>
+                <button className='editAccountButton' onClick={() => {
+                  submitChanges()
+                  setModalOpen(false)
+                }} >Save Changes</button>
               </div>
             </div>
           </div>
@@ -123,4 +129,4 @@ function EditAccountModal(props) {
   )
 };
 
-export default EditAccountModal;
+export default connect(null, { setUser })(EditAccountModal);
