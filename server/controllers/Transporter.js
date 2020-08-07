@@ -36,7 +36,7 @@ module.exports = {
           },
           {
             cid: 'unique@nodemailer.com',
-            path: 'https://i.kym-cdn.com/photos/images/original/001/516/899/f31.jpg'
+            path: 'https://www.ramblers.com.au/wp-content/uploads/2019/04/P23-Angles-with-Mason-Drewy-MadDog-by-Smithy-19-april.jpg'
           }]
       }, (err, res) => {
         if (err) {

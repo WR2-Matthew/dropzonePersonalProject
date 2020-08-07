@@ -6,3 +6,43 @@
   width: 30vw;
   @include flexOptionOne(center);
 }
+
+.amazonTwoForm {
+  @include modalSize(60vh);
+  padding: 30px;
+}
+
+.imageDisplay {
+  @include flexOptionOne(center);
+  flex-direction: column;
+}
+
+.amazonImageHold {
+  @include flexOptionOne(center);
+  h2 {
+    margin: 15px;
+    margin-top: 87px;
+  }
+}
+
+.amazonImages {
+  height: 123px;
+  @include borderOne();
+  border-radius: 50%;
+}
+
+.amazonImagesPreview {
+  margin-top: 79px;
+  height: 123px;
+  @include borderOne();
+  border-radius: 50%;
+}
+
+.dropzoneInput {
+  @include flexOptionOne(center);
+}
+
+.amazonSubmitPhoto {
+  @include buttons();
+  margin-top: 15px;
+}

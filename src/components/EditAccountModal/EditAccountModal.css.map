@@ -1,8 +1,10 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAGA,AAAA,kBAAkB,CAAC;EEFjB,OAAO,EAAE,IAAI;EACb,eAAe,EFEQ,MAAM;EED7B,WAAW,EAAE,MAAM;EFEnB,UAAU,EAAE,IAAI;CAIjB;;AAND,AAGE,kBAHgB,CAGhB,MAAM,CAAC;EEyBP,gBAAgB,EAAE,OAAO;EACzB,KAAK,EAAE,KAAK;EACZ,YAAY,EAAE,KAAK;EACnB,YAAY,EAAE,KAAK;EACnB,UAAU,EAAE,CAAC,CAAC,GAAG,CAAC,GAAG,CAAE,IAAG,CAAC,OAAe;CF3BzC",
     "sources": [
-        "EditAccountModal.scss"
+        "EditAccountModal.scss",
+        "../../Sass/_variables.scss",
+        "../../Sass/_mixin.scss"
     ],
     "names": [],
     "file": "EditAccountModal.css"

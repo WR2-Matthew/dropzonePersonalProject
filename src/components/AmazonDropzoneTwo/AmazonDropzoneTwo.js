@@ -84,25 +84,22 @@ function Amazon(props) {
     })
 
     const images = files.map((file) =>
-      <div key={file.name} >
-        <div>
-          <h2>{'===>'}</h2>
-        </div>
-        <div className='amazonImageHold'>
-          <img className='amazonImagesPreview' src={file.preview} style={{ width: "150px" }} alt="preview" />
-        </div>
+      <div key={file.name} className='amazonImageHold'>
+        <h2>{'===>'}</h2>
+        <img className='amazonImagesPreview' src={file.preview} style={{ width: "150px" }} alt="preview" />
       </div>
     )
 
     return (
       <div className='amazonDropzoneImageHolder' >
         <div className='dropzoneInput' {...getRootProps()}>
-          <input id='dropzoneInput' {...getInputProps()} />
+          <input id='dropzoneInputs' {...getInputProps()} />
           {
             isDragActive ?
               <h4 className='dropzoneAdd' ><img className='amazonImages' src={props.photo} style={{ width: "150px" }} alt="preview" /> </h4>
               : <div className='imageDisplay'>
-                <h4 className='dropzoneAdd' > Click To Change Profile Picture <img className='amazonImages' src={props.photo} style={{ width: "150px" }} alt="preview" /></h4>
+                <h4 className='dropzoneAdd' > Click To Change Profile Picture</h4>
+                <img className='amazonImages' src={props.prof} style={{ width: "150px" }} alt="preview" />
               </div>
           }
           <div>
@@ -119,7 +116,7 @@ function Amazon(props) {
 
   return (
     <div>
-      <form>
+      <form className='amazonTwoForm'>
         <div className='amazonDropzoneHolder'>
           <div className='amazonDropHold' >
             {MyDropzone()}

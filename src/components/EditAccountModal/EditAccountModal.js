@@ -16,7 +16,7 @@ function EditAccountModal(props) {
   let [recognitions, setRecognitions] = useState('');
   let [awards, setAwards] = useState('');
   let [recExpiration, setRecExpiration] = useState('');
-  let [photo, setPhoto] = useState(props.profilePicture);
+  let [photo, setPhoto] = useState('');
 
   return (
     <div className='editAccountModalHolder'>
@@ -37,7 +37,7 @@ function EditAccountModal(props) {
           }>
 
           <div className='editAccountForm'>
-            <AmazonDropzoneTwo photoFn={setPhoto} photo={photo} />
+            <AmazonDropzoneTwo photoFn={setPhoto} photo={photo} prof={props.profilePicture} />
           </div>
 
           <div className='uspaEditForm' >

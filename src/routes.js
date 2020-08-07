@@ -14,7 +14,7 @@ export default (
     <Route exact path='/login' component={Login} />
     <Route path='/register' component={Register} />
     <Route path='/logbook' component={Logbook} />
-    <Route path='/membership/:id' component={Uspa} />
+    <Route path='/membership' component={Uspa} />
     <Route path='/login/required' component={LoginRequired} />
     <Route path='/account' component={Account} />
   </Switch>

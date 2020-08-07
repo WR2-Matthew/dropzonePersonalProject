@@ -1,10 +1,22 @@
 @import '../../Sass//mixin';
 
 .uspaHolder {
-  background-color: $mainBackground;
   height: 90vh;
   width: 100vw;
   min-height: 100vh;
   padding-top: 100px;
+  @include flexOptionOne(center);
+}
+
+.uspaCardHolder {
+  background-image: url('./uspacard.png');  
+  background-size: 1150px 660px;
+  height: 80vh;
+  width: 80vw;
+  @include borderOne();
+  border-radius: 20px; 
+  h1 {
+    font-size: 50px;
+  }
 }
 

@@ -12,11 +12,15 @@
 .accountForm {
   width: 33vw;
   height: 80vh;
-  @include flexOptionOne(center);
+  @include flexOptionOne(none);
   flex-direction: column;
   background-color: #FFF8F3;
   border-radius: 10%;
   @include borderOne();
+}
+
+.accountInfo {
+  color: $mainBlueColor;
 }
 
 .accountProfilePicture {
@@ -25,3 +29,18 @@
   border-radius: 50%;
   @include borderOne();
 }
+
+.accountDetailsHolder {
+  margin-top: 130px;
+}
+
+.accountDetails {
+  height: 10vh;
+  margin-top: 30px;
+  @include flexOptionOne(center);
+  flex-direction: column;
+}
+
+// .accountButtons {
+//   @include buttons();
+// }

@@ -5,7 +5,9 @@ function Uspa() {
 
   return (
     <div className='uspaHolder'>
-      <h1>Uspa</h1>
+      <div className='uspaCardHolder'>
+        <h1 >Derp</h1>
+      </div>
     </div>
   )
 };

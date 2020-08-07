@@ -20,9 +20,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -38,6 +38,10 @@
           box-shadow: 0 5px 2px -2px #5e5d5d;
 }
 
+.accountInfo {
+  color: #0C6291;
+}
+
 .accountProfilePicture {
   height: 250px;
   width: 250px;
@@ -46,5 +50,27 @@
   border-color: black;
   -webkit-box-shadow: 0 5px 2px -2px #5e5d5d;
           box-shadow: 0 5px 2px -2px #5e5d5d;
+}
+
+.accountDetailsHolder {
+  margin-top: 130px;
+}
+
+.accountDetails {
+  height: 10vh;
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 /*# sourceMappingURL=Account.css.map */

@@ -1,0 +1,10 @@
+@import '../../Sass/variables';
+@import '../../Sass/mixin';
+
+.editAccountButton {
+  @include flexOptionOne(center);
+  margin-top: 30px;
+  button {
+    @include buttons();
+  }
+}

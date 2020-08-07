@@ -3,6 +3,7 @@ import './Register.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { registerUsers } from '../../redux/actionCreators';
+import axios from 'axios';
 
 class Register extends Component {
   constructor(props) {
@@ -79,6 +80,8 @@ class Register extends Component {
   register = (firstName, lastName, email, password) => {
     // console.log('hit')
     this.props.registerUsers(firstName, lastName, email, password)
+    const body = { email }
+    axios.post('/api/email', body)
     this.props.history.push('/')
   };
 

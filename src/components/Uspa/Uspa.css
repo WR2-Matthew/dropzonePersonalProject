@@ -1,8 +1,32 @@
 .uspaHolder {
-  background-color: #F5E8CC;
   height: 90vh;
   width: 100vw;
   min-height: 100vh;
   padding-top: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.uspaCardHolder {
+  background-image: url("./uspacard.png");
+  background-size: 1150px 660px;
+  height: 80vh;
+  width: 80vw;
+  border-style: solid;
+  border-color: black;
+  -webkit-box-shadow: 0 5px 2px -2px #5e5d5d;
+          box-shadow: 0 5px 2px -2px #5e5d5d;
+  border-radius: 20px;
+}
+
+.uspaCardHolder h1 {
+  font-size: 50px;
 }
 /*# sourceMappingURL=Uspa.css.map */
