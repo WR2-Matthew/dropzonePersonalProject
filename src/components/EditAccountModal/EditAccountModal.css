@@ -19,4 +19,92 @@
   -webkit-box-shadow: 0 5px 2px -2px #5e5d5d;
           box-shadow: 0 5px 2px -2px #5e5d5d;
 }
+
+.divider {
+  height: 80vh;
+  width: 75vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.editAccountForm {
+  height: 80vh;
+  width: 33vw;
+}
+
+.accountDeats {
+  height: 50px;
+  margin: 20px;
+  width: 33vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.accountDeats input {
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: black;
+  margin: 8px;
+}
+
+.uspaEditForm {
+  width: 35vw;
+  height: 74vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 100px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.uspaDeats {
+  margin: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.uspaDeats input {
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: black;
+  margin: 8px;
+}
 /*# sourceMappingURL=EditAccountModal.css.map */

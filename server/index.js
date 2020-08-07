@@ -64,11 +64,12 @@ app.get('/sign-s3', (req, res) => {
   });
 });
 
-//AUTH ENDPOINT
+//AUTH/USER ENDPOINT
 app.post('/auth/login', authCtrl.login);
 app.post('/auth/register', authCtrl.register);
 app.post('/auth/logout', authCtrl.logout);
 app.get('/auth/session', authCtrl.session);
+app.put('/api/edit/account/:id', authCtrl.editAccount);
 
 //DROPZONE ENDPOINT
 app.get('/api/dropzones', dzCtrl.getAllDropzones);
@@ -78,10 +79,10 @@ app.post('/api/create/dropzone/:userId', dzCtrl.createDropzone)
 app.post('/api/rate/dropzone', dzCtrl.addRating)
 
 //JUMPS ENDPOINT
-app.get('/api/jumps/:userId', jumpCtrl.getJumps)
-app.post('/api/create/jump/:userId', jumpCtrl.createJump)
-app.delete('/api/delete/jump/:id', jumpCtrl.deleteJump)
-app.put('/api/edit/jump/:userId', jumpCtrl.editJump)
+app.get('/api/jumps/:userId', jumpCtrl.getJumps);
+app.post('/api/create/jump/:userId', jumpCtrl.createJump);
+app.delete('/api/delete/jump/:id', jumpCtrl.deleteJump);
+app.put('/api/edit/jump/:userId', jumpCtrl.editJump);
 
 //NODEMAILER
 app.post('/api/email', trans.email);

@@ -8,3 +8,51 @@
     @include buttons();
   }
 }
+
+.divider {
+  @include modalSize(80vh);
+  @include flexOptionOne(none);
+}
+
+.editAccountForm {
+  height: 80vh;
+  width: 33vw;
+}
+
+.accountDeats {
+  height: 50px;
+  margin: 20px;
+  width: 33vw;
+  @include flexOptionOne(center);
+  flex-direction: column;
+  input {
+    @include inputStyles();
+    margin: 8px;
+  }
+}
+
+.uspaEditForm {
+  width: 35vw;
+  height: 74vh;
+  @include flexOptionOne(none);
+  margin-left: 100px;
+  flex-direction: column;
+}
+
+.uspaDeats {
+  margin: 5px;
+ @include flexOptionOne(center);
+ flex-direction: column;
+ input {
+  @include inputStyles();
+  margin: 8px;
+ }
+}
+
+.accountSubButton {
+  @include modalSize();
+  @include flexOptionOne(center);
+  button {
+    @include buttons();
+  }
+}

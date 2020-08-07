@@ -7,8 +7,9 @@
   @include flexOptionOne(center);
 }
 
-.amazonTwoForm {
-  @include modalSize(60vh);
+.amazonTwoForm, .noName {
+  height: 25vh;
+  width: 33vw;
   padding: 30px;
 }
 
@@ -45,4 +46,6 @@
 .amazonSubmitPhoto {
   @include buttons();
   margin-top: 15px;
+  margin-bottom: 40px;
+  margin-left: 50px;
 }

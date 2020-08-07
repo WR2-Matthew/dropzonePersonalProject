@@ -115,7 +115,7 @@ function Amazon(props) {
   }
 
   return (
-    <div>
+    <div className='noName'>
       <form className='amazonTwoForm'>
         <div className='amazonDropzoneHolder'>
           <div className='amazonDropHold' >

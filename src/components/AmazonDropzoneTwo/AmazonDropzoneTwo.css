@@ -12,9 +12,9 @@
           align-items: center;
 }
 
-.amazonTwoForm {
-  height: 60vh;
-  width: 75vw;
+.amazonTwoForm, .noName {
+  height: 25vh;
+  width: 33vw;
   padding: 30px;
 }
 
@@ -90,5 +90,7 @@
   -webkit-box-shadow: 0 5px 2px -2px #5e5d5d;
           box-shadow: 0 5px 2px -2px #5e5d5d;
   margin-top: 15px;
+  margin-bottom: 40px;
+  margin-left: 50px;
 }
 /*# sourceMappingURL=AmazonDropzoneTwo.css.map */

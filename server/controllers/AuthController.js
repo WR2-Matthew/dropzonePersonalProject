@@ -72,5 +72,15 @@ module.exports = {
   logout: (req, res) => {
     req.session.destroy()
     res.status(200).send('Successfully Logged Out!')
+  },
+
+  editAccount: async (req, res) => {
+    const db = req.app.get('db');
+    const { fName, lName, email, photo, expiration, memberSince, licenseNumber, recognitions, awards, recExpiration } = req.body;
+    const { id } = req.params;
+
+    const update = await db.auth.update_account(id, fName, lName, email, photo);
+    const membership = await db.auth.membership_update(id, expiration, memberSince, licenseNumber, recognitions, awards, recExpiration)
+    // console.log(membership[0])
   }
 };

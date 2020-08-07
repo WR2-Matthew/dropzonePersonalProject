@@ -43,6 +43,7 @@ function Account(props) {
                   lName={props.user.lastName}
                   email={props.user.email}
                   profilePicture={props.user.profilePicture}
+                  id={props.user.id}
                 />
               </div>
             </div>
