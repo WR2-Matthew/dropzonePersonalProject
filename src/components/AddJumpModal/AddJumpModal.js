@@ -106,7 +106,16 @@ function AddJumpModal(props) {
               </div>
 
               <div className='addJumpCreateButton'>
-                <button onClick={(e) => submitForm(e)}>Add Jump!</button>
+                <button onClick={(e) => {
+                  submitForm(e)
+                  setDate('')
+                  setDz('')
+                  setDiscipline('')
+                  setPhoto('')
+                  setPlane('')
+                  setDetails('')
+                  setNumber('')
+                }}>Add Jump!</button>
               </div>
             </div>
 
@@ -114,7 +123,7 @@ function AddJumpModal(props) {
         </Modal>
       </div>
 
-    </div>
+    </div >
   )
 };
 

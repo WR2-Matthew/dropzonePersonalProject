@@ -3,7 +3,7 @@
 .dropzoneHolder {
   height: 33vh;
   width: 13vw;
-  background-color: white;
+  background-color: #ceeaf7;
   @include borderOne();
   @include flexOptionOne(none);
   flex-direction: column;
@@ -29,6 +29,7 @@
 .dropzoneImage {
   height: 130px;
   width: 13vw;
+  @include borderOne();
 }
 
 .dropzoneStarComp {

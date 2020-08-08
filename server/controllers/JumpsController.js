@@ -19,10 +19,10 @@ module.exports = {
 
   deleteJump: async (req, res) => {
     const db = req.app.get('db');
-    const { id } = req.params;
-
-    const updated = await db.jumps.delete_jump(id);
-    // console.log(updated)
+    const { jumpId, userId } = req.query;
+    // console.log(userId, 'userId')
+    const updated = await db.jumps.delete_jump(jumpId, userId);
+    // console.log(updated, 'jumps')
     res.status(200).send(updated);
   },
 

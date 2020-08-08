@@ -96,8 +96,9 @@ export function addJump(date, dz, discipline, photo, plane, details, number, use
   };
 };
 
-export function deleteJump(id) {
-  const deletedJump = axios.delete(`/api/delete/jump/${id}`);
+export function deleteJump(jumpId, userId) {
+  console.log(jumpId, userId)
+  const deletedJump = axios.delete(`/api/delete/jump?jumpId=${jumpId}&userId=${userId}`);
   return {
     type: DELETE_JUMP,
     payload: deletedJump

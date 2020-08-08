@@ -127,7 +127,7 @@ function JumpModal(props) {
               ? <button onClick={() => setEditing(!editing)} className='jumpModalButton'>Edit Jump</button>
               : <div className='newJumpModalButtons'>
                 <button onClick={() => {
-                  props.saveChanges(date, dropzone, discipline, details, plane, props.id, props.userId)
+                  props.saveChanges(date, dropzone, discipline, details, plane, props.jumpId, props.userId)
                   setEditing(!editing)
                   setModalOpen(false)
                 }} className='jumpModalButton' >Save Changes</button>
@@ -135,7 +135,7 @@ function JumpModal(props) {
               </div>
             }
             <button onClick={() => {
-              props.deleteJump(props.id)
+              props.deleteJump(props.jumpId, props.userId)
               setModalOpen(false)
             }} className='jumpModalButton'>Remove Jump</button>
           </div>

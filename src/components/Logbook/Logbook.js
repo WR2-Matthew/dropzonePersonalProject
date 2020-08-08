@@ -38,7 +38,7 @@ class Logbook extends Component {
     const { dzSearched } = this.state;
     const { jumps, user } = this.props;
 
-    console.log(dzSearched)
+    // console.log(dzSearched)
     // console.log(jumps)
     // console.log(user)
 
@@ -70,7 +70,7 @@ class Logbook extends Component {
                       details={jump.jump_details}
                       plane={jump.plane}
                       number={jump.jump_number}
-                      id={jump.jump_id}
+                      jumpId={jump.jump_id}
                       userId={user.id}
                     />
                   )

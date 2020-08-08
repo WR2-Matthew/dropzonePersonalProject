@@ -81,7 +81,7 @@ app.post('/api/rate/dropzone', dzCtrl.addRating)
 //JUMPS ENDPOINT
 app.get('/api/jumps/:userId', jumpCtrl.getJumps);
 app.post('/api/create/jump/:userId', jumpCtrl.createJump);
-app.delete('/api/delete/jump/:id', jumpCtrl.deleteJump);
+app.delete('/api/delete/jump', jumpCtrl.deleteJump);
 app.put('/api/edit/jump/:userId', jumpCtrl.editJump);
 
 //NODEMAILER

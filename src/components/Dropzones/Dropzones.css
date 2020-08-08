@@ -1,7 +1,7 @@
 .dropzoneHolder {
   height: 33vh;
   width: 13vw;
-  background-color: white;
+  background-color: #ceeaf7;
   border-style: solid;
   border-color: black;
   -webkit-box-shadow: 0 5px 2px -2px #5e5d5d;
@@ -51,6 +51,10 @@
 .dropzoneImage {
   height: 130px;
   width: 13vw;
+  border-style: solid;
+  border-color: black;
+  -webkit-box-shadow: 0 5px 2px -2px #5e5d5d;
+          box-shadow: 0 5px 2px -2px #5e5d5d;
 }
 
 .dropzoneStarComp {

@@ -25,7 +25,7 @@ module.exports = {
       let info = await transporter.sendMail({
         from: `OurDropzone <${EMAIL}>`,
         to: email,
-        subject: 'Welcome to OurDropzone! Join the community of bada$$ humans who jump, party, and love!',
+        subject: 'Welcome to OurDropzone! Join the community of bada$$ humans who jump, party, and well jump again!',
         text: 'Welcome to the #1 place for our family to come together to create a better safer more respected environment for us to do what we love.',
         html: `<div>Welcome to OurDropzone.com</div>
                <img src="cid:unique@nodemailer.com" />`,
