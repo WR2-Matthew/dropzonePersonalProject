@@ -16,8 +16,11 @@ module.exports = {
 
     const registerUser = await db.auth.register_user(firstName, lastName, email, hash, profilePic);
     const newUser = registerUser[0]
+    // console.log(newUser, 'new')
     const join = await db.auth.join_membership(newUser.user_id)
     const user = join[0]
+    // console.log(user, 'user')
+
     req.session.user = {
       id: user.user_id,
       admin: user.is_admin,
@@ -46,6 +49,7 @@ module.exports = {
 
     const userCheck = await db.auth.check_email_exists(email);
     const oldUser = userCheck[0]
+    console.log(oldUser, 'old')
     if (!oldUser) {
       res.status(404).send('Email does not exist')
     };
@@ -57,7 +61,7 @@ module.exports = {
 
     const join = await db.auth.login_user(oldUser.user_id);
     const user = join[0];
-    // console.log(user)
+    console.log(user)
     req.session.user = {
       id: user.user_id,
       admin: user.is_admin,

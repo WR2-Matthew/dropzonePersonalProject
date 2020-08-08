@@ -94,7 +94,7 @@ const Dashboard = (props) => {
 
         </div>
 
-        {/* <div className='dashChecksHolder'>
+        <div className='dashChecksHolder'>
 
           <h4>Search By What Is Important To You:</h4>
           <div className='dashCheckBoxesHolder'>
@@ -201,7 +201,7 @@ const Dashboard = (props) => {
               checked={landingArea}
               onChange={() => checkValue('landingArea')} />
           </div>
-        </div> */}
+        </div>
 
         <ModalTwo className='dashAddDzHolder' />
 
