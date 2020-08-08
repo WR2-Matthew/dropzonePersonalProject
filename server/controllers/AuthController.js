@@ -30,6 +30,7 @@ module.exports = {
       lastName: user.last_name,
       member: user.uspa_card,
       profilePicture: user.profile_picture,
+      hasRated: user.has_rated,
       expirationDate: user.expiration_date,
       memberSince: user.member_since,
       licenseNumber: user.license_number,
@@ -71,6 +72,7 @@ module.exports = {
       lastName: user.last_name,
       member: user.uspa_card,
       profilePicture: user.profile_picture,
+      hasRated: user.has_rated,
       expirationDate: user.expiration_date,
       memberSince: user.member_since,
       licenseNumber: user.license_number,
@@ -104,7 +106,7 @@ module.exports = {
 
     const update = await db.auth.update_account(id, fName, lName, email, photo);
     const membership = await db.auth.membership_update(id, expiration, memberSince, licenseNumber, recognitions, awards, recExpiration)
-    console.log(membership)
-    // res.status(200).send(membership);
+    // console.log(membership)
+    res.status(200).send(membership[0]);
   }
 };

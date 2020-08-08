@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './Account.css';
 import { connect } from 'react-redux';
+import { getUser } from '../../redux/actionCreators';
 import EditAccountModal from '../EditAccountModal/EditAccountModal';
 
 function Account(props) {
 
-  let [uspa, setUspa] = useState(false);
+  // let [uspa, setUspa] = useState(false);
 
   return (
     <div className='accountHolder' >
@@ -56,10 +57,14 @@ function Account(props) {
   )
 };
 
+const mapDispatchToProps = {
+  getUser
+}
+
 function mapStateToProps(state) {
   return {
     user: state.userReducer.user.data
   }
 }
 
-export default connect(mapStateToProps)(Account);
+export default connect(mapStateToProps, mapDispatchToProps)(Account);

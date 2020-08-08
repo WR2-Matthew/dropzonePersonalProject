@@ -173,7 +173,9 @@ function ModalComp(props) {
               </div>
 
               <div className='individualRatingHolder' >
-                {!props.user ? <h4>Sign in to Rate DZ!</h4> : <button onClick={() => setEditDz(true)} className='modalRatingButton' >Rate This Dropzone!</button>}
+                {!props.user
+                  ? <h4>Sign in to Rate DZ!</h4>
+                  : <button onClick={() => setEditDz(true)} className='modalRatingButton' >Rate This Dropzone!</button>}
               </div>
             </div>
             : <RateDz

@@ -24,7 +24,7 @@ const Dashboard = (props) => {
 
   useEffect(() => {
     props.getDropzones()
-  }, [props.dropzones]);
+  }, []);
 
   function handleChangeState(e) {
     if (e.target.value === 'Select State:') {
@@ -73,8 +73,6 @@ const Dashboard = (props) => {
         break;
     }
   };
-
-  // console.log(props.dropzones)
 
   return (
     <div className='dashboardHolder'>

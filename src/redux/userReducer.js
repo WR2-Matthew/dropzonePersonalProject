@@ -34,7 +34,7 @@ export default function userReducer(state = initialState, action) {
     case SET_USER + '_PENDING':
       return state;
     case SET_USER + '_FULFILLED':
-      console.log(payload)
+      // console.log(payload)
       return { ...state, user: payload }
     case SET_USER + '_REJECTED':
       return state;

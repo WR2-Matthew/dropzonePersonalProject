@@ -39,8 +39,9 @@ export function logoutUser() {
 
 export function setUser(fName, lName, email, photo, expiration, memberSince, licenseNumber, recognitions, awards, recExpiration, id) {
   const body = { fName, lName, email, photo, expiration, memberSince, licenseNumber, recognitions, awards, recExpiration }
-  console.log('hit', photo)
+  // console.log('hit', photo)
   const newUser = axios.put(`/api/edit/account/${id}`, body)
+  // console.log(newUser)
   return {
     type: SET_USER,
     payload: newUser

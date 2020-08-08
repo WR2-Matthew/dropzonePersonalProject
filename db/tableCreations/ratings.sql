@@ -11,8 +11,7 @@ rental_gear_rt decimal,
 facilities_rt decimal,
 planes_rt decimal,
 landing_area_rt decimal,
-dz_id foreign refs dropzones dropzone_id,
-user_id foreign refs user user_id,
-has_rated boolean
+dz_id int references dropzones dropzone_id,
+user_id int references user user_id
 );
 

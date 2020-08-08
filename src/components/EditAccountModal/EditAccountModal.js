@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './EditAccountModal.css';
 import Modal from 'react-modal';
 import AmazonDropzoneTwo from '../AmazonDropzoneTwo/AmazonDropzoneTwo';
-import axios from 'axios';
 import { setUser } from '../../redux/actionCreators';
 import { connect } from 'react-redux';
 
@@ -24,7 +23,7 @@ function EditAccountModal(props) {
     console.log('hit')
     props.setUser(fName, lName, email, photo, expiration, memberSince, licenseNumber, recognitions, awards, recExpiration, props.id);
   };
-  console.log(photo)
+  // console.log(photo)
 
   return (
     <div className='editAccountModalHolder'>
@@ -126,4 +125,8 @@ function EditAccountModal(props) {
   )
 };
 
-export default connect(null, { setUser })(EditAccountModal);
+const mapDispatchToProps = {
+  setUser
+}
+
+export default connect(null, mapDispatchToProps)(EditAccountModal);

@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Uspa.css';
 import { connect } from 'react-redux';
 import { getUser } from '../../redux/actionCreators';
 
 function Uspa(props) {
+
+  useEffect(() => {
+    props.getUser()
+  }, []);
 
   return (
     <div className='uspaHolder'>
