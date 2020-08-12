@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
 import Dropdown from '../Dropdown/DropDown';
 import { connect } from 'react-redux';
-import { getDropzones, hasRated } from '../../redux/actionCreators';
+import { getDropzones, hasRated, checkboxChecked } from '../../redux/actionCreators';
 import Modal from '../Modal/Modal';
 import ModalTwo from '../AddDzModal/AddDzModal';
 
@@ -26,6 +26,10 @@ const Dashboard = (props) => {
     props.getDropzones();
     props.hasRated()
   }, []);
+
+  useEffect(() => {
+    props.checkboxChecked(overall, camping, skySafety, inclusion, party, bunkhouse, rental, facilities, planes, landingArea)
+  }, [overall, camping, skySafety, inclusion, party, bunkhouse, rental, facilities, planes, landingArea])
 
   function handleChangeState(e) {
     if (e.target.value === 'Select State:') {
@@ -68,30 +72,105 @@ const Dashboard = (props) => {
         break;
       case 'skySafety':
         setSkySafety(!skySafety);
+        setCamping(false);
+        setOverall(false);
+        setBunkhouse(false);
+        setInclusion(false);
+        setParty(false);
+        setRental(false);
+        setFacilities(false);
+        setPlanes(false);
+        setLandingArea(false);
         break;
       case 'inclusion':
         setInclusion(!inclusion);
+        setCamping(false);
+        setOverall(false);
+        setBunkhouse(false);
+        setSkySafety(false);
+        setParty(false);
+        setRental(false);
+        setFacilities(false);
+        setPlanes(false);
+        setLandingArea(false);
         break;
       case 'party':
         setParty(!party);
+        setCamping(false);
+        setOverall(false);
+        setBunkhouse(false);
+        setSkySafety(false);
+        setInclusion(false);
+        setRental(false);
+        setFacilities(false);
+        setPlanes(false);
+        setLandingArea(false);
         break;
       case 'bunkhouse':
         setBunkhouse(!bunkhouse);
+        setCamping(false);
+        setOverall(false);
+        setSkySafety(false);
+        setInclusion(false);
+        setParty(false);
+        setRental(false);
+        setFacilities(false);
+        setPlanes(false);
+        setLandingArea(false);
         break;
       case 'rental':
         setRental(!rental);
+        setCamping(false);
+        setOverall(false);
+        setBunkhouse(false);
+        setSkySafety(false);
+        setInclusion(false);
+        setParty(false);
+        setFacilities(false);
+        setPlanes(false);
+        setLandingArea(false);
         break;
       case 'facilities':
         setFacilities(!facilities);
+        setCamping(false);
+        setOverall(false);
+        setBunkhouse(false);
+        setSkySafety(false);
+        setInclusion(false);
+        setParty(false);
+        setRental(false);
+        setPlanes(false);
+        setLandingArea(false);
         break;
       case 'planes':
         setPlanes(!planes);
+        setCamping(false);
+        setOverall(false);
+        setBunkhouse(false);
+        setSkySafety(false);
+        setInclusion(false);
+        setParty(false);
+        setRental(false);
+        setFacilities(false);
+        setLandingArea(false);
         break;
       case 'landingArea':
         setLandingArea(!landingArea);
+        setCamping(false);
+        setOverall(false);
+        setBunkhouse(false);
+        setSkySafety(false);
+        setInclusion(false);
+        setParty(false);
+        setRental(false);
+        setFacilities(false);
+        setPlanes(false);
         break;
     }
   };
+
+  console.log(overall, 'over')
+  console.log(camping, 'camp')
 
   return (
     <div className='dashboardHolder'>
@@ -345,7 +424,8 @@ const Dashboard = (props) => {
 
 const mapDispatchToProps = {
   getDropzones,
-  hasRated
+  hasRated,
+  checkboxChecked
 };
 
 function mapStateToProps(state) {

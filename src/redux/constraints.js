@@ -11,3 +11,4 @@ export const DELETE_JUMP = 'DELETE_JUMP';
 export const EDIT_JUMP = 'EDIT_JUMP';
 export const SET_USER = 'SET_USER';
 export const GET_RATINGS = 'GET_RATINGS';
+export const CHECKBOX_FILTER = 'CHECKBOX_FILTER';

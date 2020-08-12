@@ -35,5 +35,68 @@ module.exports = {
     const rating = await db.dropzone.has_rated();
     // console.log(rating)
     res.status(200).send(rating);
+  },
+
+  checkbox: async (req, res) => {
+    const db = req.app.get('db');
+    const { overall, camping, skySafety, inclusion, party, bunkhouse, rental, facilities, planes, landingArea } = req.query;
+    console.log(overall, camping, skySafety, inclusion, party, bunkhouse, rental, facilities, planes, landingArea);
+
+    if (overall == 'false' && camping == 'false' && skySafety == 'false' && inclusion == 'false' && party == 'false' && bunkhouse == 'false' && rental == 'false' && facilities == 'false' && planes == 'false' && landingArea == 'false') {
+      const dropzones = await db.dropzone.get_all_dropzones();
+      res.status(200).send(dropzones);
+    }
+
+    if (overall == 'true' && camping == 'false' && skySafety == 'false' && inclusion == 'false' && party == 'false' && bunkhouse == 'false' && rental == 'false' && facilities == 'false' && planes == 'false' && landingArea == 'false') {
+      console.log('hit')
+      const overallDz = await db.dropzone.get_best_overall();
+      console.log(overallDz, 'overallDz')
+      res.status(200).send(overallDz);
+    }
+
+    if (overall == 'false' && camping == 'true' && skySafety == 'false' && inclusion == 'false' && party == 'false' && bunkhouse == 'false' && rental == 'false' && facilities == 'false' && planes == 'false' && landingArea == 'false') {
+      const campingDz = await db.dropzone.get_best_camping();
+      res.status(200).send(campingDz);
+    }
+
+    if (overall == 'false' && camping == 'false' && skySafety == 'true' && inclusion == 'false' && party == 'false' && bunkhouse == 'false' && rental == 'false' && facilities == 'false' && planes == 'false' && landingArea == 'false') {
+      const safetyDz = await db.dropzone.get_best_safety();
+      res.status(200).send(safetyDz);
+    }
+
+    if (overall == 'false' && camping == 'false' && skySafety == 'false' && inclusion == 'true' && party == 'false' && bunkhouse == 'false' && rental == 'false' && facilities == 'false' && planes == 'false' && landingArea == 'false') {
+      const inclusionDz = await db.dropzone.get_best_inclusion();
+      res.status(200).send(inclusionDz);
+    }
+
+    if (overall == 'false' && camping == 'false' && skySafety == 'false' && inclusion == 'false' && party == 'true' && bunkhouse == 'false' && rental == 'false' && facilities == 'false' && planes == 'false' && landingArea == 'false') {
+      const partyDz = await db.dropzone.get_best_party();
+      res.status(200).send(partyDz);
+    }
+
+    if (overall == 'false' && camping == 'false' && skySafety == 'false' && inclusion == 'false' && party == 'false' && bunkhouse == 'true' && rental == 'false' && facilities == 'false' && planes == 'false' && landingArea == 'false') {
+      const bunkhouseDz = await db.dropzone.get_best_bunkhouse();
+      res.status(200).send(bunkhouseDz);
+    }
+
+    if (overall == 'false' && camping == 'false' && skySafety == 'false' && inclusion == 'false' && party == 'false' && bunkhouse == 'false' && rental == 'true' && facilities == 'false' && planes == 'false' && landingArea == 'false') {
+      const rentalDz = await db.dropzone.get_best_rentals();
+      res.status(200).send(rentalDz);
+    }
+
+    if (overall == 'false' && camping == 'false' && skySafety == 'false' && inclusion == 'false' && party == 'false' && bunkhouse == 'false' && rental == 'false' && facilities == 'true' && planes == 'false' && landingArea == 'false') {
+      const facilitiesDz = await db.dropzone.get_best_facilities();
+      res.status(200).send(facilitiesDz);
+    }
+
+    if (overall == 'false' && camping == 'false' && skySafety == 'false' && inclusion == 'false' && party == 'false' && bunkhouse == 'false' && rental == 'false' && facilities == 'false' && planes == 'true' && landingArea == 'false') {
+      const planesDz = await db.dropzone.get_best_planes();
+      res.status(200).send(planesDz);
+    }
+
+    if (overall == 'false' && camping == 'false' && skySafety == 'false' && inclusion == 'false' && party == 'false' && bunkhouse == 'false' && rental == 'false' && facilities == 'false' && planes == 'false' && landingArea == 'true') {
+      const landingDz = await db.dropzone.get_best_landing();
+      res.status(200).send(landingDz);
+    }
   }
 };

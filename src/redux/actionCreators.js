@@ -1,4 +1,4 @@
-import { LOGIN_USER, REGISTER_USER, GET_DROPZONES, GET_SESSION, LOGOUT_USER, RATE_DZ, CREATE_DZ, GET_JUMPS, ADD_JUMP, DELETE_JUMP, EDIT_JUMP, SET_USER, GET_RATINGS } from './constraints';
+import { LOGIN_USER, REGISTER_USER, GET_DROPZONES, GET_SESSION, LOGOUT_USER, RATE_DZ, CREATE_DZ, GET_JUMPS, ADD_JUMP, DELETE_JUMP, EDIT_JUMP, SET_USER, GET_RATINGS, CHECKBOX_FILTER } from './constraints';
 import axios from 'axios';
 
 //USER FUNCTIONS
@@ -83,6 +83,15 @@ export function hasRated() {
   return {
     type: GET_RATINGS,
     payload: ratings
+  };
+};
+
+export function checkboxChecked(overall, camping, skySafety, inclusion, party, bunkhouse, rental, facilities, planes, landingArea) {
+  console.log(overall)
+  const checked = axios.get(`/api/checkbox/dropzones?overall=${overall}&camping=${camping}&skySafety=${skySafety}&inclusion=${inclusion}&party=${party}&bunkhouse=${bunkhouse}&rental=${rental}&facilities=${facilities}&planes=${planes}&landingArea=${landingArea}`);
+  return {
+    type: CHECKBOX_FILTER,
+    payload: checked
   };
 };
 
