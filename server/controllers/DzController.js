@@ -28,5 +28,12 @@ module.exports = {
     const newDz = await db.dropzone.create_dropzone_rating(dzId, camping, skySafety, inclusion, party, bunkhouse, rental, facilities, planes, landingArea)
     // console.log(newDz, 'newnew')
     res.status(200).send(newDz);
+  },
+
+  hasRated: async (req, res) => {
+    const db = req.app.get('db');
+    const rating = await db.dropzone.has_rated();
+    // console.log(rating)
+    res.status(200).send(rating);
   }
 };

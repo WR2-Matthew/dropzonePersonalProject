@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
 import Dropdown from '../Dropdown/DropDown';
 import { connect } from 'react-redux';
-import { getDropzones, getUser } from '../../redux/actionCreators';
+import { getDropzones, hasRated } from '../../redux/actionCreators';
 import Modal from '../Modal/Modal';
 import ModalTwo from '../AddDzModal/AddDzModal';
 
@@ -23,7 +23,8 @@ const Dashboard = (props) => {
   let [landingArea, setLandingArea] = useState(false);
 
   useEffect(() => {
-    props.getDropzones()
+    props.getDropzones();
+    props.hasRated()
   }, []);
 
   function handleChangeState(e) {
@@ -43,9 +44,27 @@ const Dashboard = (props) => {
     switch (id) {
       case 'overall':
         setOverall(!overall);
+        setBunkhouse(false);
+        setCamping(false);
+        setSkySafety(false);
+        setInclusion(false);
+        setParty(false);
+        setRental(false);
+        setFacilities(false);
+        setPlanes(false);
+        setLandingArea(false);
         break;
       case 'camping':
         setCamping(!camping);
+        setOverall(false);
+        setBunkhouse(false);
+        setSkySafety(false);
+        setInclusion(false);
+        setParty(false);
+        setRental(false);
+        setFacilities(false);
+        setPlanes(false);
+        setLandingArea(false);
         break;
       case 'skySafety':
         setSkySafety(!skySafety);
@@ -326,7 +345,7 @@ const Dashboard = (props) => {
 
 const mapDispatchToProps = {
   getDropzones,
-  getUser
+  hasRated
 };
 
 function mapStateToProps(state) {

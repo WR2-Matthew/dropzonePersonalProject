@@ -73,10 +73,11 @@ app.put('/api/edit/account/:id', authCtrl.editAccount);
 
 //DROPZONE ENDPOINT
 app.get('/api/dropzones', dzCtrl.getAllDropzones);
-app.post('/api/create/dropzone/:userId', dzCtrl.createDropzone)
+app.post('/api/create/dropzone/:userId', dzCtrl.createDropzone);
 
 //RATING ENDPOINT
-app.post('/api/rate/dropzone', dzCtrl.addRating)
+app.post('/api/rate/dropzone', dzCtrl.addRating);
+app.get('/api/has/rated', dzCtrl.hasRated);
 
 //JUMPS ENDPOINT
 app.get('/api/jumps/:userId', jumpCtrl.getJumps);

@@ -40,6 +40,20 @@ function RateDz(props) {
     }
   };
 
+  const beenRated = props.hasRated.filter(rating => {
+    console.log(rating)
+    if (rating.d_id === props.dropzoneId && rating.u_id === props.user.id) {
+      return (
+        <div>
+          <h1>You have already rated this dropzone!</h1>
+        </div>
+      )
+    }
+    else {
+      return <h1>HELLO</h1>
+    }
+  })
+
   return (
     <div className='rateDzHolder' >
       <form className='rateForm'>
@@ -165,7 +179,8 @@ const mapDispatchToProps = {
 
 function mapStateToProps(state) {
   return {
-    user: state.userReducer.user.data
+    user: state.userReducer.user.data,
+    hasRated: state.dzReducer.hasRated.data
   }
 }
 

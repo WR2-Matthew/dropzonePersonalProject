@@ -1,0 +1,1 @@
+select * from has_rated;

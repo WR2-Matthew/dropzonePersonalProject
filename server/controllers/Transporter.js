@@ -3,7 +3,7 @@ const nodemailer = require('nodemailer'),
 
 module.exports = {
   email: async (req, res) => {
-    const { email } = req.body
+    const { email, firstName } = req.body
 
     try {
       //The transporter is essentially the email that you are using to send
@@ -25,15 +25,17 @@ module.exports = {
       let info = await transporter.sendMail({
         from: `OurDropzone <${EMAIL}>`,
         to: email,
-        subject: 'Welcome to OurDropzone! Join the community of bada$$ humans who jump, party, and well jump again!',
+        subject: 'Welcome to OurDropzone! Join the community of bada$$ humans who jump, party, and then jump again!',
         text: 'Welcome to the #1 place for our family to come together to create a better safer more respected environment for us to do what we love.',
-        html: `<div>Welcome to OurDropzone.com</div>
-               <img src="cid:unique@nodemailer.com" />`,
+        html: `<h2>Welcome ${firstName}, to OurDropzone.com</h2>
+               <h4>We are all here due to our passion, our jobs, or simply the fun of jumping from aircraft and flying our bodies!</h4>
+               <h4>The objective of OurDropzone.com is to find the right DZ that will best fit what you are looking to get out of the sport.</h4>
+               <a href=https://www.facebook.com/SkydiveUSPA><img src=https://img.icons8.com/plasticine/2x/facebook-new.png alt=facebook/></a>`,
         attachments: [
-          {
-            filename: 'license.txt',
-            path: 'https://raw.github.com/nodemailer/nodemailer/master/LICENSE'
-          },
+          // {
+          //   filename: 'license.txt',
+          //   path: 'https://raw.github.com/nodemailer/nodemailer/master/LICENSE'
+          // },
           {
             cid: 'unique@nodemailer.com',
             path: 'https://www.ramblers.com.au/wp-content/uploads/2019/04/P23-Angles-with-Mason-Drewy-MadDog-by-Smithy-19-april.jpg'

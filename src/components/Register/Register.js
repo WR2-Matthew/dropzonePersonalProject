@@ -80,7 +80,7 @@ class Register extends Component {
   register = (firstName, lastName, email, password) => {
     // console.log('hit')
     this.props.registerUsers(firstName, lastName, email, password)
-    const body = { email }
+    const body = { email, firstName }
     axios.post('/api/email', body)
     this.props.history.push('/')
   };
