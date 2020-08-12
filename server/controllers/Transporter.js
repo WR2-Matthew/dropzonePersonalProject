@@ -3,7 +3,7 @@ const nodemailer = require('nodemailer'),
 
 module.exports = {
   email: async (req, res) => {
-    const { email, firstName } = req.body
+    const { email, firstName } = req.body;
 
     try {
       //The transporter is essentially the email that you are using to send

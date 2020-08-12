@@ -56,9 +56,8 @@ insert into ratings (
   party_rt,
   rental_gear_rt,
   planes_rt,
-  sky_safety_rt,
-  has_rated
-) values (
+  sky_safety_rt
+  ) values (
   $1, 
   $2,
   $3,
@@ -69,9 +68,8 @@ insert into ratings (
   $8,
   $9,
   $10,
-  $11,
-  true
-);
+  $11
+  );
 
 update averages 
  set camping_avg = (select avg(camping_rt) from ratings where dz_id = $1),

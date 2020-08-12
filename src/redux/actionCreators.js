@@ -87,7 +87,6 @@ export function hasRated() {
 };
 
 export function checkboxChecked(overall, camping, skySafety, inclusion, party, bunkhouse, rental, facilities, planes, landingArea) {
-  console.log(overall)
   const checked = axios.get(`/api/checkbox/dropzones?overall=${overall}&camping=${camping}&skySafety=${skySafety}&inclusion=${inclusion}&party=${party}&bunkhouse=${bunkhouse}&rental=${rental}&facilities=${facilities}&planes=${planes}&landingArea=${landingArea}`);
   return {
     type: CHECKBOX_FILTER,
