@@ -76,7 +76,8 @@ class Logbook extends Component {
                   )
                 })
                 : jumps.filter(jump => (
-                  jump.dropzone.toLowerCase() === dzSearched.toLowerCase()
+                  console.log(jump)
+                  // jump.dropzone.toLowerCase() === dzSearched.toLowerCase()
                 ))
                   .map((jump, i) => {
                     return (

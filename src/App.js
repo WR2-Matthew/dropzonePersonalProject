@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import routes from './routes';
 import Nav from './components/Nav/Nav';
 import { connect } from 'react-redux';
-import { getUser } from './redux/actionCreators'
+import { getUser } from './redux/actionCreators';
 // import Sass from './components/SassTesting/SassTesting';
 // import Dropdown from './components/LEARNING COMPONENTS/DropDown';
 // import DZA from './LEARNING COMPONENTS/DropzoneAmazon';

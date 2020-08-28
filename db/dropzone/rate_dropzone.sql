@@ -84,6 +84,16 @@ update averages
  overall_avg = (select (avg(camping_rt) + avg(sky_safety_rt) + avg(inclusion_rt) + avg(party_rt) + avg(bunkhouse_rt) + avg(rental_gear_rt) + avg(facilities_rt) + avg(planes_rt) + avg(landing_area_rt)) / 9 from ratings where dz_id = $1 )
  where dzone_id = $1;
 
+ insert into has_rated (
+   d_id,
+   u_id,
+   rated
+ ) values (
+   $1,
+   $2,
+   true
+ );
+
 select * from dropzones d
 join averages a on a.dzone_id = d.dropzone_id
 order by d.dz_name;

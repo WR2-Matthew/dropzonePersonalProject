@@ -1,0 +1,14 @@
+@import '../../Sass/mixin';
+@import '../../Sass/variables';
+
+.footerHolder {
+  height: 15vh;
+  width: 100vw;
+  @include flexOptionOne(center);
+  background-color: $mainBlueColor;
+}
+
+.socialMediaIcons {
+  height: 80px;
+  width: 80px;
+}

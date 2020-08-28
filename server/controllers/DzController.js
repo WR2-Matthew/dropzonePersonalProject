@@ -14,6 +14,9 @@ module.exports = {
     const { dropzone, user } = req.query;
 
     const rating = await db.dropzone.rate_dropzone(dropzone, user, bunkhouse, camping, facilities, inclusion, landingArea, party, rental, planes, skySafety);
+    // console.log(rating)
+    const rated = await db.dropzone.get_has_rated(user)
+    // console.log(rated)
     res.status(200).send(rating);
   },
 
@@ -40,7 +43,7 @@ module.exports = {
   checkbox: async (req, res) => {
     const db = req.app.get('db');
     const { overall, camping, skySafety, inclusion, party, bunkhouse, rental, facilities, planes, landingArea } = req.query;
-    console.log(overall, camping, skySafety, inclusion, party, bunkhouse, rental, facilities, planes, landingArea);
+    // console.log(overall, camping, skySafety, inclusion, party, bunkhouse, rental, facilities, planes, landingArea);
 
     if (overall == 'false' && camping == 'false' && skySafety == 'false' && inclusion == 'false' && party == 'false' && bunkhouse == 'false' && rental == 'false' && facilities == 'false' && planes == 'false' && landingArea == 'false') {
       const dropzones = await db.dropzone.get_all_dropzones();
@@ -48,9 +51,9 @@ module.exports = {
     }
 
     if (overall == 'true' && camping == 'false' && skySafety == 'false' && inclusion == 'false' && party == 'false' && bunkhouse == 'false' && rental == 'false' && facilities == 'false' && planes == 'false' && landingArea == 'false') {
-      console.log('hit')
+      // console.log('hit')
       const overallDz = await db.dropzone.get_best_overall();
-      console.log(overallDz, 'overallDz')
+      // console.log(overallDz, 'overallDz')
       res.status(200).send(overallDz);
     }
 

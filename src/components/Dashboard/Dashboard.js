@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getDropzones, hasRated, checkboxChecked } from '../../redux/actionCreators';
 import Modal from '../Modal/Modal';
 import ModalTwo from '../AddDzModal/AddDzModal';
+import Footer from '../Footer/Footer';
 
 const Dashboard = (props) => {
 

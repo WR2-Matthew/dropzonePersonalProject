@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import StarComponent from 'react-star-rating-component';
 import { connect } from 'react-redux';
 import './RateDropzone.css';
-import { rateDropzones } from '../../redux/actionCreators';
+import { rateDropzones, getHasRated } from '../../redux/actionCreators';
 
 function RateDz(props) {
 
@@ -27,6 +27,7 @@ function RateDz(props) {
     else {
       console.log('hit')
       props.rateDropzones(bunkhouse, camping, facilities, inclusion, landingArea, party, rental, planes, skySafety, props.user.id, props.dropzoneId)
+      props.getHasRated(props.user.id)
       props.setEditDzFn(false)
       setCamping(0)
       setFacilities(0)
@@ -40,19 +41,19 @@ function RateDz(props) {
     }
   };
 
-  const beenRated = props.hasRated.filter(rating => {
-    console.log(rating)
-    if (rating.d_id === props.dropzoneId && rating.u_id === props.user.id) {
-      return (
-        <div>
-          <h1>You have already rated this dropzone!</h1>
-        </div>
-      )
-    }
-    else {
-      return <h1>HELLO</h1>
-    }
-  })
+  // const beenRated = props.hasRated.filter(rating => {
+  //   console.log(rating)
+  //   if (rating.d_id === props.dropzoneId && rating.u_id === props.user.id) {
+  //     return (
+  //       <div>
+  //         <h1>You have already rated this dropzone!</h1>
+  //       </div>
+  //     )
+  //   }
+  //   else {
+  //     return <h1>HELLO</h1>
+  //   }
+  // })
 
   return (
     <div className='rateDzHolder' >
@@ -174,7 +175,8 @@ function RateDz(props) {
 };
 
 const mapDispatchToProps = {
-  rateDropzones
+  rateDropzones,
+  getHasRated
 }
 
 function mapStateToProps(state) {

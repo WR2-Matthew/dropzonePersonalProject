@@ -12,3 +12,4 @@ export const EDIT_JUMP = 'EDIT_JUMP';
 export const SET_USER = 'SET_USER';
 export const GET_RATINGS = 'GET_RATINGS';
 export const CHECKBOX_FILTER = 'CHECKBOX_FILTER';
+export const GET_HAS_RATED = 'GET_HAS_RATED';

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import Dropzone from '../Dropzones/Dropzones';
 import './Modal.css';
@@ -12,6 +12,15 @@ function ModalComp(props) {
 
   let [modalOpen, setModalOpen] = useState(false);
   let [editDz, setEditDz] = useState(false);
+  let [rated, setRated] = useState(false);
+
+  useEffect(() => {
+    props.hasRated.filter(e => {
+      if (e.d_id === props.dropzoneId) {
+        setRated(true)
+      }
+    })
+  }, [props.user])
 
   return (
     <div>
@@ -175,7 +184,7 @@ function ModalComp(props) {
               <div className='individualRatingHolder' >
                 {!props.user
                   ? <h4>Sign in to Rate DZ!</h4>
-                  : <button onClick={() => setEditDz(true)} className='modalRatingButton' >Rate This Dropzone!</button>}
+                  : <button onClick={() => setEditDz(true)} disabled={rated} className='modalRatingButton' >Rate This Dropzone!</button>}
               </div>
             </div>
             : <RateDz
@@ -192,7 +201,8 @@ function ModalComp(props) {
 
 function mapStateToProps(state) {
   return {
-    user: state.userReducer.user.data
+    user: state.userReducer.user.data,
+    hasRated: state.dzReducer.hasRated.data
   }
 }
 
