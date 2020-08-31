@@ -16,5 +16,4 @@
 
 select * from dropzones d
 join averages a on a.dzone_id = d.dropzone_id
-join pictures p on p.drop_id = d.dropzone_id
 order by d.dz_name;
