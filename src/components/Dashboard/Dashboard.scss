@@ -28,6 +28,8 @@
 
 .dashSearch {
   @include searchSize();
+  width: 310px;
+  height: 48px;
   // background: url(https://img.icons8.com/cotton/2x/search--v2.png) no-repeat 1px 1px ;
 }
 

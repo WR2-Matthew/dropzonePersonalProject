@@ -1,8 +1,9 @@
-import { GET_DROPZONES, RATE_DZ, CREATE_DZ, GET_RATINGS, CHECKBOX_FILTER, GET_HAS_RATED } from "./constraints";
+import { GET_DROPZONES, RATE_DZ, CREATE_DZ, GET_RATINGS, CHECKBOX_FILTER, GET_HAS_RATED, GET_PHOTOS } from "./constraints";
 
 const initialState = {
   dropzones: [],
-  hasRated: []
+  hasRated: [],
+  photos: []
 };
 
 export default function dzReducer(state = initialState, action) {
@@ -44,6 +45,12 @@ export default function dzReducer(state = initialState, action) {
     case GET_HAS_RATED + '_FULFILLED':
       return { ...state, hasRated: payload };
     case GET_HAS_RATED + '_REJECTED':
+      return state;
+    case GET_PHOTOS + '_PENDING':
+      return state;
+    case GET_PHOTOS + '_FULFILLED':
+      return { ...state, photos: payload };
+    case GET_PHOTOS + '_REJECTED':
       return state;
     default:
       return state;

@@ -1,4 +1,4 @@
-import { LOGIN_USER, REGISTER_USER, GET_DROPZONES, GET_SESSION, LOGOUT_USER, RATE_DZ, CREATE_DZ, GET_JUMPS, ADD_JUMP, DELETE_JUMP, EDIT_JUMP, SET_USER, GET_RATINGS, CHECKBOX_FILTER, GET_HAS_RATED } from './constraints';
+import { LOGIN_USER, REGISTER_USER, GET_DROPZONES, GET_SESSION, LOGOUT_USER, RATE_DZ, CREATE_DZ, GET_JUMPS, ADD_JUMP, DELETE_JUMP, EDIT_JUMP, SET_USER, GET_RATINGS, CHECKBOX_FILTER, GET_HAS_RATED, GET_PHOTOS } from './constraints';
 import axios from 'axios';
 
 //USER FUNCTIONS
@@ -91,6 +91,14 @@ export function checkboxChecked(overall, camping, skySafety, inclusion, party, b
   return {
     type: CHECKBOX_FILTER,
     payload: checked
+  };
+};
+
+export function getPhotos() {
+  const pictures = axios.get('/api/dropzone/pictures');
+  return {
+    type: GET_PHOTOS,
+    payload: pictures
   };
 };
 

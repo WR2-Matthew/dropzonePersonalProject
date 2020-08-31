@@ -101,5 +101,12 @@ module.exports = {
       const landingDz = await db.dropzone.get_best_landing();
       res.status(200).send(landingDz);
     }
+  },
+
+  getPhotos: async (req, res) => {
+    const db = req.app.get('db');
+
+    const photos = await db.dropzone.get_all_photos();
+    res.status(200).send(photos);
   }
 };

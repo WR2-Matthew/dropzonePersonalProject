@@ -91,8 +91,12 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 220px;
+  height: 300px;
   width: 75vw;
+}
+
+.modalDzImageHolder .carouselHold {
+  margin: 20px;
 }
 
 .modalDzImage {

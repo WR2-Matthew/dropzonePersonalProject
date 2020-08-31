@@ -4,7 +4,9 @@ import Dropzone from '../Dropzones/Dropzones';
 import './Modal.css';
 import StarComponent from 'react-star-rating-component';
 import { connect } from 'react-redux';
-import RateDz from '../RateDropzone/RateDropzone'
+import RateDz from '../RateDropzone/RateDropzone';
+import { hasRated } from '../../redux/actionCreators';
+import CarouselComp from '../Carousel/Carousel';
 
 Modal.setAppElement('#root')
 
@@ -13,13 +15,30 @@ function ModalComp(props) {
   let [modalOpen, setModalOpen] = useState(false);
   let [editDz, setEditDz] = useState(false);
   let [rated, setRated] = useState(false);
+  let [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    props.hasRated.filter(e => {
-      if (e.d_id === props.dropzoneId) {
-        setRated(true)
+    if (submitted === true) {
+      if (props.user) {
+        props.ratedDropzone.filter(e => {
+          if (e.d_id === props.dropzoneId) {
+            setRated(true)
+            setSubmitted(false)
+          }
+        })
       }
-    })
+    }
+  }, [props.user, submitted, props.ratedDropzone])
+
+  useEffect(() => {
+    if (props.user) {
+      props.ratedDropzone.filter(e => {
+        if (e.d_id === props.dropzoneId) {
+          setRated(true)
+          setSubmitted(false)
+        }
+      })
+    }
   }, [props.user])
 
   return (
@@ -64,7 +83,9 @@ function ModalComp(props) {
           </div>
 
           <div className='modalDzImageHolder'>
-            <img className='modalDzImage' alt='dropzone' src={props.picture} />
+            <div className='carouselHold'>
+              <CarouselComp dropzoneId={props.dropzoneId} />
+            </div>
           </div>
 
           <div className='modalDzDetails'>
@@ -190,6 +211,7 @@ function ModalComp(props) {
             : <RateDz
               dropzoneId={props.dropzoneId}
               setEditDzFn={setEditDz}
+              setSubmitted={setSubmitted}
             />
           }
 
@@ -199,11 +221,15 @@ function ModalComp(props) {
   )
 };
 
+const mapDispatchToProps = {
+  hasRated
+};
+
 function mapStateToProps(state) {
   return {
     user: state.userReducer.user.data,
-    hasRated: state.dzReducer.hasRated.data
-  }
-}
+    ratedDropzone: state.dzReducer.hasRated.data
+  };
+};
 
-export default connect(mapStateToProps)(ModalComp);
+export default connect(mapStateToProps, mapDispatchToProps)(ModalComp);

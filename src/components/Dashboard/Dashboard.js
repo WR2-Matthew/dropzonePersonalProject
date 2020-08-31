@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { getDropzones, hasRated, checkboxChecked } from '../../redux/actionCreators';
 import Modal from '../Modal/Modal';
 import ModalTwo from '../AddDzModal/AddDzModal';
-import Footer from '../Footer/Footer';
 
 const Dashboard = (props) => {
 
@@ -170,8 +169,7 @@ const Dashboard = (props) => {
     }
   };
 
-  console.log(overall, 'over')
-  console.log(camping, 'camp')
+  console.log(props.dropzones)
 
   return (
     <div className='dashboardHolder'>
@@ -179,7 +177,7 @@ const Dashboard = (props) => {
         <div className='dashSearchHolder'>
 
           <div className='dashSearchBar'>
-            <input className='dashSearch' placeholder='DZ Name' name='nameSearched' value={nameSearched} onChange={(e) => handleChangeName(e)} />
+            <input className='dashSearch' type="search" placeholder='DZ Name' name='nameSearched' value={nameSearched} onChange={(e) => handleChangeName(e)} />
           </div>
 
           <div className='dashFilterState'>

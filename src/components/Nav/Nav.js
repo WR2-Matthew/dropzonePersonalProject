@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Nav.css';
 import { connect } from 'react-redux';
 import { logoutUser, getUser } from '../../redux/actionCreators';
+import dzLogo from './dzLogo.png';
 
 function Nav(props) {
 
@@ -12,7 +13,7 @@ function Nav(props) {
   return (
     <div className='navHolder'>
       <div className='navTitleHolder'>
-        <img className='navLogo' alt='parachute' src='https://i7.pngguru.com/preview/463/236/951/parachuting-parachute-landing-fall-skydiver-paratrooper-parachute.jpg' />
+        <img className='navLogo' alt='parachute' src={dzLogo} />
         <h1 className='navTitle' >Our Dropzone</h1>
       </div>
 

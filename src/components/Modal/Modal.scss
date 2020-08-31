@@ -45,8 +45,11 @@ font-size: 40px;
 
 .modalDzImageHolder {
   @include flexOptionOne(center);
-  @include modalSize(220px);
-}
+  @include modalSize(300px);
+  .carouselHold {
+    margin: 20px;
+  }
+ }
 
 .modalDzImage {
   height: 200px;

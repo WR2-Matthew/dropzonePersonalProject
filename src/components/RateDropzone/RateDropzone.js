@@ -167,7 +167,10 @@ function RateDz(props) {
         </div>
 
         <div className='rateHolder' >
-          <button className='modalRatingSubmitButton' onClick={(e) => submitForm(e)}>Submit Dropzone Rating's</button>
+          <button className='modalRatingSubmitButton' onClick={(e) => {
+            submitForm(e)
+            props.setSubmitted(true)
+          }}>Submit Dropzone Rating's</button>
         </div>
       </form>
     </div >

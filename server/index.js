@@ -75,6 +75,7 @@ app.put('/api/edit/account/:id', authCtrl.editAccount);
 app.get('/api/dropzones', dzCtrl.getAllDropzones);
 app.post('/api/create/dropzone/:userId', dzCtrl.createDropzone);
 app.get('/api/checkbox/dropzones', dzCtrl.checkbox);
+app.get('/api/dropzone/pictures', dzCtrl.getPhotos);
 
 //RATING ENDPOINT
 app.post('/api/rate/dropzone', dzCtrl.addRating);
